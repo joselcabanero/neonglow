@@ -12,8 +12,8 @@ importers:
         specifier: ^2.10.3
         version: 2.10.3
       typescript:
-        specifier: ^6.0.3
-        version: 6.0.3
+        specifier: ^5.5.0
+        version: 5.9.3
 
   packages/tokens:
     devDependencies:
@@ -523,11 +523,6 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  typescript@6.0.3:
-    resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
-    engines: {node: '>=14.17'}
-    hasBin: true
-
   vite-node@3.2.4:
     resolution: {integrity: sha512-EbKSKh+bh1E1IFxeO0pg1n4dvoOTt0UDiXMd/qn++r98+jPO1xtJilvXldeuQ8giIB5IkpjCgMleHMNEsGH6pg==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
@@ -990,8 +985,6 @@ snapshots:
       '@turbo/windows-arm64': 2.10.3
 
   typescript@5.9.3: {}
-
-  typescript@6.0.3: {}
 
   vite-node@3.2.4:
     dependencies:
