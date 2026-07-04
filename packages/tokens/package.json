@@ -1,0 +1,16 @@
+{
+  "name": "@neonglow/tokens",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./theme.css": "./dist/theme.css",
+    "./fonts.css": "./fonts/fonts.css"
+  },
+  "files": ["dist", "fonts"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node dist/generate.js",
+    "test": "vitest run"
+  },
+  "devDependencies": { "typescript": "^5.5.0", "vitest": "^3.0.0" }
+}
