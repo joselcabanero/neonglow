@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { themes, densities, primitives } from "../src/index.js";
 import { cssVarName } from "../src/cssname.js";
+import { renderThemeCss } from "../src/generate.js";
 
 describe("cssVarName", () => {
   it("kebab-cases camelCase and digits", () => {
@@ -36,8 +37,6 @@ describe("densities", () => {
         expect(parseInt(v) % 12, v).toBe(0);
   });
 });
-
-import { renderThemeCss } from "../src/generate.js";
 
 describe("renderThemeCss", () => {
   const css = renderThemeCss();
