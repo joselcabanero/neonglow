@@ -29,6 +29,9 @@ importers:
 
   apps/docs:
     dependencies:
+      '@neonglow/core':
+        specifier: workspace:*
+        version: link:../../packages/core
       '@neonglow/icons':
         specifier: workspace:*
         version: link:../../packages/icons
