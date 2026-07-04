@@ -1,0 +1,7 @@
+/* Brand family: Ubuntu (or similar) — the family is a token, not a pin. */
+@font-face{font-family:'Ubuntu';font-weight:300;font-display:swap;src:url('./Ubuntu-Light.woff2') format('woff2');}
+@font-face{font-family:'Ubuntu';font-weight:400;font-display:swap;src:url('./Ubuntu-Regular.woff2') format('woff2');}
+@font-face{font-family:'Ubuntu';font-weight:500;font-display:swap;src:url('./Ubuntu-Medium.woff2') format('woff2');}
+@font-face{font-family:'Ubuntu';font-weight:700;font-display:swap;src:url('./Ubuntu-Bold.woff2') format('woff2');}
+@font-face{font-family:'Ubuntu Mono';font-weight:400;font-display:swap;src:url('./UbuntuMono-Regular.woff2') format('woff2');}
+@font-face{font-family:'Ubuntu Mono';font-weight:700;font-display:swap;src:url('./UbuntuMono-Bold.woff2') format('woff2');}

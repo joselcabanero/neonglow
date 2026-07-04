@@ -36,3 +36,24 @@ describe("densities", () => {
         expect(parseInt(v) % 12, v).toBe(0);
   });
 });
+
+import { renderThemeCss } from "../src/generate.js";
+
+describe("renderThemeCss", () => {
+  const css = renderThemeCss();
+  it("emits all four scopes", () => {
+    expect(css).toContain(':root,[data-theme="light"]');
+    expect(css).toContain('[data-theme="dark"]');
+    expect(css).toContain('[data-density="default"]');
+    expect(css).toContain('[data-density="compact"]');
+  });
+  it("emits kebab-cased vars with verbatim values", () => {
+    expect(css).toContain("--surface-sunken-2:#e0e0e4");
+    expect(css).toContain("--intent-danger:#FF3B5C");
+    expect(css).toContain("--control-h:36px");
+  });
+  it("ships the base a11y layer", () => {
+    expect(css).toContain(":focus-visible");
+    expect(css).toContain("prefers-reduced-motion");
+  });
+});
