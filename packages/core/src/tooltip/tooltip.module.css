@@ -1,0 +1,9 @@
+.wrap { position: relative; display: inline-flex; }
+.tip { position: absolute; bottom: calc(100% + 8px); left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--border-strong); color: var(--surface);
+  font-family: var(--font-sans); font-size: var(--fs-micro); line-height: var(--baseline-half);
+  padding: 5px 9px; border-radius: var(--radius-action); white-space: nowrap;
+  opacity: 0; pointer-events: none;
+  transition: opacity .12s ease-out, transform .12s ease-out; }
+.wrap:hover .tip, .wrap:focus-within .tip { opacity: 1; transform: translateX(-50%) translateY(0); }
