@@ -1,2 +1,9 @@
 .DS_Store
 .firecrawl/
+.superpowers/
+node_modules/
+dist/
+storybook-static/
+.turbo/
+vrt/current/
+vrt/diff/

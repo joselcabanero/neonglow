@@ -1,0 +1,16 @@
+{
+  "name": "neonglow-monorepo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "storybook": "pnpm --filter @neonglow/docs storybook",
+    "vrt": "node scripts/vrt.mjs"
+  },
+  "devDependencies": {
+    "turbo": "^2.10.3",
+    "typescript": "^6.0.3"
+  },
+  "packageManager": "pnpm@9.15.0"
+}
