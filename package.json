@@ -9,6 +9,10 @@
     "vrt": "node scripts/vrt.mjs"
   },
   "devDependencies": {
+    "pixelmatch": "^7.2.0",
+    "playwright": "^1.61.1",
+    "pngjs": "^7.0.0",
+    "sirv": "^3.0.2",
     "turbo": "^2.10.3",
     "typescript": "^5.5.0"
   },
