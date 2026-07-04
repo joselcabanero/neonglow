@@ -1,0 +1,28 @@
+/* Action affordance: soft radius, density-driven height, glow token on dark. */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  height: var(--control-h); padding: 0 var(--pad-x);
+  border-radius: var(--radius-action);
+  font-family: var(--font-sans); font-size: var(--fs-ui); font-weight: 500;
+  letter-spacing: .01em; white-space: nowrap; cursor: pointer;
+  border: 1px solid var(--border-hairline);
+  background: var(--surface); color: var(--text-1);
+  transition: background .12s ease, border-color .12s ease, color .12s ease;
+}
+.btn:hover { background: var(--surface-sunken); }
+.btn:active { background: var(--surface-sunken-2); }
+.btn:disabled { opacity: .4; cursor: not-allowed; }
+
+.primary { background: var(--accent); color: var(--on-accent); border-color: transparent; box-shadow: var(--glow); }
+.primary:hover { background: var(--accent-hover); }
+.primary:active { background: var(--accent-press); }
+
+.ghost { background: transparent; border-color: transparent; color: var(--text-2); }
+.ghost:hover { background: var(--surface-sunken); color: var(--text-1); }
+
+.danger { color: var(--intent-danger); border-color: color-mix(in srgb, var(--intent-danger) 45%, transparent); }
+.danger:hover { background: var(--intent-danger-bg); }
+
+.secondary {} /* base styles are the secondary variant */
+
+.group { display: inline-flex; gap: 8px; }
