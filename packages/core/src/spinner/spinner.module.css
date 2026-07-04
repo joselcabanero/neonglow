@@ -1,0 +1,4 @@
+.spinner { display: inline-flex; color: var(--text-3); }
+.svg { animation: spin .8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+/* theme.css globally disables animation under prefers-reduced-motion */
