@@ -1,0 +1,27 @@
+/* Data surface: radius 0, hairline border, NO shadow, NO glow. */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-0);
+  padding: calc(var(--baseline) - 1px);
+}
+
+.sunken {
+  background: var(--surface-sunken);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--baseline-half);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--fs-h3);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--text-1);
+}
