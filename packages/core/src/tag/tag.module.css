@@ -1,0 +1,17 @@
+.tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 22px; padding: 0 9px; border-radius: var(--radius-action);
+  font-family: var(--font-sans); font-size: var(--fs-micro); font-weight: 500; letter-spacing: .03em;
+  background: var(--surface-sunken); color: var(--text-2);
+}
+.success { background: var(--intent-success-bg); color: var(--intent-success); box-shadow: var(--glow); }
+.warning { background: var(--intent-warning-bg); color: var(--intent-warning); box-shadow: var(--glow); }
+.danger  { background: var(--intent-danger-bg);  color: var(--intent-danger);  box-shadow: var(--glow); }
+.info    { background: var(--intent-info-bg);    color: var(--intent-info);    box-shadow: var(--glow); }
+.accent  { background: var(--accent); color: var(--on-accent); }
+.remove {
+  appearance: none; border: 0; background: transparent; color: inherit;
+  display: inline-flex; padding: 2px; margin-right: -4px; cursor: pointer;
+  border-radius: var(--radius-action);
+}
+.remove:hover { background: color-mix(in srgb, currentColor 14%, transparent); }

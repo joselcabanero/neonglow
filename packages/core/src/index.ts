@@ -4,3 +4,4 @@ export { Button, type ButtonProps } from "./button/Button.js";
 export { ButtonGroup } from "./button/ButtonGroup.js";
 export { Spinner, type SpinnerProps } from "./spinner/Spinner.js";
 export { Divider } from "./divider/Divider.js";
+export { Tag, type TagProps } from "./tag/Tag.js";
