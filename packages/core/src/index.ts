@@ -7,3 +7,7 @@ export { Divider } from "./divider/Divider.js";
 export { Tag, type TagProps } from "./tag/Tag.js";
 export { Card, type CardProps } from "./card/Card.js";
 export { Callout, type CalloutProps } from "./callout/Callout.js";
+export { FormGroup, type FormGroupProps } from "./form/FormGroup.js";
+export { TextInput, type TextInputProps } from "./form/TextInput.js";
+export { TextArea, type TextAreaProps } from "./form/TextArea.js";
+export { NumericInput } from "./form/NumericInput.js";

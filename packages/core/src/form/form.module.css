@@ -1,0 +1,21 @@
+.group { display: flex; flex-direction: column; gap: 6px; }
+.label { font-family: var(--font-sans); font-size: var(--fs-micro); letter-spacing: .1em;
+  text-transform: uppercase; font-weight: 500; color: var(--text-3); }
+.helper { font-size: var(--fs-cap); color: var(--text-3); line-height: var(--baseline-half); }
+.helperDanger { color: var(--intent-danger); }
+
+.input { height: var(--control-h); padding: 0 var(--pad-x);
+  border-radius: var(--radius-action); border: 1px solid var(--border-hairline);
+  background: var(--surface); color: var(--text-1);
+  font-family: var(--font-sans); font-size: var(--fs-ui); width: 100%;
+  transition: border-color .12s ease, background .12s ease; }
+.input::placeholder { color: var(--text-3); }
+.input:hover { border-color: var(--text-3); }
+.input:disabled { opacity: .4; cursor: not-allowed; }
+.area { height: auto; padding: var(--pad-y) var(--pad-x); line-height: var(--baseline);
+  resize: vertical; }
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.danger { border-color: var(--intent-danger); }
+.warning { border-color: var(--intent-warning); }
+.success { border-color: var(--intent-success); }
+.info { border-color: var(--intent-info); }
