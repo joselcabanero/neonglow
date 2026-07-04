@@ -1,0 +1,51 @@
+<!-- @dsCard group="Components" viewport="700x360" name="Slide chrome" subtitle="Chapter number integrated into eyebrow — chrome drops the section tag" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Chrome</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:#fff;font-family:var(--font-sans);color:var(--ink);}
+  .wrap{padding:14px;display:grid;grid-template-columns:1fr;gap:10px;}
+  .pv{padding:22px 28px 34px;min-height:148px;position:relative;border:1px solid rgba(10,10,10,0.15);}
+  .pv.paper{background:var(--paper);}
+  .pv.dark{background:#0a0a0a;color:var(--paper);}
+  .tag{position:absolute;top:6px;left:28px;font-family:var(--font-mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-3);font-weight:500;}
+
+  /* Chrome (shared) */
+  .ct{display:flex;align-items:center;justify-content:space-between;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3);font-weight:500;}
+  .dark .ct{color:var(--grey-88);}
+  .logo{height:18px;}
+  .mono{font-family:var(--font-mono);text-transform:none;letter-spacing:0;font-size:11px;}
+
+  /* Eyebrow variants */
+  .eb{display:flex;align-items:center;gap:10px;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;font-weight:500;margin:22px 0 8px;}
+  .eb::before{content:"";width:26px;height:2px;background:currentColor;flex-shrink:0;}
+  .eb .chap{font-family:var(--font-mono);letter-spacing:0.1em;color:var(--green);}
+  .eb .sep{color:var(--ink-3);font-weight:400;}
+  .dark .eb .sep{color:var(--grey-88);}
+
+  .title{font-size:20px;font-weight:500;letter-spacing:-0.02em;line-height:1.05;}
+  .cf{position:absolute;bottom:10px;left:28px;right:28px;display:flex;justify-content:space-between;font-size:10px;color:var(--ink-3);letter-spacing:0.04em;}
+  .dark .cf{color:var(--grey-88);}
+</style></head><body>
+<div class="wrap">
+
+  <!-- Recommended: chapter lives INSIDE the eyebrow, chrome is just logo + page -->
+  <div class="pv paper">
+    <span class="tag">Recommended · chapter in eyebrow</span>
+    <div class="ct"><img class="logo" src="../assets/accelera-wordmark-ink.png"><span class="mono">02 / 24</span></div>
+    <div class="eb"><span class="chap">01</span><span class="sep">/</span><span>Portfolio at a Glance</span></div>
+    <div class="title">Two funds. Thirty-five companies.</div>
+    <div class="cf"><span>Accelera Ventures</span><span>Q4 2026 · Portfolio Overview</span></div>
+  </div>
+
+  <!-- Same on dark -->
+  <div class="pv dark">
+    <span class="tag" style="color:var(--grey-88);">on ink</span>
+    <div class="ct"><img class="logo" src="../assets/accelera-wordmark-inverted.png"><span class="mono">03 / 24</span></div>
+    <div class="eb"><span class="chap">02</span><span class="sep">/</span><span>The Landmark Exit</span></div>
+    <div class="title">Ekonoke · 14.58× MOIC</div>
+    <div class="cf"><span>Accelera Ventures</span><span>Case Study</span></div>
+  </div>
+
+</div>
+</body></html>

@@ -1,0 +1,27 @@
+<!-- @dsCard group="Components" viewport="700x230" name="Card states" subtitle="Five states, one shape" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Card States</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--paper);font-family:var(--font-sans);color:var(--ink);}
+  .wrap{padding:20px 24px;display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:#0a0a0a;border:1px solid #0a0a0a;margin:16px;}
+  .c{padding:18px 16px;min-height:150px;display:flex;flex-direction:column;gap:6px;}
+  .st{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;font-weight:500;color:var(--ink-3);}
+  .val{font-size:30px;font-weight:500;letter-spacing:-0.03em;line-height:0.95;font-variant-numeric:tabular-nums;}
+  .nm{font-size:13px;font-weight:500;letter-spacing:-0.01em;}
+  .de{font-size:10px;color:var(--ink-3);line-height:1.4;margin-top:auto;}
+  .accent{background:#7BF076;}.accent .st{color:#0a0a0a;font-weight:700;}
+  .up{background:#d4f5d1;}
+  .neutral{background:#ffffff;}
+  .muted{background:#eeeef0;}
+  .dark{background:#0a0a0a;color:#ffffff;}
+  .dark .st{color:#9a9a9e;}.dark .val{color:#7BF076;}.dark .de{color:#9a9a9e;}
+</style></head><body>
+<div class="wrap">
+  <div class="c accent"><div class="st">Exited · A</div><div class="val">14.58×</div><div class="nm">Ekonoke</div><div class="de">Featured</div></div>
+  <div class="c up"><div class="st">Marking up</div><div class="val">5.26×</div><div class="nm">Cocuus</div><div class="de">Positive</div></div>
+  <div class="c neutral"><div class="st">At cost</div><div class="val">1.00×</div><div class="nm">Noiet</div><div class="de">Default</div></div>
+  <div class="c muted"><div class="st">Written off</div><div class="val">0.00×</div><div class="nm">Batavia</div><div class="de">Muted</div></div>
+  <div class="c dark"><div class="st">Dark</div><div class="val">14.58×</div><div class="nm">Hero</div><div class="de">Closing</div></div>
+</div>
+</body></html>

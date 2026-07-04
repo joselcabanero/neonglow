@@ -1,0 +1,20 @@
+<!-- @dsCard group="Type" viewport="700x180" name="Metric scale" subtitle="Tabular numerals, demoted units" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Metric Scale</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--paper);font-family:var(--font-sans);color:var(--ink);}
+  .wrap{padding:24px 32px;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:32px;align-items:end;}
+  .m{display:flex;flex-direction:column;gap:6px;}
+  .lbl{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3);font-weight:500;}
+  .xl{font-size:84px;font-weight:500;letter-spacing:-0.04em;line-height:0.95;font-variant-numeric:tabular-nums;}
+  .md{font-size:52px;font-weight:500;letter-spacing:-0.03em;line-height:0.95;font-variant-numeric:tabular-nums;}
+  .sm{font-size:34px;font-weight:500;letter-spacing:-0.03em;line-height:0.95;font-variant-numeric:tabular-nums;}
+  .u{font-size:0.35em;color:var(--ink-3);font-weight:400;margin-left:0.06em;letter-spacing:0;}
+</style></head><body>
+<div class="wrap">
+  <div class="m"><div class="lbl">Metric XL</div><div class="xl">14.58<span class="u">×</span></div></div>
+  <div class="m"><div class="lbl">Metric M</div><div class="md">€4.15<span class="u">M</span></div></div>
+  <div class="m"><div class="lbl">Metric S</div><div class="sm">1.47×</div></div>
+</div>
+</body></html>

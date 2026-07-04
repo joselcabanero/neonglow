@@ -1,0 +1,24 @@
+<!-- @dsCard group="Components" viewport="700x220" name="Portfolio table" subtitle="Dense rows, tinted perf" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Portfolio Table</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--paper);font-family:var(--font-sans);color:var(--ink);}
+  .wrap{padding:20px 28px;background:var(--paper);}
+  .box{padding:18px 22px;background:var(--paper);border:1px solid rgba(10,10,10,0.15);}
+  .h{display:grid;grid-template-columns:1.5fr 1fr 0.9fr 0.7fr 1fr;gap:14px;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3);font-weight:500;padding-bottom:10px;border-bottom:2px solid var(--ink);}
+  .r{display:grid;grid-template-columns:1.5fr 1fr 0.9fr 0.7fr 1fr;gap:14px;padding:12px 0;border-bottom:1px solid rgba(10,10,10,0.12);font-size:14px;align-items:baseline;}
+  .r.up{background:#d4f5d1;margin:0 -22px;padding-left:22px;padding-right:22px;}
+  .num{font-family:var(--font-mono);font-variant-numeric:tabular-nums;}
+  .moic{font-weight:700;}
+  strong{font-weight:500;}
+</style></head><body>
+<div class="wrap">
+  <div class="box">
+    <div class="h"><div>Company</div><div>Sector</div><div>Invested</div><div>MOIC</div><div>Status</div></div>
+    <div class="r up"><div><strong>Foreverland</strong></div><div>Foodtech</div><div class="num">€268K</div><div class="num moic">2.22×</div><div>Seed closed</div></div>
+    <div class="r"><div><strong>Néboda Farms</strong></div><div>Agritech</div><div class="num">€170K</div><div class="num moic">1.50×</div><div>Active</div></div>
+    <div class="r" style="border-bottom:none"><div><strong>Mmmico eats</strong></div><div>Foodtech</div><div class="num">€170K</div><div class="num moic">1.00×</div><div>Active</div></div>
+  </div>
+</div>
+</body></html>

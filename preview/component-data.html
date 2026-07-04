@@ -1,0 +1,39 @@
+<!-- @dsCard group="Components" viewport="700x220" name="Bars & distribution" subtitle="Horizontal bars, segment distribution" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Bars & Distribution</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--paper);font-family:var(--font-sans);color:var(--ink);}
+  .wrap{padding:20px 28px;display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .box{padding:18px 22px;background:var(--paper);border:1px solid rgba(10,10,10,0.15);}
+  .ttl{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3);font-weight:500;margin-bottom:14px;}
+  .bar{display:grid;grid-template-columns:80px 1fr 56px;gap:10px;align-items:center;margin-bottom:10px;}
+  .lbl{font-size:12px;}
+  .bw{height:14px;background:#eeeef0;}
+  .b{height:100%;background:#7BF076;}
+  .b.g{background:rgba(10,10,10,0.2);}
+  .v{font-family:var(--font-mono);font-size:12px;font-weight:700;text-align:right;font-variant-numeric:tabular-nums;}
+  .v.g{color:var(--ink-3);font-weight:400;}
+  .dist{display:flex;height:36px;border:2px solid var(--ink);font-family:var(--font-mono);font-size:11px;font-weight:700;align-items:center;justify-content:flex-start;}
+  .dist>div{padding:0 8px;display:flex;align-items:center;height:100%;}
+  .dl{display:flex;font-size:9px;color:var(--ink-3);margin-top:6px;letter-spacing:0.1em;text-transform:uppercase;}
+</style></head><body>
+<div class="wrap">
+  <div class="box">
+    <div class="ttl">Sector MOIC</div>
+    <div class="bar"><div class="lbl">Agritech</div><div class="bw"><div class="b" style="width:100%"></div></div><div class="v">2.18×</div></div>
+    <div class="bar"><div class="lbl">Foodtech</div><div class="bw"><div class="b" style="width:67%"></div></div><div class="v">1.46×</div></div>
+    <div class="bar"><div class="lbl">Logistics</div><div class="bw"><div class="b g" style="width:45%"></div></div><div class="v g">0.97×</div></div>
+  </div>
+  <div class="box">
+    <div class="ttl">MOIC distribution · 35 positions</div>
+    <div class="dist">
+      <div style="width:5.7%;background:#7BF076">2</div>
+      <div style="width:22.9%;background:#d4f5d1">8</div>
+      <div style="width:65.7%;background:#eeeef0;color:#555">23</div>
+      <div style="width:5.7%;background:#0a0a0a;color:#ffffff">2</div>
+    </div>
+    <div class="dl"><div style="width:5.7%">5×+</div><div style="width:22.9%">1.2–5×</div><div style="width:65.7%">1.0–1.2×</div><div style="width:5.7%">&lt;1×</div></div>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,26 @@
+<!-- @dsCard group="Spacing" viewport="700x420" name="Slide grid" subtitle="1920×1080 · 100 px gutters" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Slide Grid</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:#fff;font-family:var(--font-sans);color:var(--ink);}
+  .wrap{padding:18px 28px;}
+  .frame{position:relative;aspect-ratio:1920/1080;background:var(--paper);border:1px solid var(--ink);}
+  .gut{position:absolute;top:0;bottom:0;width:1px;background:rgba(10,10,10,0.25);border-left:1px dashed rgba(10,10,10,0.35);}
+  .chrome{position:absolute;left:5%;right:5%;height:6%;background:rgba(123,240,118,0.28);border:1px dashed #0a0a0a;}
+  .body-z{position:absolute;top:16%;bottom:12%;left:5.2%;right:5.2%;background:rgba(10,10,10,0.035);border:1px solid rgba(10,10,10,0.3);}
+  .lbl{position:absolute;font-family:var(--font-mono);font-size:9px;color:var(--ink);font-weight:500;}
+</style></head><body>
+<div class="wrap">
+  <div class="frame">
+    <div class="gut" style="left:10.4%"></div>
+    <div class="gut" style="right:10.4%"></div>
+    <div class="chrome" style="top:4%"></div>
+    <div class="chrome" style="bottom:4%"></div>
+    <div class="body-z"></div>
+    <div class="lbl" style="top:6%;left:50%;transform:translateX(-50%)">chrome-top · 44 px</div>
+    <div class="lbl" style="bottom:6%;left:50%;transform:translateX(-50%)">chrome-foot · 44 px</div>
+    <div class="lbl" style="top:50%;left:50%;transform:translate(-50%,-50%);color:var(--ink-3)">body · 170 / 130 / 100 / 100</div>
+  </div>
+</div>
+</body></html>

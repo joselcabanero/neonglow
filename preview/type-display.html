@@ -1,0 +1,17 @@
+<!-- @dsCard group="Type" viewport="700x260" name="Display scale" subtitle="Hero · Title · Subtitle" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Display Scale</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--paper);font-family:var(--font-sans);color:var(--ink);}
+  .wrap{padding:24px 32px;display:flex;flex-direction:column;gap:18px;}
+  .row{display:grid;grid-template-columns:120px 1fr 160px;gap:24px;align-items:baseline;padding-bottom:14px;border-bottom:1px solid rgba(10,10,10,0.12);}
+  .role{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3);font-weight:500;}
+  .spec{font-family:var(--font-mono);font-size:10px;color:var(--ink-3);}
+</style></head><body>
+<div class="wrap">
+  <div class="row"><div class="role">Hero</div><div style="font-size:60px;font-weight:700;letter-spacing:-0.035em;line-height:0.95">Track Record</div><div class="spec">120 / 0.95 / -0.035em · 700</div></div>
+  <div class="row"><div class="role">Title</div><div style="font-size:40px;font-weight:500;letter-spacing:-0.02em;line-height:1.02">Two funds. Thirty-five companies.</div><div class="spec">64–80 / 1.02 / -0.02em · 500</div></div>
+  <div class="row" style="border-bottom:none"><div class="role">Subtitle</div><div style="font-size:22px;font-weight:300;line-height:1.3;color:var(--ink-2)">Legacy portfolio · €2.18M value · 2.09× MOIC.</div><div class="spec">28–34 / 1.3 / 0 · 300</div></div>
+</div>
+</body></html>

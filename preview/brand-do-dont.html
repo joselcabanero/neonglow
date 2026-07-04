@@ -1,0 +1,32 @@
+<!-- @dsCard group="Brand" viewport="700x280" name="Do / Don't" subtitle="Hard rules" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Do / Don't</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--paper);font-family:var(--font-sans);color:var(--ink);}
+  .wrap{padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .c{padding:18px 20px;background:var(--paper-2);}
+  .c.dont{background:#0a0a0a;color:#ffffff;}
+  .tag{display:inline-block;font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:4px 8px;background:var(--ink);color:var(--paper);margin-bottom:12px;}
+  .c.dont .tag{background:#7BF076;color:#0a0a0a;}
+  ul{margin:0;padding-left:14px;font-size:11px;line-height:1.55;}
+  li{margin-bottom:4px;}
+  .c.dont ul{color:var(--grey-d8);}
+</style></head><body>
+<div class="wrap">
+  <div class="c"><span class="tag">Do</span><ul>
+    <li>Clean white <code>#FFFFFF</code> as default background.</li>
+    <li>Tabular numerals on every metric.</li>
+    <li>One accent per slide. Scarcity = signal.</li>
+    <li>Title case eyebrows. Full-sentence titles with a period.</li>
+    <li>Bold numbers, not adjectives, in body copy.</li>
+  </ul></div>
+  <div class="c dont"><span class="tag">Don't</span><ul>
+    <li>No rounded corners on data surfaces. No shadows.</li>
+    <li>No gradients. No stock imagery. No emoji.</li>
+    <li>No coloured dividers. No warm cream bg.</li>
+    <li>No mixed weights inside a number.</li>
+    <li>Never centre body copy.</li>
+  </ul></div>
+</div>
+</body></html>

@@ -1,0 +1,44 @@
+<!-- @dsCard group="Grid" viewport="700x394" name="Field grid" subtitle="12 columns × 4 fields · 125×160 module" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Field Grid</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:#d8d8dc;font-family:var(--font-sans);}
+  .stage{width:1920px;height:1080px;transform:scale(0.3646);transform-origin:top left;}
+  .holder{width:700px;height:394px;overflow:hidden;}
+  .frame{width:1920px;height:1080px;background:var(--paper);position:relative;}
+  /* margin guides */
+  .mg{position:absolute;background:rgba(10,10,10,0.0);}
+  .guide{position:absolute;border:0 dashed rgba(10,10,10,0.35);}
+  .region{position:absolute;top:170px;left:100px;right:100px;bottom:150px;}
+  .cols{position:absolute;inset:0;display:grid;grid-template-columns:repeat(12,1fr);column-gap:20px;}
+  .cols > i{background:rgba(123,240,118,0.18);outline:1px solid rgba(10,10,10,0.12);}
+  .fieldlines{position:absolute;inset:0;}
+  .fl{position:absolute;left:0;right:0;height:0;border-top:1px solid rgba(10,10,10,0.28);}
+  .lab{position:absolute;font-family:var(--font-mono);font-size:20px;color:var(--ink-3);letter-spacing:0.04em;}
+  .labk{position:absolute;font-family:var(--font-mono);font-size:18px;color:#0a0a0a;font-weight:700;background:#7BF076;padding:4px 10px;}
+</style></head><body>
+<div class="holder"><div class="stage">
+  <div class="frame">
+    <!-- margin labels -->
+    <div class="lab" style="top:70px;left:100px;">margin 100</div>
+    <div class="lab" style="top:70px;right:100px;">12 × 125 · gutter 20</div>
+    <div class="region">
+      <div class="cols">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      </div>
+      <div class="fieldlines">
+        <div class="fl" style="top:0"></div>
+        <div class="fl" style="top:200px"></div>
+        <div class="fl" style="top:400px"></div>
+        <div class="fl" style="top:600px"></div>
+        <div class="fl" style="top:760px"></div>
+        <div class="labk" style="top:64px;left:14px;">module 125 × 160</div>
+        <div class="lab" style="top:166px;right:8px;">field gutter 40</div>
+      </div>
+    </div>
+    <div class="lab" style="bottom:64px;left:100px;">content 1720 × 760 · 4 fields</div>
+    <div class="lab" style="bottom:64px;right:100px;">baseline 40 → 19 lines</div>
+  </div>
+</div></div>
+</body></html>

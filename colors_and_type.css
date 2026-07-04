@@ -1,0 +1,388 @@
+/* =========================================================================
+   Accelera Ventures — Foundation Tokens
+   Colors + Typography. Editorial/quiet-luxury VC fund system.
+   ========================================================================= */
+
+/* ---------- Fonts ------------------------------------------------------- */
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('fonts/Ubuntu-Light.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/Ubuntu-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('fonts/Ubuntu-Medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/Ubuntu-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Ubuntu Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/UbuntuMono-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Ubuntu Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/UbuntuMono-Bold.woff2') format('woff2');
+}
+
+:root {
+  /* ----- Core palette ----- */
+  --ink:         #0a0a0a;  /* Primary text, hairline rules, dark-slide bg */
+  --ink-2:       #2a2a2a;  /* Body copy on paper */
+  --ink-3:       #555555;  /* Captions, labels, chrome */
+
+  --paper:       #ffffff;  /* Default slide background — clean white */
+  --paper-2:     #eeeef0;  /* Muted card surfaces — neutral light grey */
+  --paper-3:     #e0e0e4;  /* Deeper neutral surface — sparingly */
+
+  --accent:      #7BF076;  /* Brand green — highlights, positive outcomes, logo */
+  --accent-ink:  #0a0a0a;  /* Text that sits ON the accent */
+
+  /* ----- Performance tints ----- */
+  --perf-up:     #d4f5d1;  /* Marking up above 1.2× */
+  --perf-neutral:#eeeef0;  /* Held at cost — same as paper-2 */
+  --perf-down:   #0a0a0a;  /* Written off — ink block */
+
+  /* ----- Dark-slide greys (neutral, cool) ----- */
+  --grey-9b:     #9a9a9e;  /* Captions, units on dark */
+  --grey-c9:     #c6c6cb;  /* Body copy on dark */
+  --grey-d8:     #d8d8dc;  /* Emphasised body on dark */
+  --grey-88:     #888888;  /* Dark-slide chrome (logo/page) */
+
+  /* ----- Rules / hairlines ----- */
+  --rule:        #0a0a0a;
+  --rule-faint:  rgba(10, 10, 10, 0.12);
+  --rule-light:  rgba(10, 10, 10, 0.2);
+  --rule-dark-faint: rgba(255, 255, 255, 0.18);
+  --rule-dark-light: rgba(255, 255, 255, 0.3);
+
+  /* ----- Type families ----- */
+  --font-sans: 'Ubuntu', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Ubuntu Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* ----- Type scale (px) ----- */
+  --fs-hero:       120px;  /* Cover title, 700 */
+  --fs-title-xl:   80px;   /* Slide H1, 500 */
+  --fs-title:      64px;   /* Slide H2, 500 */
+  --fs-title-sm:   48px;   /* Smaller H2, 500 */
+  --fs-metric-xl:  128px;  /* Headline metric, 500 tabular */
+  --fs-metric:     64px;   /* Card metric, 500 tabular */
+  --fs-metric-sm:  40px;   /* Small metric, 500 tabular */
+  --fs-subtitle:   34px;   /* Cover secondary, 300 */
+  --fs-body-lg:    28px;   /* Paragraph, 300 */
+  --fs-body:       22px;   /* Default body, 300/400 */
+  --fs-body-sm:    18px;   /* Small body */
+  --fs-caption:    16px;   /* Captions */
+  --fs-eyebrow:    18px;   /* Kicker, 500 caps 0.18em */
+  --fs-label:      14px;   /* Small label, 500 caps 0.14em */
+  --fs-label-sm:   11px;   /* Card header label */
+  --fs-mono:       13px;
+
+  /* ----- Weights ----- */
+  --fw-light:   300; /* @kind font */
+  --fw-regular: 400; /* @kind font */
+  --fw-medium:  500; /* @kind font */
+  --fw-bold:    700; /* @kind font */
+
+  /* ----- Letter-spacing ----- */
+  --ls-tight:   -0.035em; /* @kind font */
+  --ls-tight-2: -0.02em; /* @kind font */
+  --ls-tight-3: -0.04em; /* @kind font */
+  --ls-normal:  0; /* @kind font */
+  --ls-label:   0.14em; /* @kind font */
+  --ls-eyebrow: 0.18em; /* @kind font */
+  --ls-chrome:  0.12em; /* @kind font */
+
+  /* ----- Line-height ----- */
+  --lh-hero:   0.95; /* @kind font */
+  --lh-metric: 0.95; /* @kind font */
+  --lh-title:  1.02; /* @kind font */
+  --lh-body:   1.45; /* @kind font */
+  --lh-caption: 1.3; /* @kind font */
+
+  /* ----- Spacing scale (px) ----- */
+  --sp-4:   4px;
+  --sp-8:   8px;
+  --sp-14:  14px;
+  --sp-20:  20px;
+  --sp-28:  28px;
+  --sp-40:  40px;
+  --sp-56:  56px;
+  --sp-80:  80px;
+  --sp-100: 100px;  /* Slide gutter */
+}
+
+/* =========================================================================
+   Grid system  —  after Josef Müller-Brockmann, "Grid Systems in
+   Graphic Design". A modular field grid + a baseline rhythm. The grid
+   is the instrument of order: every element begins and ends on a field
+   edge; every line of type sits on the baseline. Construction, not
+   composition by eye.
+   --------------------------------------------------------------------------
+   Canvas      1920 × 1080
+   Margins     100 px L/R · 170 px top (chrome 44) · 150 px foot
+   Content     1720 × 760 px
+   Columns     12 × 125 px, 20 px inter-column gutter   (12·125 + 11·20 = 1720)
+   Fields      4 × 160 px, 40 px inter-field gutter     (4·160  + 3·40  =  760)
+   Baseline    40 px  (760 = 19 lines) · half-unit 20 px
+   Module      125 × 160 px  (the 1/48 unit of the page)
+   ========================================================================= */
+:root {
+  --canvas-w:      1920px;
+  --canvas-h:      1080px;
+  --margin-x:      100px;
+  --content-top:   170px;
+  --content-foot:  150px;
+
+  --grid-cols:     12; /* @kind other */
+  --grid-fields:   4; /* @kind other */
+  --col-w:         125px;
+  --field-h:       160px;
+  --col-gutter:    20px;   /* inter-column — the narrow gutter */
+  --field-gutter:  40px;   /* inter-field — one baseline line   */
+
+  --baseline:      40px;   /* the unit. ALL vertical spacing is a multiple */
+  --baseline-half: 20px;
+}
+
+/* The body region of any slide — the field-grid lives inside it. */
+.grid-region {
+  position: absolute;
+  top: var(--content-top);
+  left: var(--margin-x);
+  right: var(--margin-x);
+  bottom: var(--content-foot);
+}
+
+/* 12-column field grid. Children placed with .col-N / .col-N-M. */
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+  column-gap: var(--col-gutter);
+  row-gap: var(--field-gutter);
+}
+
+/* Column spans */
+.col-1  { grid-column: span 1; }
+.col-2  { grid-column: span 2; }
+.col-3  { grid-column: span 3; }   /* quarter */
+.col-4  { grid-column: span 4; }   /* third  */
+.col-5  { grid-column: span 5; }
+.col-6  { grid-column: span 6; }   /* half   */
+.col-7  { grid-column: span 7; }
+.col-8  { grid-column: span 8; }   /* two-thirds */
+.col-9  { grid-column: span 9; }   /* three-quarters */
+.col-10 { grid-column: span 10; }
+.col-11 { grid-column: span 11; }
+.col-12 { grid-column: span 12; }  /* full   */
+
+/* Explicit start/end placement: .col-start-3, .col-end-9 */
+.col-start-1  { grid-column-start: 1; }  .col-start-2  { grid-column-start: 2; }
+.col-start-3  { grid-column-start: 3; }  .col-start-4  { grid-column-start: 4; }
+.col-start-5  { grid-column-start: 5; }  .col-start-6  { grid-column-start: 6; }
+.col-start-7  { grid-column-start: 7; }  .col-start-8  { grid-column-start: 8; }
+.col-start-9  { grid-column-start: 9; }  .col-start-10 { grid-column-start: 10; }
+.col-start-11 { grid-column-start: 11; } .col-start-12 { grid-column-start: 12; }
+
+/* Vertical rhythm — stack children on whole baseline multiples.
+   Use --rhythm to choose the step (default one baseline). */
+.rhythm > * { margin: 0; }
+.rhythm > * + * { margin-top: var(--rhythm, var(--baseline)); }
+.rhythm-half  { --rhythm: var(--baseline-half); }
+.rhythm-2     { --rhythm: calc(var(--baseline) * 2); }
+
+/* Baseline-snapped leadings (line-heights as whole baseline lines).
+   Vertical structure aligns; long-form body keeps its readable --lh-body. */
+.lead-1 { line-height: var(--baseline); }                 /* 40 */
+.lead-2 { line-height: calc(var(--baseline) * 2); }       /* 80 */
+.lead-3 { line-height: calc(var(--baseline) * 3); }       /* 120 */
+
+/* Grid overlay — a diagnostic layer. Drop inside .grid-region to see
+   the 12 columns and 4 fields. Pure construction lines, no print. */
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+  column-gap: var(--col-gutter);
+}
+.grid-overlay > i {
+  display: block;
+  background: rgba(123, 240, 118, 0.16);
+  outline: 1px solid rgba(10, 10, 10, 0.10);
+}
+.grid-overlay.fields > i {
+  background: linear-gradient(
+    to bottom,
+    rgba(123,240,118,0.16) 0, rgba(123,240,118,0.16) 160px,
+    transparent 160px, transparent 200px) repeat-y;
+}
+
+
+body {
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+h1 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-title-xl);
+  line-height: var(--lh-title);
+  letter-spacing: var(--ls-tight-2);
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+h2 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-title);
+  line-height: var(--lh-title);
+  letter-spacing: var(--ls-tight-2);
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+h3 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-medium);
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+p {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  font-weight: var(--fw-light);
+  color: var(--ink-2);
+  max-width: 60ch;
+}
+
+code, .mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  color: var(--ink-2);
+}
+
+/* --- Editorial utilities the design system uses everywhere --- */
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  font-weight: var(--fw-medium);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-14);
+}
+.eyebrow::before {
+  content: "";
+  width: 44px;
+  height: 2px;
+  background: currentColor;
+}
+
+.small-label {
+  font-size: var(--fs-caption);
+  letter-spacing: var(--ls-chrome);
+  text-transform: uppercase;
+  font-weight: var(--fw-medium);
+  color: var(--ink-3);
+}
+
+.metric-value {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-metric-xl);
+  line-height: var(--lh-metric);
+  letter-spacing: var(--ls-tight-3);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+.metric-value .unit {
+  font-size: 0.34em;
+  font-weight: var(--fw-regular);
+  color: var(--ink-3);
+  margin-left: 0.08em;
+  letter-spacing: 0;
+}
+
+.rule {
+  height: 1px;
+  background: var(--ink);
+  opacity: 0.2;
+}
+.rule.thick {
+  height: 2px;
+  opacity: 1;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.chip.ghost {
+  background: transparent;
+  border: 1.5px solid var(--ink);
+  color: var(--ink);
+}
+
+/* ---------- Section utility shortcuts ---------- */
+.sec-num {
+  font-family: var(--font-mono);
+  font-size: var(--fs-body-sm);
+  letter-spacing: 0.04em;
+  color: var(--ink-3);
+}
+
+.dark {
+  background: var(--ink);
+  color: var(--paper);
+}
+.dark .eyebrow { color: var(--paper); }
+.dark .small-label { color: var(--grey-9b); }
+.dark p { color: var(--grey-d8); }
+.dark .rule { background: var(--paper); }

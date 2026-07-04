@@ -1,0 +1,21 @@
+<!-- @dsCard group="Colors" viewport="700x220" name="Core palette" subtitle="Ink · Paper · Accent · Paper 2" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Core Palette</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--paper);font-family:var(--font-sans);}
+  .wrap{padding:28px 32px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  .sw{display:flex;flex-direction:column;}
+  .chip{height:96px;border:1px solid rgba(10,10,10,0.12);}
+  .info{padding:10px 2px 0;}
+  .name{font-size:13px;font-weight:500;letter-spacing:-0.005em;color:var(--ink);}
+  .hex{font-family:var(--font-mono);font-size:11px;color:var(--ink-3);margin-top:2px;}
+  .var{font-family:var(--font-mono);font-size:10px;color:var(--ink);background:var(--paper-2);display:inline-block;padding:2px 6px;margin-top:6px;}
+</style></head><body>
+<div class="wrap">
+  <div class="sw"><div class="chip" style="background:#0a0a0a"></div><div class="info"><div class="name">Ink</div><div class="hex">#0A0A0A</div><span class="var">--ink</span></div></div>
+  <div class="sw"><div class="chip" style="background:#ffffff"></div><div class="info"><div class="name">Paper</div><div class="hex">#FFFFFF</div><span class="var">--paper</span></div></div>
+  <div class="sw"><div class="chip" style="background:#7BF076"></div><div class="info"><div class="name">Accent Green</div><div class="hex">#7BF076</div><span class="var">--accent</span></div></div>
+  <div class="sw"><div class="chip" style="background:#eeeef0"></div><div class="info"><div class="name">Paper 2</div><div class="hex">#EEEEF0</div><span class="var">--paper-2</span></div></div>
+</div>
+</body></html>

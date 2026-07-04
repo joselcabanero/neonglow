@@ -1,0 +1,20 @@
+<!-- @dsCard group="Components" viewport="700x120" name="Chips" subtitle="Accent · ghost · dark" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Chips</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--paper);font-family:var(--font-sans);color:var(--ink);}
+  .wrap{padding:28px 32px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;}
+  .chip{display:inline-flex;align-items:center;padding:8px 16px;font-size:13px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;}
+  .accent{background:#7BF076;color:#0a0a0a;}
+  .ghost{background:transparent;border:1.5px solid var(--ink);color:var(--ink);}
+  .dark{background:#0a0a0a;color:#ffffff;}
+  .lbl{font-family:var(--font-mono);font-size:11px;color:var(--ink-3);}
+</style></head><body>
+<div class="wrap">
+  <span class="chip accent">Featured</span>
+  <span class="chip ghost">Active · 2026</span>
+  <span class="chip dark">Exited</span>
+  <span class="lbl" style="margin-left:auto">Square corners · 8×16 pad · 0.06em caps</span>
+</div>
+</body></html>

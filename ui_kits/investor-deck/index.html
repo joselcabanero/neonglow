@@ -1,0 +1,378 @@
+<!-- @dsCard group="UI Kit — Investor Deck" viewport="1920x1100" name="Investor deck kit" subtitle="Six slide recipes + closing (1920×1080)" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Accelera Ventures — Investor Deck UI Kit</title>
+  <link rel="stylesheet" href="../../colors_and_type.css">
+  <style>
+    html, body { margin: 0; background: #d8d8dc; font-family: 'Ubuntu', sans-serif; }
+    .kit { display: flex; flex-direction: column; gap: 48px; padding: 60px 40px 120px; align-items: center; }
+    .kit-header { max-width: 1920px; width: 100%; padding: 0 20px; }
+    .kit-header h1 { font-size: 48px; font-weight: 500; letter-spacing: -0.02em; margin: 0 0 8px; }
+    .kit-header .meta { font-family: 'Ubuntu Mono', monospace; font-size: 13px; color: #555; letter-spacing: 0.04em; }
+    .grid-toggle { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; font-family: 'Ubuntu Mono', monospace; font-size: 13px; color: #2a2a2a; letter-spacing: 0.04em; cursor: pointer; user-select: none; }
+    .grid-toggle input { accent-color: #0a0a0a; width: 15px; height: 15px; }
+    .slide { width: 1920px; height: 1080px; position: relative; overflow: hidden; transform-origin: top center; }
+    .scale-wrap { width: 100%; display: flex; justify-content: center; }
+    .scale-wrap .slide { transform: scale(var(--scale, 0.5)); margin-bottom: calc((1080px * var(--scale, 0.5)) - 1080px); }
+    @media (max-width: 2000px) { .scale-wrap { --scale: 0.5; } }
+    @media (max-width: 1200px) { .scale-wrap { --scale: 0.35; } }
+    @media (max-width: 800px) { .scale-wrap { --scale: 0.25; } }
+
+    /* ═══ Slide chrome ═══ */
+    .paper { background: #ffffff; color: #0a0a0a; }
+    .ink { background: #0a0a0a; color: #ffffff; }
+    .chrome-top { position: absolute; top: 44px; left: 100px; right: 100px; display: flex; align-items: center; justify-content: space-between; font-size: 18px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; color: #555; }
+    .ink .chrome-top { color: #888; }
+    .chrome-top .logo { height: 28px; }
+    .chrome-top .pagenum { font-family: 'Ubuntu Mono', monospace; font-variant-numeric: tabular-nums; letter-spacing: 0.04em; text-transform: none; font-size: 18px; font-weight: 500; color: #0a0a0a; }
+    .ink .chrome-top .pagenum { color: #ffffff !important; }
+    .chrome-top .section-tag { display: none; } /* chapter now lives in eyebrow */
+    .chrome-foot { position: absolute; bottom: 44px; left: 100px; right: 100px; display: flex; justify-content: space-between; align-items: baseline; font-size: 14px; color: #555; letter-spacing: 0.04em; }
+    .ink .chrome-foot { color: #888; }
+    .body-region { position: absolute; top: 170px; bottom: 150px; left: 100px; right: 100px; }
+
+    /* Müller-Brockmann field grid overlay — toggled from the header. */
+    .kit-grid-ov { position: absolute; inset: 0; pointer-events: none; display: none; }
+    .kit.show-grid .kit-grid-ov { display: block; }
+    .kit-grid-ov .cols { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 20px; }
+    .kit-grid-ov .cols > i { background: rgba(123,240,118,0.16); outline: 1px solid rgba(10,10,10,0.10); }
+    .ink .kit-grid-ov .cols > i { background: rgba(123,240,118,0.10); outline: 1px solid rgba(255,255,255,0.14); }
+    .kit-grid-ov .fl { position: absolute; left: 0; right: 0; border-top: 1px solid rgba(10,10,10,0.24); }
+    .ink .kit-grid-ov .fl { border-top-color: rgba(255,255,255,0.22); }
+    .eyebrow { font-size: 18px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; margin: 0 0 28px; display: flex; align-items: center; gap: 18px; }
+    .eyebrow::before { content: ""; width: 44px; height: 2px; background: currentColor; flex-shrink: 0; }
+    .eyebrow .chap { font-family: 'Ubuntu Mono', monospace; letter-spacing: 0.08em; color: #7BF076; font-weight: 500; }
+    .ink .eyebrow .chap { color: #7BF076; }
+    .eyebrow .sep { color: #555; font-weight: 400; }
+    .ink .eyebrow .sep { color: #888; }
+    h1.title { font-family: 'Ubuntu', sans-serif; font-weight: 500; font-size: 80px; line-height: 1.02; letter-spacing: -0.02em; margin: 0 0 40px; text-wrap: balance; }
+    h1.hero { font-weight: 700; font-size: 120px; line-height: 0.95; letter-spacing: -0.035em; margin: 0; }
+    h1.hero .accent { color: #7BF076; }
+    .subtitle { font-size: 34px; line-height: 1.3; font-weight: 300; color: #2a2a2a; margin: 0; max-width: 1400px; }
+    .ink .subtitle { color: #c6c6cb; }
+    .body-text { font-size: 28px; line-height: 1.45; font-weight: 300; color: #2a2a2a; max-width: 900px; margin: 0; }
+    .ink .body-text { color: #d8d8dc; }
+    .small-label { font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; color: #555; }
+    .ink .small-label { color: #9a9a9e; }
+    strong { font-weight: 500; }
+
+    /* Metrics */
+    .metric { display: flex; flex-direction: column; gap: 10px; }
+    .metric-label { font-size: 18px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; color: #555; }
+    .ink .metric-label { color: #9a9a9e; }
+    .metric-value { font-size: 128px; line-height: 0.95; font-weight: 500; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+    .metric-value .unit { font-size: 44px; font-weight: 400; color: #555; margin-left: 10px; letter-spacing: 0; }
+    .ink .metric-value .unit { color: #9a9a9e; }
+    .metric-note { font-size: 22px; color: #555; font-weight: 400; line-height: 1.3; max-width: 480px; }
+    .ink .metric-note { color: #9a9a9e; }
+
+    /* Tables */
+    .tbl-head, .tbl-row { display: grid; grid-template-columns: 1.7fr 1fr 0.9fr 0.8fr 1fr; gap: 24px; align-items: baseline; padding: 20px 0; }
+    .tbl-head { font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: #555; font-weight: 500; padding-bottom: 14px; border-bottom: 2px solid #0a0a0a; }
+    .tbl-row { font-size: 24px; border-bottom: 1px solid rgba(10,10,10,0.12); }
+    .tbl-row.up { background: #d4f5d1; margin: 0 -24px; padding-left: 24px; padding-right: 24px; }
+    .num { font-family: 'Ubuntu Mono', monospace; font-variant-numeric: tabular-nums; }
+    .moic { font-weight: 700; }
+
+    /* Bars */
+    .bar-row { display: grid; grid-template-columns: 160px 1fr 80px; gap: 16px; align-items: center; margin-bottom: 16px; }
+    .bar-lbl { font-size: 22px; }
+    .bar-wrap { height: 14px; background: #eeeef0; }
+    .bar-fill { height: 100%; background: #7BF076; }
+    .bar-fill.ghost { background: rgba(10,10,10,0.15); }
+    .bar-val { font-family: 'Ubuntu Mono', monospace; font-variant-numeric: tabular-nums; font-weight: 700; font-size: 20px; text-align: right; }
+    .bar-val.ghost { color: #555; font-weight: 400; }
+
+    /* Cards */
+    .card-grid { display: grid; gap: 2px; background: #0a0a0a; border: 2px solid #0a0a0a; }
+    .card { padding: 32px 28px; min-height: 260px; display: flex; flex-direction: column; gap: 12px; background: #ffffff; }
+    .card.accent { background: #7BF076; }
+    .card.up { background: #d4f5d1; }
+    .card.muted { background: #eeeef0; }
+    .card.dark { background: #0a0a0a; color: #ffffff; }
+    .card .st { font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; color: #555; }
+    .card.accent .st { color: #0a0a0a; font-weight: 700; }
+    .card.dark .st { color: #9a9a9e; }
+    .card .val { font-size: 60px; font-weight: 500; letter-spacing: -0.03em; line-height: 0.95; font-variant-numeric: tabular-nums; }
+    .card.dark .val { color: #7BF076; }
+    .card .nm { font-size: 26px; font-weight: 500; letter-spacing: -0.01em; }
+    .card .de { font-size: 18px; color: #2a2a2a; line-height: 1.4; }
+    .card.dark .de { color: #9a9a9e; }
+    .card .flow { font-family: 'Ubuntu Mono', monospace; font-size: 18px; margin-top: auto; font-weight: 500; }
+    .card.dark .flow { color: #c6c6cb; }
+    .card.muted .de { color: #555; }
+
+    /* Watermark */
+    .watermark { position: absolute; opacity: 0.08; pointer-events: none; }
+  </style>
+</head>
+<body>
+
+<div class="kit">
+  <div class="kit-header">
+    <h1>Investor deck — UI kit</h1>
+    <div class="meta">1920 × 1080 · six recipe layouts · laid on a 12-column / 4-field Müller-Brockmann grid</div>
+    <label class="grid-toggle"><input type="checkbox" id="gridToggle"> Show construction grid</label>
+  </div>
+
+  <!-- ═══════════════════════ 01 COVER ═══════════════════════ -->
+  <div class="scale-wrap"><div class="slide paper">
+    <div class="chrome-top">
+      <img class="logo" src="../../assets/accelera-wordmark-primary.png">
+      <span class="section-tag">CONFIDENTIAL · Q4 2026</span>
+      <span class="pagenum">01 / 07</span>
+    </div>
+    <img class="watermark" src="../../assets/accelera-mark.png" style="right:-120px; top:-80px; width:800px;">
+    <div class="body-region" style="display:flex; flex-direction:column; justify-content:flex-end; gap:40px;">
+      <div class="small-label">Confidential · For LP distribution</div>
+      <h1 class="hero">Portfolio<br>Track Record<br><span class="accent">2018–2026</span></h1>
+      <div class="subtitle">Legacy portfolio · €6.12M value · 1.47× MOIC across two funds.</div>
+      <div style="height:2px; background:#0a0a0a; width:100%;"></div>
+    </div>
+    <div class="chrome-foot">
+      <span>Accelera Ventures</span>
+      <span>accelera.vc · Madrid</span>
+    </div>
+  </div></div>
+
+  <!-- ═══════════════════════ 02 HEADLINE METRIC ═══════════════════════ -->
+  <div class="scale-wrap"><div class="slide paper">
+    <div class="chrome-top">
+      <img class="logo" src="../../assets/accelera-wordmark-ink.png">
+      <span class="section-tag">01 / OVERVIEW</span>
+      <span class="pagenum">02 / 07</span>
+    </div>
+    <div class="body-region">
+      <div class="eyebrow"><span class="chap">01</span><span class="sep">/</span><span>Portfolio at a Glance</span></div>
+      <h1 class="title">Two funds. Thirty-five companies.<br>One exit at <span style="color:#7BF076;">14.58×</span>.</h1>
+      <div class="field-grid" style="margin-top:80px;">
+        <div class="metric col-4">
+          <div class="metric-label">Current portfolio value</div>
+          <div class="metric-value">€6.12<span class="unit">M</span></div>
+          <div class="metric-note">On €4.15M deployed — €1.97M of value creation to date.</div>
+        </div>
+        <div class="metric col-4">
+          <div class="metric-label">Active companies</div>
+          <div class="metric-value">32</div>
+          <div class="metric-note">Two COVID write-offs pre-programme. Zero in the Fund.</div>
+        </div>
+        <div class="metric col-4">
+          <div class="metric-label">Overall MOIC</div>
+          <div class="metric-value">1.47<span class="unit">×</span></div>
+          <div class="metric-note">Spain SPV 2.09× · Fund I 1.27× at 2-year maturity.</div>
+        </div>
+      </div>
+    </div>
+    <div class="chrome-foot"><span>Accelera Ventures</span><span>Q4 2026 · Portfolio Overview</span></div>
+  </div></div>
+
+  <!-- ═══════════════════════ 03 DARK HERO ═══════════════════════ -->
+  <div class="scale-wrap"><div class="slide ink">
+    <div class="chrome-top">
+      <img class="logo" src="../../assets/accelera-wordmark-inverted.png">
+      <span class="section-tag" style="color:#888;">02 / THE EXIT</span>
+      <span class="pagenum" style="color:#888;">03 / 07</span>
+    </div>
+    <img class="watermark" src="../../assets/accelera-mark-paper.png" style="right:-80px; bottom:-80px; width:600px; opacity:0.06;">
+    <div class="body-region">
+      <div class="eyebrow" style="color:#ffffff;"><span class="chap">02</span><span class="sep">/</span><span>The Landmark Exit</span></div>
+      <div style="display:flex; align-items:flex-end; gap:60px; margin-top:80px;">
+        <div style="font-size:280px; font-weight:500; letter-spacing:-0.05em; line-height:0.8; color:#7BF076; font-variant-numeric:tabular-nums;">14.58<span style="font-size:96px; color:#ffffff; margin-left:10px;">×</span></div>
+        <div style="padding-bottom:40px; max-width:460px;">
+          <div class="small-label">MOIC at exit</div>
+          <div style="font-size:32px; margin-top:14px; line-height:1.2;">Ekonoke · Series A · Dec 2022</div>
+          <div style="font-size:20px; color:#9a9a9e; margin-top:20px; line-height:1.5;">Entry Jul 2020 · Exit Dec 2022<br>29 months hold · Indoor hop farming · Spain</div>
+        </div>
+      </div>
+      <div style="height:2px; background:#ffffff; opacity:0.2; margin-top:80px;"></div>
+      <div style="font-size:28px; color:#d8d8dc; font-weight:300; margin-top:40px; max-width:1000px; line-height:1.4;">
+        <strong style="color:#ffffff;">€152K → €2.21M.</strong> A single position returned more than we deployed into the entire Fund I programme that year.
+      </div>
+    </div>
+    <div class="chrome-foot"><span>Accelera Ventures</span><span>Case Study · Ekonoke</span></div>
+  </div></div>
+
+  <!-- ═══════════════════════ 04 TABLE ═══════════════════════ -->
+  <div class="scale-wrap"><div class="slide paper">
+    <div class="chrome-top">
+      <img class="logo" src="../../assets/accelera-wordmark-ink.png">
+      <span class="section-tag">03 / POSITIONS</span>
+      <span class="pagenum">04 / 07</span>
+    </div>
+    <div class="body-region">
+      <div class="eyebrow"><span class="chap">03</span><span class="sep">/</span><span>Active Positions</span></div>
+      <h1 class="title" style="font-size:56px; margin-bottom:40px;">Top ten by marking.</h1>
+      <div class="tbl-head">
+        <div>Company</div><div>Sector</div><div>Invested</div><div>MOIC</div><div>Status</div>
+      </div>
+      <div class="tbl-row up"><div><strong>Foreverland</strong></div><div>Foodtech</div><div class="num">€268K</div><div class="num moic">2.22×</div><div>Seed closed</div></div>
+      <div class="tbl-row up"><div><strong>Nous Energy</strong></div><div>Foodtech</div><div class="num">€202K</div><div class="num moic">1.82×</div><div>Seed eval.</div></div>
+      <div class="tbl-row up"><div><strong>Cocuus</strong></div><div>Foodtech</div><div class="num">€152K</div><div class="num moic">5.26×</div><div>Active</div></div>
+      <div class="tbl-row"><div><strong>Néboda Farms</strong></div><div>Agritech</div><div class="num">€170K</div><div class="num moic">1.50×</div><div>Active</div></div>
+      <div class="tbl-row"><div><strong>Mmmico eats</strong></div><div>Foodtech</div><div class="num">€170K</div><div class="num moic">1.00×</div><div>Active</div></div>
+      <div class="tbl-row"><div><strong>Noiet</strong></div><div>Logistics</div><div class="num">€145K</div><div class="num moic">1.00×</div><div>Active</div></div>
+      <div class="tbl-row" style="border-bottom:none"><div><strong>Batavia</strong></div><div>Foodtech</div><div class="num">€110K</div><div class="num moic" style="color:#555;">0.00×</div><div style="color:#555;">Written off</div></div>
+    </div>
+    <div class="chrome-foot"><span>Accelera Ventures</span><span>Q4 2026 · Positions Report</span></div>
+  </div></div>
+
+  <!-- ═══════════════════════ 05 CARD GRID ═══════════════════════ -->
+  <div class="scale-wrap"><div class="slide paper">
+    <div class="chrome-top">
+      <img class="logo" src="../../assets/accelera-wordmark-ink.png">
+      <span class="section-tag">04 / HIGHLIGHTS</span>
+      <span class="pagenum">05 / 07</span>
+    </div>
+    <div class="body-region">
+      <div class="eyebrow"><span class="chap">04</span><span class="sep">/</span><span>Highlights</span></div>
+      <h1 class="title" style="font-size:56px; margin-bottom:40px;">Value creation is concentrated —<br>and that's by design.</h1>
+      <div class="card-grid" style="grid-template-columns:repeat(4, 1fr);">
+        <div class="card accent">
+          <div class="st">Exited · Series A</div>
+          <div class="val">14.58×</div>
+          <div class="nm">Ekonoke</div>
+          <div class="de">Indoor hop farming. Sold to Heineken supply arm, Dec 2022.</div>
+          <div class="flow">€152K → €2.21M</div>
+        </div>
+        <div class="card up">
+          <div class="st">Active · Marking up</div>
+          <div class="val">5.26×</div>
+          <div class="nm">Cocuus</div>
+          <div class="de">3D-printed plant proteins. Series A closed Q2 2025.</div>
+          <div class="flow">€152K → €797K</div>
+        </div>
+        <div class="card">
+          <div class="st">Active · At cost</div>
+          <div class="val">1.00×</div>
+          <div class="nm">Noiet</div>
+          <div class="de">Last-mile cold chain optimisation for agri logistics.</div>
+          <div class="flow">€145K → €145K</div>
+        </div>
+        <div class="card muted">
+          <div class="st">Written off</div>
+          <div class="val">0.00×</div>
+          <div class="nm">Batavia</div>
+          <div class="de">COVID-era insolvency, 2021. Outside programme.</div>
+          <div class="flow">€110K → €0</div>
+        </div>
+      </div>
+    </div>
+    <div class="chrome-foot"><span>Accelera Ventures</span><span>Q4 2026 · Highlights</span></div>
+  </div></div>
+
+  <!-- ═══════════════════════ 06 SPLIT NARRATIVE ═══════════════════════ -->
+  <div class="scale-wrap"><div class="slide paper">
+    <div class="chrome-top">
+      <img class="logo" src="../../assets/accelera-wordmark-ink.png">
+      <span class="section-tag">05 / STRATEGY</span>
+      <span class="pagenum">06 / 07</span>
+    </div>
+    <div class="body-region field-grid">
+      <div class="col-5">
+        <div class="eyebrow"><span class="chap">05</span><span class="sep">/</span><span>The Thesis</span></div>
+        <h1 class="title" style="font-size:64px;">Deep-tech for a sustainable food system.</h1>
+        <p class="body-text">
+          We back pre-seed and seed companies rebuilding the food, agriculture and logistics stack around planetary limits. Spain and Iberia first, Europe second.
+        </p>
+        <p class="body-text" style="margin-top:28px;">
+          Our cheques are small, early, and followed — <strong>€100K to €300K at entry</strong>, with reserves for Series A.
+        </p>
+      </div>
+      <div class="col-6 col-start-7" style="display:flex; flex-direction:column; gap:40px;">
+        <div>
+          <div class="small-label">Sector MOIC · realised + unrealised</div>
+          <div style="margin-top:28px;">
+            <div class="bar-row"><div class="bar-lbl">Agritech</div><div class="bar-wrap"><div class="bar-fill" style="width:100%"></div></div><div class="bar-val">2.18×</div></div>
+            <div class="bar-row"><div class="bar-lbl">Foodtech</div><div class="bar-wrap"><div class="bar-fill" style="width:67%"></div></div><div class="bar-val">1.46×</div></div>
+            <div class="bar-row"><div class="bar-lbl">Logistics</div><div class="bar-wrap"><div class="bar-fill ghost" style="width:45%"></div></div><div class="bar-val ghost">0.97×</div></div>
+          </div>
+        </div>
+        <div style="height:1px; background:rgba(10,10,10,0.15);"></div>
+        <div>
+          <div class="small-label">MOIC distribution · 35 positions</div>
+          <div style="display:flex; height:56px; border:2px solid #0a0a0a; margin-top:20px; font-family:'Ubuntu Mono', monospace; font-size:20px; font-weight:700;">
+            <div style="width:5.7%; background:#7BF076; display:flex; align-items:center; padding:0 10px;">2</div>
+            <div style="width:22.9%; background:#d4f5d1; display:flex; align-items:center; padding:0 10px;">8</div>
+            <div style="width:65.7%; background:#eeeef0; color:#555; display:flex; align-items:center; padding:0 10px;">23</div>
+            <div style="width:5.7%; background:#0a0a0a; color:#ffffff; display:flex; align-items:center; padding:0 10px;">2</div>
+          </div>
+          <div style="display:flex; margin-top:10px; font-size:14px; color:#555; letter-spacing:0.1em; text-transform:uppercase;">
+            <div style="width:5.7%;">5×+</div><div style="width:22.9%;">1.2–5×</div><div style="width:65.7%;">1.0–1.2×</div><div style="width:5.7%;">&lt;1×</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="chrome-foot"><span>Accelera Ventures</span><span>Q4 2026 · Strategy Review</span></div>
+  </div></div>
+
+  <!-- ═══════════════════════ 07 CLOSING ═══════════════════════ -->
+  <div class="scale-wrap"><div class="slide ink">
+    <div class="chrome-top">
+      <img class="logo" src="../../assets/accelera-wordmark-inverted.png">
+      <span class="section-tag" style="color:#888;">CLOSING</span>
+      <span class="pagenum" style="color:#888;">07 / 07</span>
+    </div>
+    <img class="watermark" src="../../assets/accelera-mark-paper.png" style="right:-100px; top:-60px; width:700px; opacity:0.06;">
+    <div class="body-region" style="display:flex; flex-direction:column; justify-content:flex-end; gap:40px;">
+      <div class="eyebrow" style="color:#ffffff;"><span class="chap">06</span><span class="sep">/</span><span>Thank You</span></div>
+      <h1 class="hero" style="color:#ffffff;">Let's build the<br>sustainable <span style="color:#7BF076;">future</span>.</h1>
+      <div style="height:2px; background:#ffffff; opacity:0.3; margin-top:40px;"></div>
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:60px; margin-top:20px;">
+        <div>
+          <div class="small-label">Contact</div>
+          <div style="font-size:22px; margin-top:12px;">Javier Nadal</div>
+          <div style="font-size:18px; color:#9a9a9e; margin-top:4px;">Managing Partner</div>
+        </div>
+        <div>
+          <div class="small-label">Email</div>
+          <div style="font-family:'Ubuntu Mono', monospace; font-size:22px; margin-top:12px;">lp@accelera.vc</div>
+        </div>
+        <div>
+          <div class="small-label">Office</div>
+          <div style="font-size:22px; margin-top:12px;">Madrid · Iberia</div>
+        </div>
+      </div>
+    </div>
+    <div class="chrome-foot"><span>Accelera Ventures</span><span>accelera.vc</span></div>
+  </div></div>
+
+</div>
+
+<script>
+  // Müller-Brockmann grid overlay — inject the construction lines into
+  // every slide's content region; toggle visibility from the header.
+  document.querySelectorAll('.body-region').forEach(br => {
+    const ov = document.createElement('div');
+    ov.className = 'kit-grid-ov';
+    const cols = '<div class="cols">' + '<i></i>'.repeat(12) + '</div>';
+    const lines = [0, 200, 400, 600, 760]
+      .map(t => '<div class="fl" style="top:' + t + 'px"></div>').join('');
+    ov.innerHTML = cols + lines;
+    br.insertBefore(ov, br.firstChild);
+  });
+  const kit = document.querySelector('.kit');
+  const toggle = document.getElementById('gridToggle');
+  if (toggle) toggle.addEventListener('change', () => kit.classList.toggle('show-grid', toggle.checked));
+
+  // Fit-to-width scaling
+  function fit() {
+    const w = document.documentElement.clientWidth;
+    const target = Math.min(1, (w - 80) / 1920);
+    document.documentElement.style.setProperty('--scale', target);
+    // adjust the margin so the scaled slides don't leave gaps
+    document.querySelectorAll('.scale-wrap').forEach(el => {
+      el.style.setProperty('--scale', target);
+      const slide = el.querySelector('.slide');
+      if (slide) {
+        const extra = 1080 * target - 1080;
+        slide.style.marginBottom = extra + 'px';
+      }
+    });
+  }
+  fit();
+  window.addEventListener('resize', fit);
+</script>
+</body>
+</html>

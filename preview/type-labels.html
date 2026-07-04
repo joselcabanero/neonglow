@@ -1,0 +1,22 @@
+<!-- @dsCard group="Type" viewport="700x300" name="Labels & body" subtitle="Eyebrow, body, small label, caption" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Labels & Body</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--paper);font-family:var(--font-sans);color:var(--ink);}
+  .wrap{padding:24px 32px;display:flex;flex-direction:column;gap:18px;}
+  .row{display:grid;grid-template-columns:140px 1fr;gap:20px;align-items:baseline;padding-bottom:12px;border-bottom:1px solid rgba(10,10,10,0.12);}
+  .role{font-family:var(--font-mono);font-size:10px;color:var(--ink-3);}
+  .eb{font-size:14px;letter-spacing:0.18em;text-transform:uppercase;font-weight:500;display:flex;align-items:center;gap:10px;}
+  .eb::before{content:"";width:32px;height:2px;background:var(--ink);}
+  .body{font-size:16px;font-weight:300;line-height:1.45;color:var(--ink-2);max-width:420px;}
+  .lbl{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;font-weight:500;color:var(--ink-3);}
+  .cap{font-size:13px;color:var(--ink-3);}
+</style></head><body>
+<div class="wrap">
+  <div class="row"><div class="role">Eyebrow</div><div class="eb">Portfolio at a Glance</div></div>
+  <div class="row"><div class="role">Body</div><div class="body">We deployed <strong>€4.15M</strong> into 35 portfolio companies. Current aggregate value is <strong>€6.12M</strong>.</div></div>
+  <div class="row"><div class="role">Small label</div><div class="lbl">Current portfolio value</div></div>
+  <div class="row" style="border-bottom:none"><div class="role">Caption</div><div class="cap">Entry Jul 2020 · Exit Dec 2022 · 29 months hold</div></div>
+</div>
+</body></html>

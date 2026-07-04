@@ -1,0 +1,30 @@
+<!-- @dsCard group="Grid" viewport="700x280" name="Baseline rhythm" subtitle="40 px unit · whole-line leadings" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Baseline Rhythm</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html,body{margin:0;background:var(--paper);font-family:var(--font-sans);color:var(--ink);}
+  .wrap{position:relative;padding:28px 32px;}
+  /* baseline lines every 20px (scaled half-baseline for the card) */
+  .lines{position:absolute;inset:0;background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 19px,rgba(10,10,10,0.10) 19px,rgba(10,10,10,0.10) 20px);background-position:0 28px;pointer-events:none;}
+  .col{position:relative;max-width:560px;}
+  /* type snapped to a 20px baseline grid for the card scale */
+  .eyebrow-d{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:500;line-height:20px;height:20px;margin:0 0 20px;display:flex;align-items:center;gap:10px;color:var(--ink-3);}
+  .eyebrow-d::before{content:"";width:24px;height:2px;background:currentColor;}
+  .ttl{font-size:32px;font-weight:500;letter-spacing:-0.02em;line-height:40px;margin:0 0 20px;}
+  .bd{font-size:15px;font-weight:300;line-height:20px;color:var(--ink-2);margin:0 0 20px;}
+  .cap{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3);line-height:20px;font-weight:500;margin:0;}
+  strong{font-weight:500;}
+  .tick{position:absolute;right:24px;top:28px;font-family:var(--font-mono);font-size:10px;color:#7BF076;background:#0a0a0a;padding:2px 6px;}
+</style></head><body>
+<div class="wrap">
+  <div class="lines"></div>
+  <span class="tick">baseline 40px</span>
+  <div class="col">
+    <div class="eyebrow-d">Baseline Rhythm</div>
+    <div class="ttl">Every line sits<br>on the grid.</div>
+    <div class="bd">Structural leading is a whole multiple of the baseline. Headings take two or three lines; body copy holds the half-unit. We deployed <strong>€4.15M</strong> across 35 companies.</div>
+    <div class="cap">40 px unit · 20 px half · 19 lines / slide</div>
+  </div>
+</div>
+</body></html>
