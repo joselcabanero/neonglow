@@ -11,3 +11,6 @@ export { FormGroup, type FormGroupProps } from "./form/FormGroup.js";
 export { TextInput, type TextInputProps } from "./form/TextInput.js";
 export { TextArea, type TextAreaProps } from "./form/TextArea.js";
 export { NumericInput } from "./form/NumericInput.js";
+export { Checkbox, type CheckboxProps } from "./selection/Checkbox.js";
+export { Radio, type RadioProps } from "./selection/Radio.js";
+export { Switch, type SwitchProps } from "./selection/Switch.js";

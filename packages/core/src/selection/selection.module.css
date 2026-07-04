@@ -1,0 +1,25 @@
+.check { display: inline-flex; align-items: center; gap: 9px; cursor: pointer;
+  font-family: var(--font-sans); font-size: var(--fs-ui); color: var(--text-2); }
+.input { position: absolute; opacity: 0; width: 0; height: 0; }
+.box { width: 18px; height: 18px; flex: none; border: 1.5px solid var(--text-3); border-radius: 3px;
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--on-accent); transition: background .12s ease, border-color .12s ease; }
+.mark { opacity: 0; }
+.input:checked + .box, .input:indeterminate + .box { background: var(--accent); border-color: var(--accent); }
+.input:checked + .box .mark, .input:indeterminate + .box .mark { opacity: 1; }
+.input:focus-visible + .box { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.input:disabled + .box { opacity: .4; }
+
+.round { border-radius: 50%; }
+.dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent);
+  transform: scale(0); transition: transform .12s ease; }
+.input:checked + .round .dot { transform: scale(1); }
+
+.track { width: 36px; height: 20px; flex: none; border-radius: 20px;
+  background: var(--surface-sunken-2); border: 1px solid var(--border-hairline);
+  position: relative; transition: background .14s ease; }
+.track::after { content: ""; position: absolute; top: 2px; left: 2px; width: 14px; height: 14px;
+  border-radius: 50%; background: var(--text-2); transition: left .14s ease, background .14s ease; }
+.input:checked + .track { background: var(--accent); border-color: transparent; }
+.input:checked + .track::after { left: 18px; background: var(--on-accent); }
+.input:focus-visible + .track { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
