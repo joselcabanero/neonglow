@@ -11,7 +11,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Che
   { label, indeterminate = false, ...rest },
   outerRef
 ) {
-  const innerRef = useRef<HTMLInputElement>(null);
+  const innerRef = useRef<HTMLInputElement | null>(null);
   useEffect(() => {
     if (innerRef.current) innerRef.current.indeterminate = indeterminate;
   }, [indeterminate]);

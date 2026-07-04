@@ -1935,7 +1935,7 @@ Expected: FAIL — modules unresolved.
 
 `packages/core/src/selection/selection.module.css`:
 ```css
-.check { display: inline-flex; align-items: center; gap: 9px; cursor: pointer;
+.check { position: relative; display: inline-flex; align-items: center; gap: 9px; cursor: pointer;
   font-family: var(--font-sans); font-size: var(--fs-ui); color: var(--text-2); }
 .input { position: absolute; opacity: 0; width: 0; height: 0; }
 .box { width: 18px; height: 18px; flex: none; border: 1.5px solid var(--text-3); border-radius: 3px;
@@ -1950,7 +1950,7 @@ Expected: FAIL — modules unresolved.
 .round { border-radius: 50%; }
 .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent);
   transform: scale(0); transition: transform .12s ease; }
-.input:checked + .round .dot { transform: scale(1); }
+.input:checked + .round .dot { transform: scale(1); background: var(--on-accent); }
 
 .track { width: 36px; height: 20px; flex: none; border-radius: 20px;
   background: var(--surface-sunken-2); border: 1px solid var(--border-hairline);
