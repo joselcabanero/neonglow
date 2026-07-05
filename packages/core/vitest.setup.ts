@@ -7,3 +7,11 @@ expect.extend(matchers);
 afterEach(() => {
   cleanup();
 });
+
+// jsdom lacks ResizeObserver; floating-ui's autoUpdate requires it.
+class ResizeObserverStub {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+}
+(globalThis as { ResizeObserver?: unknown }).ResizeObserver ??= ResizeObserverStub;
