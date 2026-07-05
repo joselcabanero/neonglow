@@ -18,6 +18,6 @@ export function NavbarHeading({ className, ...rest }: HTMLAttributes<HTMLDivElem
   return <div className={cx(styles.heading, className)} {...rest} />;
 }
 
-export function NavbarDivider(props: HTMLAttributes<HTMLSpanElement>) {
-  return <span aria-hidden="true" className={styles.divider} {...props} />;
+export function NavbarDivider({ className, ...rest }: HTMLAttributes<HTMLSpanElement>) {
+  return <span aria-hidden="true" className={cx(styles.divider, className)} {...rest} />;
 }
