@@ -7,7 +7,7 @@ import { IconCheck } from "../src/index.js";
 describe("icon contract", () => {
   it("exports 31 icons, all Icon-prefixed", () => {
     const names = Object.keys(Icons).filter((k) => k.startsWith("Icon"));
-    expect(names.length).toBe(31);
+    expect(names.length).toBe(32);
   });
   it("renders a 1.5-stroke, no-fill, currentColor svg", () => {
     const { container } = render(<IconCheck />);

@@ -32,3 +32,4 @@ export const IconDragHandle = createIcon("drag-handle", <><circle cx="9" cy="6" 
 export const IconExternalLink = createIcon("external-link", <><path d="M14 5h5v5" /><line x1="19" y1="5" x2="11" y2="13" /><path d="M18 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4" /></>);
 export const IconEye = createIcon("eye", <><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" /><circle cx="12" cy="12" r="3" /></>);
 export const IconEyeOff = createIcon("eye-off", <><path d="M2 12s3.5-7 10-7c2.1 0 3.9.7 5.4 1.7M22 12s-3.5 7-10 7c-2.1 0-3.9-.7-5.4-1.7" /><line x1="4" y1="20" x2="20" y2="4" /></>);
+export const IconChevronDouble = createIcon("chevron-double", <><polyline points="6 6 12 12 18 6" /><polyline points="6 13 12 19 18 13" /></>);
