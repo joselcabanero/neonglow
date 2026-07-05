@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { act, render, screen } from "@testing-library/react";
 import { axe } from "vitest-axe";
-import { toaster } from "./toaster.js";
+import { toaster } from "./toast-store.js";
 import { Toaster } from "./Toaster.js";
 
 beforeEach(() => {
@@ -9,7 +9,8 @@ beforeEach(() => {
   toaster.clear();
 });
 afterEach(() => {
-  vi.runOnlyPendingTimers();
+  // Guard: axe test calls vi.useRealTimers() mid-test; skip flush if already real
+  try { vi.runOnlyPendingTimers(); } catch (_) { /* timers already real */ }
   vi.useRealTimers();
 });
 
@@ -59,6 +60,8 @@ describe("toaster", () => {
     act(() => {
       toaster.show({ message: "Valuation saved", intent: "success", timeout: 0 });
     });
+    // axe defers via setTimeout(0); frozen fake timers would deadlock it
+    vi.useRealTimers();
     expect(await axe(document.body)).toHaveNoViolations();
   });
 });

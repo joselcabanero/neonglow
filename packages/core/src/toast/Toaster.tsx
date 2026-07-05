@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef } from "react";
 import { IconError, IconInfo, IconSuccess, IconWarning, IconX } from "@neonglow/icons";
 import { cx } from "../cx.js";
 import { Portal } from "../utils/Portal.js";
-import { toaster, useToasts, type ToastEntry } from "./toaster.js";
+import { toaster, useToasts, type ToastEntry } from "./toast-store.js";
 import styles from "./toast.module.css";
 
 const ICONS = { success: IconSuccess, warning: IconWarning, danger: IconError, info: IconInfo } as const;

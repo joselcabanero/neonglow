@@ -1,11 +1,3 @@
-// macOS APFS workaround: re-export Toaster here so that `import { Toaster }
-// from "./Toaster.js"` works on case-insensitive file systems where Vite
-// probes "./Toaster.ts" (= "toaster.ts" via case-fold) before "./Toaster.tsx".
-// Using an explicit ".tsx" extension bypasses extension-probe ambiguity.
-// On case-sensitive file systems (Linux CI) this re-export is unused — the test
-// imports "./Toaster.js" which resolves directly to Toaster.tsx.
-export { Toaster, type ToasterProps } from "./Toaster.tsx";
-
 import { useSyncExternalStore } from "react";
 import type { ReactNode } from "react";
 import type { Intent } from "../types.js";
