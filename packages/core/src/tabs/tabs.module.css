@@ -1,0 +1,11 @@
+.list { display: flex; gap: 2px; border-bottom: 2px solid var(--border-hairline); }
+.tab { appearance: none; border: 0; background: transparent; color: var(--text-3);
+  font-family: var(--font-sans); font-size: var(--fs-ui); font-weight: 500;
+  line-height: var(--baseline); padding: var(--baseline-half) 14px;
+  cursor: pointer; position: relative; transition: color .12s ease; }
+.tab:hover { color: var(--text-1); }
+.tab:disabled { opacity: .4; cursor: not-allowed; }
+.active { color: var(--text-1); }
+.active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -2px;
+  height: 2px; background: var(--accent); }
+.panel { padding-top: var(--baseline-half); font-size: var(--fs-ui); color: var(--text-2); }
