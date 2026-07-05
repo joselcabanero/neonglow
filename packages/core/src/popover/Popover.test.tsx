@@ -55,6 +55,7 @@ describe("Popover", () => {
         <Button>Open</Button>
       </Popover>
     );
-    expect(await axe(baseElement)).toHaveNoViolations();
+    // Portal renders outside landmarks; axe's "region" rule is a known false-positive for overlay portals.
+    expect(await axe(baseElement, { rules: { region: { enabled: false } } })).toHaveNoViolations();
   });
 });

@@ -1,5 +1,5 @@
 import {
-  cloneElement, useCallback, useEffect, useId, useMemo, useRef,
+  cloneElement, useCallback, useEffect, useId, useMemo,
   type ReactElement, type ReactNode,
 } from "react";
 import {
@@ -20,13 +20,11 @@ export interface PopoverProps {
   onOpenChange?: (open: boolean) => void;
   /** Panel takes the trigger's width (for Select-style dropdowns). */
   matchTargetWidth?: boolean;
-  /** Accessible label for the panel dialog. Defaults to "Popover". */
-  label?: string;
 }
 
 export function Popover({
   content, children, placement = "bottom-start",
-  isOpen, defaultIsOpen = false, onOpenChange, matchTargetWidth, label = "Popover",
+  isOpen, defaultIsOpen = false, onOpenChange, matchTargetWidth,
 }: PopoverProps) {
   const [open, setOpen] = useControllableState({
     value: isOpen, defaultValue: defaultIsOpen, onChange: onOpenChange,
@@ -40,8 +38,6 @@ export function Popover({
   const close = useCallback(() => setOpen(false), [setOpen]);
 
   // Outside click + Escape (Escape also restores focus to the trigger).
-  const openRef = useRef(open);
-  openRef.current = open;
   useEffect(() => {
     if (!open) return;
     const onPointerDown = (e: PointerEvent) => {
@@ -64,8 +60,7 @@ export function Popover({
   }, [open, close, refs.floating, refs.reference]);
 
   const ctx = useMemo(() => ({ close }), [close]);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const trigger = cloneElement(children as ReactElement<any>, {
+  const trigger = cloneElement(children as ReactElement<Record<string, unknown>>, {
     ref: refs.setReference,
     "aria-expanded": open,
     "aria-haspopup": "true",
@@ -84,8 +79,6 @@ export function Popover({
           <div
             ref={refs.setFloating}
             id={panelId}
-            role="dialog"
-            aria-label={label}
             className={styles.panel}
             style={{
               ...floatingStyles,
