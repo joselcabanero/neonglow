@@ -19,3 +19,4 @@ export { Popover, type PopoverProps } from "./popover/Popover.js";
 export { Menu, type MenuProps } from "./menu/Menu.js";
 export { MenuItem, type MenuItemProps } from "./menu/MenuItem.js";
 export { MenuDivider } from "./menu/MenuDivider.js";
+export { Dialog, type DialogProps } from "./dialog/Dialog.js";

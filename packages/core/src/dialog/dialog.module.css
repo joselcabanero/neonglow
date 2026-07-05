@@ -1,0 +1,14 @@
+.dialog { padding: 0; border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-action); box-shadow: var(--elevation-overlay);
+  background: var(--surface-raised); color: var(--text-1);
+  width: min(460px, calc(100vw - 40px)); }
+.dialog::backdrop { background: var(--scrim); }
+.head { display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 18px; border-bottom: 1px solid var(--border-hairline); }
+.title { margin: 0; font-family: var(--font-sans); font-size: var(--fs-h-3); font-weight: 500; }
+.close { appearance: none; border: 0; background: transparent; color: var(--text-2);
+  display: inline-flex; padding: 4px; cursor: pointer; border-radius: var(--radius-action); }
+.close:hover { background: var(--surface-sunken); }
+.body { padding: 18px; font-size: var(--fs-ui); color: var(--text-2); }
+.foot { display: flex; justify-content: flex-end; gap: 10px; padding: 14px 18px;
+  border-top: 1px solid var(--border-hairline); background: var(--surface-sunken); }
