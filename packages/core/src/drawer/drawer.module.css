@@ -1,0 +1,20 @@
+.drawer { padding: 0; border: 0; box-shadow: var(--elevation-overlay);
+  background: var(--surface-raised); color: var(--text-1);
+  position: fixed; margin: 0; max-width: none; max-height: none; }
+.drawer::backdrop { background: var(--scrim); }
+.right { inset: 0 0 0 auto; width: var(--drawer-size, 380px); height: 100vh;
+  border-left: 1px solid var(--border-hairline); animation: fromRight .14s ease-out; }
+.left { inset: 0 auto 0 0; width: var(--drawer-size, 380px); height: 100vh;
+  border-right: 1px solid var(--border-hairline); animation: fromLeft .14s ease-out; }
+.bottom { inset: auto 0 0 0; height: var(--drawer-size, 40vh); width: 100vw;
+  border-top: 1px solid var(--border-hairline); animation: fromBottom .14s ease-out; }
+@keyframes fromRight { from { transform: translateX(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes fromLeft { from { transform: translateX(-24px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes fromBottom { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+.head { display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 18px; border-bottom: 1px solid var(--border-hairline); }
+.title { margin: 0; font-family: var(--font-sans); font-size: var(--fs-h-3); font-weight: 500; }
+.close { appearance: none; border: 0; background: transparent; color: var(--text-2);
+  display: inline-flex; padding: 4px; cursor: pointer; border-radius: var(--radius-action); }
+.close:hover { background: var(--surface-sunken); }
+.body { padding: 18px; font-size: var(--fs-ui); color: var(--text-2); overflow-y: auto; }
