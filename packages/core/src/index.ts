@@ -21,3 +21,5 @@ export { MenuItem, type MenuItemProps } from "./menu/MenuItem.js";
 export { MenuDivider } from "./menu/MenuDivider.js";
 export { Dialog, type DialogProps } from "./dialog/Dialog.js";
 export { Drawer, type DrawerProps } from "./drawer/Drawer.js";
+export { toaster, type ToastOptions, type ToasterInstance } from "./toast/toaster.js";
+export { Toaster, type ToasterProps } from "./toast/Toaster.js";
