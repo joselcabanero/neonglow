@@ -44,7 +44,6 @@ export function Tabs({ tabs, selectedId, defaultSelectedId, onChange }: TabsProp
     }
   };
 
-  const active = tabs.find((t) => t.id === sel);
   return (
     <div>
       <div role="tablist" ref={listRef} className={styles.list} onKeyDown={onKeyDown}>
@@ -65,11 +64,18 @@ export function Tabs({ tabs, selectedId, defaultSelectedId, onChange }: TabsProp
           </button>
         ))}
       </div>
-      {active?.panel != null ? (
-        <div role="tabpanel" id={`${uid}-panel-${active.id}`} aria-labelledby={`${uid}-tab-${active.id}`} className={styles.panel}>
-          {active.panel}
+      {tabs.filter((t) => t.panel != null).map((t) => (
+        <div
+          key={t.id}
+          role="tabpanel"
+          id={`${uid}-panel-${t.id}`}
+          aria-labelledby={`${uid}-tab-${t.id}`}
+          hidden={t.id !== sel}
+          className={styles.panel}
+        >
+          {t.panel}
         </div>
-      ) : null}
+      ))}
     </div>
   );
 }

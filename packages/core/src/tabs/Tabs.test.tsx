@@ -15,10 +15,9 @@ describe("Tabs", () => {
   it("selects first tab by default and switches on click", async () => {
     render(<Tabs tabs={TABS} />);
     expect(screen.getByRole("tab", { name: "Overview" }).getAttribute("aria-selected")).toBe("true");
-    expect(screen.getByText("Overview panel")).toBeTruthy();
+    expect(screen.getByRole("tabpanel").textContent).toBe("Overview panel");
     await userEvent.click(screen.getByRole("tab", { name: "Holdings" }));
-    expect(screen.getByText("Holdings panel")).toBeTruthy();
-    expect(screen.queryByText("Overview panel")).toBeNull();
+    expect(screen.getByRole("tabpanel").textContent).toBe("Holdings panel");
   });
   it("arrow keys move selection and skip disabled tabs", async () => {
     render(<Tabs tabs={TABS} />);
@@ -34,7 +33,7 @@ describe("Tabs", () => {
     render(<Tabs tabs={TABS} selectedId="overview" onChange={onChange} />);
     await userEvent.click(screen.getByRole("tab", { name: "Holdings" }));
     expect(onChange).toHaveBeenCalledWith("holdings");
-    expect(screen.getByText("Overview panel")).toBeTruthy();
+    expect(screen.getByRole("tabpanel").textContent).toBe("Overview panel");
   });
   it("has no axe violations", async () => {
     const { container } = render(<Tabs tabs={TABS} />);
