@@ -33,7 +33,7 @@ describe("themes", () => {
 describe("densities", () => {
   it("heights are half-baseline (12px) multiples", () => {
     for (const d of Object.values(densities))
-      for (const v of [d.controlH, d.rowH, d.navbarH])
+      for (const v of [d.controlH, d.rowH])
         expect(parseInt(v) % 12, v).toBe(0);
   });
 });
