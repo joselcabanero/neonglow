@@ -16,3 +16,6 @@ export { Radio, type RadioProps } from "./selection/Radio.js";
 export { Switch, type SwitchProps } from "./selection/Switch.js";
 export { Tooltip, type TooltipProps } from "./tooltip/Tooltip.js";
 export { Popover, type PopoverProps } from "./popover/Popover.js";
+export { Menu, type MenuProps } from "./menu/Menu.js";
+export { MenuItem, type MenuItemProps } from "./menu/MenuItem.js";
+export { MenuDivider } from "./menu/MenuDivider.js";
