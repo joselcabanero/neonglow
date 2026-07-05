@@ -1,4 +1,4 @@
-.drawer { padding: 0; border: 0; box-shadow: var(--elevation-overlay);
+.drawer { padding: 0; border: 0; border-radius: var(--radius-0); box-shadow: var(--elevation-overlay);
   background: var(--surface-raised); color: var(--text-1);
   position: fixed; margin: 0; max-width: none; max-height: none; }
 .drawer::backdrop { background: var(--scrim); }
