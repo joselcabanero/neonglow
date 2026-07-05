@@ -26,3 +26,4 @@ export { Toaster, type ToasterProps } from "./toast/Toaster.js";
 export { Tabs, type TabsProps, type TabDef } from "./tabs/Tabs.js";
 export { Breadcrumbs, type BreadcrumbsProps, type BreadcrumbItem } from "./breadcrumbs/Breadcrumbs.js";
 export { NonIdealState, type NonIdealStateProps } from "./nonideal/NonIdealState.js";
+export { Navbar, NavbarGroup, NavbarHeading, NavbarDivider, type NavbarGroupProps } from "./navbar/Navbar.js";

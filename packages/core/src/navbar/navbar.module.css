@@ -1,0 +1,9 @@
+/* Data surface: radius 0, no shadow. */
+.navbar { display: flex; align-items: center; justify-content: space-between;
+  height: var(--navbar-h); padding: 0 var(--baseline);
+  background: var(--surface); color: var(--text-1);
+  border-bottom: 1px solid var(--border-hairline); border-radius: var(--radius-0); }
+.group { display: flex; align-items: center; gap: 10px; height: 100%; }
+.heading { font-family: var(--font-sans); font-size: var(--fs-h-3); font-weight: 700;
+  letter-spacing: -.02em; margin: 0 6px 0 0; }
+.divider { width: 1px; height: 40%; background: var(--border-hairline); }
