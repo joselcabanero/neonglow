@@ -114,7 +114,7 @@ interface BreadcrumbsProps {
 `<nav aria-label="Breadcrumbs">` + `<ol>`; IconChevronRight separators (aria-hidden); last item `aria-current="page"`, `--text-1` medium; others `--text-3`.
 
 ### Navbar (+ NavbarGroup, NavbarHeading, NavbarDivider)
-Layout primitive, data surface: radius 0, `--surface` bg, hairline bottom border, height 48px default / 40px compact (via density selector on its own component token). `NavbarGroup align="left"|"right"`; `NavbarDivider` = vertical hairline.
+Layout primitive, data surface: radius 0, `--surface` bg, hairline bottom border, height 48px default / 36px compact (half-baseline multiples, via its own density token). `NavbarGroup align="left"|"right"`; `NavbarDivider` = vertical hairline.
 
 ### Tree
 ```ts
@@ -165,4 +165,4 @@ Centered column, icon at `--text-3`, quiet. For empty tables/panels; copy follow
 
 ## 6. Open items
 - Toast placement default: `top-right` (data-app convention). Change later via prop.
-- Navbar height token: introduce `--navbar-h` (Tier 3) in tokens package: 48px default / 40px compact.
+- Navbar height token: introduce `--navbar-h` (Tier 3) in tokens package: 48px default / 36px compact.
