@@ -27,3 +27,4 @@ export { Tabs, type TabsProps, type TabDef } from "./tabs/Tabs.js";
 export { Breadcrumbs, type BreadcrumbsProps, type BreadcrumbItem } from "./breadcrumbs/Breadcrumbs.js";
 export { NonIdealState, type NonIdealStateProps } from "./nonideal/NonIdealState.js";
 export { Navbar, NavbarGroup, NavbarHeading, NavbarDivider, type NavbarGroupProps } from "./navbar/Navbar.js";
+export { Tree, type TreeProps, type TreeNode } from "./tree/Tree.js";
