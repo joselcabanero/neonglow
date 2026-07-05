@@ -7,6 +7,12 @@ import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { primitives, themes, densities, cssVarName } from "@neonglow/tokens";
 
+// Component-scoped custom properties: set by the component itself (inline style
+// or local rule), not design tokens. Each entry must name the defining component.
+const COMPONENT_SCOPED = new Set([
+  "--drawer-size", // Drawer: set via inline style from the `size` prop
+]);
+
 // ── helpers ──────────────────────────────────────────────────────────────────
 
 function walkCss(dir: string): string[] {
@@ -56,7 +62,7 @@ describe("CSS module token references", () => {
     for (const file of cssFiles) {
       const css = readFileSync(file, "utf-8");
       for (const token of extractVarRefs(css)) {
-        if (!defined.has(token)) {
+        if (!defined.has(token) && !COMPONENT_SCOPED.has(token)) {
           missing.push({ file: file.replace(srcDir + "/", ""), token });
         }
       }
