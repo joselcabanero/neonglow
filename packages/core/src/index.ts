@@ -15,3 +15,4 @@ export { Checkbox, type CheckboxProps } from "./selection/Checkbox.js";
 export { Radio, type RadioProps } from "./selection/Radio.js";
 export { Switch, type SwitchProps } from "./selection/Switch.js";
 export { Tooltip, type TooltipProps } from "./tooltip/Tooltip.js";
+export { Popover, type PopoverProps } from "./popover/Popover.js";

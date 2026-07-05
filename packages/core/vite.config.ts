@@ -6,7 +6,7 @@ export default defineConfig({
   build: {
     lib: { entry: "src/index.ts", formats: ["es"], fileName: "index", cssFileName: "neonglow-core" },
     cssCodeSplit: false,
-    rollupOptions: { external: ["react", "react-dom", "react/jsx-runtime", "@neonglow/icons"] },
+    rollupOptions: { external: ["react", "react-dom", "react/jsx-runtime", "@neonglow/icons", "@floating-ui/react-dom"] },
   },
   test: {
     environment: "jsdom",
