@@ -12,7 +12,7 @@ Deliver the interaction/overlay layer of `@neonglow/core`, per the parent spec's
 
 **Overlay machinery:** Portal (internal), Popover, Menu/MenuItem/MenuDivider, Dialog, Drawer, Toast + imperative toaster.
 **Navigation:** Tabs, Breadcrumbs, Navbar (+ Group/Heading/Divider), Tree, NonIdealState.
-**Support:** `useControllableState` util; `IconChevronDouble` added to `@neonglow/icons` (closes the Phase 0 icon-set gap).
+**Support:** `useControllableState` util; `IconChevronDouble` added to `@neonglow/icons` (closes the Phase 0 icon-set gap; with IconFolder + IconDoc added for Tree, the set is 34).
 
 **Out of scope (deferred):** submenus (Phase 3 with Select), omnibar (Phase 3), toast queue persistence, virtualized tree (Phase 5 grid work), context menu.
 
@@ -153,7 +153,7 @@ Centered column, icon at `--text-3`, quiet. For empty tables/panels; copy follow
 `useControllableState<T>({ value, defaultValue, onChange }): [T, (v: T) => void]` — standard controlled/uncontrolled resolution, used by Popover and Tabs. (Dialog/Drawer are fully controlled by design; Tree is fully controlled via caller data.)
 
 ## 4. Icons addition
-`IconChevronDouble` (expand-all affordance, 24 viewBox, two nested chevrons) added to `@neonglow/icons` → 32 icons. Same contract tests.
+`IconChevronDouble` (expand-all affordance) + `IconFolder` + `IconDoc` (Tree affordances) added to `@neonglow/icons` → 34 icons. Same contract tests.
 
 ## 5. Quality gates (same as Phase 0+1)
 - TDD per component; axe test each; keyboard-interaction tests for Menu/Tabs/Tree (user-event).

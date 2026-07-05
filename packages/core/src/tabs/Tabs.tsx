@@ -54,7 +54,7 @@ export function Tabs({ tabs, selectedId, defaultSelectedId, onChange }: TabsProp
             role="tab"
             id={`${uid}-tab-${t.id}`}
             aria-selected={t.id === sel}
-            aria-controls={`${uid}-panel-${t.id}`}
+            aria-controls={t.panel != null ? `${uid}-panel-${t.id}` : undefined}
             disabled={t.disabled}
             tabIndex={t.id === sel ? 0 : -1}
             className={cx(styles.tab, t.id === sel && styles.active)}
