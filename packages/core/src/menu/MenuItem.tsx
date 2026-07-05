@@ -30,7 +30,7 @@ export function MenuItem({ text, icon, kbd, intent = "none", disabled, onSelect 
       >
         {icon ? <span className={styles.icon}>{icon}</span> : null}
         {text}
-        {kbd ? <span className={styles.kbd}>{kbd}</span> : null}
+        {kbd ? <span className={styles.kbd} aria-hidden="true">{kbd}</span> : null}
       </button>
     </li>
   );
