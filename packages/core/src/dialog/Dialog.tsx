@@ -14,18 +14,18 @@ export interface DialogProps {
 
 export function Dialog({ isOpen, onClose, title, actions, children }: DialogProps) {
   const ref = useRef<HTMLDialogElement>(null);
+  // Open-only sync: when isOpen flips false the component returns null and the
+  // <dialog> unmounts, which removes it from the top layer. We never call
+  // close() — closing is unmount-by-design (parent owns state via onClose).
   useEffect(() => {
     const d = ref.current;
     if (!d) return;
     if (isOpen && !d.open) {
-      // Try to use showModal, but fall back to setting open attribute for jsdom
-      try {
+      if (typeof d.showModal === "function") {
         d.showModal();
-      } catch {
-        d.setAttribute("open", "");
+      } else {
+        d.setAttribute("open", ""); // jsdom (<26) lacks showModal
       }
-    } else if (!isOpen && d.open) {
-      d.close();
     }
   }, [isOpen]);
 
