@@ -80,4 +80,9 @@ describe("QueryList", () => {
     const { container } = render(<QueryList {...base} onItemSelect={() => {}} />);
     expect(await axe(container)).toHaveNoViolations();
   });
+  it("option accessible name is the clean label even when highlighted", async () => {
+    render(<QueryList {...base} onItemSelect={() => {}} />);
+    await userEvent.type(screen.getByRole("combobox"), "nu");
+    expect(screen.getByRole("option", { name: "Nucaps" })).toBeTruthy();
+  });
 });

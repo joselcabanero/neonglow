@@ -10,11 +10,11 @@ export interface SuggestProps<T> extends Omit<QueryListCoreOptions<T>, "onItemSe
   defaultValue?: T | null;
   onChange?: (item: T) => void;
   placeholder?: string;
-  ariaLabel?: string;
+  "aria-label"?: string;
 }
 
 export function Suggest<T>({
-  value, defaultValue = null, onChange, placeholder = "Search…", ariaLabel, ...core
+  value, defaultValue = null, onChange, placeholder = "Search…", "aria-label": ariaLabel, ...core
 }: SuggestProps<T>) {
   const [sel, setSel] = useControllableState<T | null>({
     value, defaultValue,
@@ -45,13 +45,13 @@ export function Suggest<T>({
           getOptionId={ql.getOptionId}
           query={ql.query}
           selected={sel != null ? [sel] : []}
+          aria-label={ariaLabel}
         />
       }
     >
       <TextInput
         role="combobox"
-        aria-label={ariaLabel || placeholder}
-        title={ariaLabel || placeholder}
+        aria-label={ariaLabel}
         aria-expanded={isOpen}
         aria-autocomplete="list"
         aria-controls={isOpen ? ql.listboxId : undefined}

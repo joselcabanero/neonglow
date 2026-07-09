@@ -15,16 +15,19 @@ export interface OptionListProps<T> extends QueryListCoreOptions<T> {
   noResults?: ReactNode;
   /** Current query — used to highlight matches. */
   query?: string;
+  /** Accessible name for the listbox element. */
+  "aria-label"?: string;
 }
 
 export function OptionList<T>({
   filtered, activeIndex, setActiveIndex, listboxId, getOptionId,
   selected, noResults, query = "",
   getItemLabel, getItemKey, itemDisabled, onItemSelect,
+  "aria-label": ariaLabel,
 }: OptionListProps<T>) {
   const keyOf = getItemKey ?? getItemLabel;
   return (
-    <ul role="listbox" id={listboxId} className={styles.listbox}>
+    <ul role="listbox" id={listboxId} aria-label={ariaLabel} className={styles.listbox}>
       {filtered.length === 0 ? (
         <li role="presentation" className={styles.noResults}>{noResults ?? "No results."}</li>
       ) : (
@@ -36,6 +39,7 @@ export function OptionList<T>({
               key={keyOf(item)}
               id={getOptionId(i)}
               role="option"
+              aria-label={getItemLabel(item)}
               aria-selected={isSelected}
               aria-disabled={disabled || undefined}
               className={cx(styles.option, i === activeIndex && styles.active, disabled && styles.disabled)}

@@ -26,12 +26,12 @@ describe("Suggest", () => {
     const onChange = vi.fn();
     render(<Suggest {...base} onChange={onChange} />);
     await userEvent.type(screen.getByRole("combobox"), "nu");
-    await userEvent.click(screen.getAllByRole("option")[0]);
+    await userEvent.click(screen.getByRole("option", { name: /Nucaps/ }));
     expect(onChange).toHaveBeenCalledWith("Nucaps");
   });
   it("has no axe violations while open", async () => {
-    const { container } = render(<Suggest {...base} ariaLabel="Search" />);
+    const { baseElement } = render(<Suggest {...base} aria-label="Company" />);
     await userEvent.type(screen.getByRole("combobox"), "o");
-    expect(await axe(container)).toHaveNoViolations();
+    expect(await axe(baseElement, { rules: { region: { enabled: false } } })).toHaveNoViolations();
   });
 });
