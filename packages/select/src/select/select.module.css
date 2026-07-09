@@ -1,0 +1,23 @@
+.trigger { display: inline-flex; align-items: center; justify-content: space-between; gap: 8px;
+  min-width: 180px; height: var(--control-h); padding: 0 var(--pad-x);
+  border-radius: var(--radius-action); border: 1px solid var(--border-hairline);
+  background: var(--surface); color: var(--text-1);
+  font-family: var(--font-sans); font-size: var(--fs-ui); cursor: pointer;
+  transition: border-color .12s ease, background .12s ease; }
+.trigger:hover { border-color: var(--text-3); }
+.trigger:disabled { opacity: .4; cursor: not-allowed; }
+.value { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.placeholder { color: var(--text-3); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.chevron { display: inline-flex; color: var(--text-3); flex: none; }
+
+/* MultiSelect trigger (Task 4) */
+.multiWrap { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 6px;
+  min-width: 240px; min-height: var(--control-h); padding: 4px var(--pad-x);
+  border-radius: var(--radius-action); border: 1px solid var(--border-hairline);
+  background: var(--surface); cursor: pointer; }
+.multiWrap:hover { border-color: var(--text-3); }
+.multiOpen { appearance: none; border: 0; background: transparent; color: var(--text-3);
+  display: inline-flex; margin-left: auto; padding: 2px; cursor: pointer;
+  border-radius: var(--radius-action); }
+.multiOpen:hover { color: var(--text-1); background: var(--surface-sunken); }
+.multiDisabled { opacity: .4; cursor: not-allowed; }
