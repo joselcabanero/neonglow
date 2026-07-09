@@ -35,6 +35,9 @@ importers:
       '@neonglow/icons':
         specifier: workspace:*
         version: link:../../packages/icons
+      '@neonglow/select':
+        specifier: workspace:*
+        version: link:../../packages/select
       '@neonglow/tokens':
         specifier: workspace:*
         version: link:../../packages/tokens

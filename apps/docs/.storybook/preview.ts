@@ -2,6 +2,7 @@ import type { Preview } from "@storybook/react";
 import "@neonglow/tokens/fonts.css";
 import "@neonglow/tokens/theme.css";
 import "@neonglow/core/styles.css";
+import "@neonglow/select/styles.css";
 
 const preview: Preview = {
   globalTypes: {

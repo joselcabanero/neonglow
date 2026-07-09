@@ -10,6 +10,7 @@
   "dependencies": {
     "@neonglow/core": "workspace:*",
     "@neonglow/icons": "workspace:*",
+    "@neonglow/select": "workspace:*",
     "@neonglow/tokens": "workspace:*",
     "react": "^18.3.0",
     "react-dom": "^18.3.0"
