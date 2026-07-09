@@ -1,0 +1,13 @@
+.dialog { padding: 0; border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-action); box-shadow: var(--elevation-overlay);
+  background: var(--surface-raised); color: var(--text-1);
+  width: min(560px, calc(100vw - 40px));
+  margin-top: 12vh; }
+.dialog::backdrop { background: var(--scrim); }
+.input { width: 100%; box-sizing: border-box; height: 48px; padding: 0 var(--baseline);
+  border: 0; border-bottom: 1px solid var(--border-hairline); border-radius: 0;
+  background: transparent; color: var(--text-1);
+  font-family: var(--font-sans); font-size: var(--fs-h-3); }
+.input::placeholder { color: var(--text-3); }
+.input:focus { outline: none; } /* the dialog surface is the focus context */
+.results { max-height: 320px; overflow-y: auto; }
