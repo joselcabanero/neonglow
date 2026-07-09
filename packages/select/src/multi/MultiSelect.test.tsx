@@ -13,7 +13,7 @@ describe("MultiSelect", () => {
     await userEvent.click(screen.getByRole("button", { name: "Sectors" }));
     await userEvent.click(screen.getByRole("option", { name: "Foodtech" }));
     expect(screen.getByRole("listbox")).toBeTruthy();            // stays open
-    expect(screen.getByText("Foodtech")).toBeTruthy();           // tag rendered
+    expect(screen.getByRole("button", { name: "Remove Foodtech" })).toBeTruthy();           // tag rendered
   });
   it("clicking a selected option removes it (toggle)", async () => {
     const onChange = vi.fn();

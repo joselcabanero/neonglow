@@ -22,28 +22,10 @@ export function MultiSelect<T>({
     value: values, defaultValue: defaultValues ?? [], onChange,
   });
   const [isOpen, setIsOpen] = useState(false);
-  /**
-   * Query is controlled here so that after each toggle the selected item's label
-   * is used as the query. This causes highlightQuery to wrap the text in <mark>,
-   * ensuring the option label span has no direct text node — leaving the Tag span
-   * as the sole element matching getByText(label) for testing and avoiding
-   * duplicate-match issues in RTL.
-   */
-  const [query, setQuery] = useState("");
 
   const toggle = (item: T) => {
     const has = vals.some((v) => keyOf(v) === keyOf(item));
     setVals(has ? vals.filter((v) => keyOf(v) !== keyOf(item)) : [...vals, item]);
-    /**
-     * Set query to the first character of the item label. This causes
-     * highlightQuery to split the label text between a <mark> (first char) and
-     * a trailing text node (rest), so no single DOM element has the full label
-     * as a complete direct text node — leaving the Tag span as the sole element
-     * matched by RTL's getByText(label). Without this, the <mark> element inside
-     * the option also matches (mark has the full label as a text node when
-     * query === label).
-     */
-    setQuery(core.getItemLabel(item).charAt(0));
   };
 
   return (
@@ -75,8 +57,6 @@ export function MultiSelect<T>({
             {...core}
             selected={vals}
             onItemSelect={toggle}
-            query={query}
-            onQueryChange={setQuery}
             onInputKeyDown={(e) => {
               if (e.key === "Backspace" && (e.target as HTMLInputElement).value === "" && vals.length) {
                 setVals(vals.slice(0, -1));
