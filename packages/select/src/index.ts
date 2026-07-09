@@ -5,3 +5,4 @@ export { QueryList, type QueryListProps } from "./query-list/QueryList.js";
 export { highlightQuery } from "./query-list/highlightQuery.js";
 export { Select, type SelectProps } from "./select/Select.js";
 export { MultiSelect, type MultiSelectProps } from "./multi/MultiSelect.js";
+export { Suggest, type SuggestProps } from "./suggest/Suggest.js";
