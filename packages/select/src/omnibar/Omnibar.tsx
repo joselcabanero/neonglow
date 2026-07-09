@@ -1,4 +1,4 @@
-import { useEffect, useRef, type MouseEvent, type ReactNode, type SyntheticEvent } from "react";
+import { useCallback, useEffect, useRef, type MouseEvent, type ReactNode, type SyntheticEvent } from "react";
 import type { QueryListCoreOptions } from "../types.js";
 import { useQueryList } from "../query-list/useQueryList.js";
 import { OptionList } from "../query-list/OptionList.js";
@@ -23,19 +23,21 @@ export function Omnibar<T>({
   const [isOpen, setIsOpen] = useControllableState({
     value: isOpenProp, defaultValue: defaultIsOpen, onChange: onOpenChange,
   });
-  const ql = useQueryList({
-    ...core,
-    onItemSelect: (item) => {
+  const handleSelect = useCallback(
+    (item: T) => {
       core.onItemSelect(item);
       setIsOpen(false);
     },
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- core is a rest object; onItemSelect is the stable handle
+    [core.onItemSelect, setIsOpen]
+  );
+  const ql = useQueryList({ ...core, onItemSelect: handleSelect });
   const { setQuery, setActiveIndex } = ql;
 
   // Global hotkey while mounted.
   useEffect(() => {
-    if (!hotkey) return;
-    const [modPart, keyPart] = hotkey.split("+");
+    if (hotkey == null) return;
+    const [modPart, keyPart] = hotkey.toLowerCase().split("+");
     const needsMod = modPart === "mod";
     const onKey = (e: KeyboardEvent) => {
       if (e.key.toLowerCase() === keyPart && (!needsMod || e.metaKey || e.ctrlKey)) {
@@ -95,10 +97,7 @@ export function Omnibar<T>({
       <div className={styles.results}>
         <OptionList
           {...core}
-          onItemSelect={(item) => {
-            core.onItemSelect(item);
-            setIsOpen(false);
-          }}
+          onItemSelect={handleSelect}
           filtered={ql.filtered}
           activeIndex={ql.activeIndex}
           setActiveIndex={ql.setActiveIndex}
