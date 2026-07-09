@@ -87,6 +87,7 @@ export function Omnibar<T>({
         aria-controls={ql.listboxId}
         aria-activedescendant={ql.activeDescendantId}
         aria-autocomplete="list"
+        aria-haspopup="listbox"
         // eslint-disable-next-line jsx-a11y/no-autofocus -- primary affordance of a just-opened command bar
         autoFocus
         placeholder={placeholder}

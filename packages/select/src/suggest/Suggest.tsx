@@ -54,6 +54,7 @@ export function Suggest<T>({
         aria-label={ariaLabel}
         aria-expanded={isOpen}
         aria-autocomplete="list"
+        aria-haspopup="listbox"
         aria-controls={isOpen ? ql.listboxId : undefined}
         aria-activedescendant={isOpen ? ql.activeDescendantId : undefined}
         placeholder={placeholder}
