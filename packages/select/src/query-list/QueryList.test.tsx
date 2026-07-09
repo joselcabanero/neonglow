@@ -70,6 +70,12 @@ describe("QueryList", () => {
     expect(container.querySelector("mark")?.textContent).toBe("hop");
     expect(container.textContent).toBe("Hedgehop");
   });
+  it("initial active descendant skips a disabled first item", () => {
+    const items = [{ name: "Innomy", sector: "Foodtech", disabled: true }, { name: "Nucaps", sector: "Foodtech" }];
+    render(<QueryList items={items} getItemLabel={(h) => h.name} itemDisabled={(h) => !!h.disabled} onItemSelect={() => {}} />);
+    const input = screen.getByRole("combobox");
+    expect(input.getAttribute("aria-activedescendant")).toBe(screen.getByRole("option", { name: "Nucaps" }).id);
+  });
   it("has no axe violations", async () => {
     const { container } = render(<QueryList {...base} onItemSelect={() => {}} />);
     expect(await axe(container)).toHaveNoViolations();

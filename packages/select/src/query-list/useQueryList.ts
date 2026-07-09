@@ -29,6 +29,15 @@ export function useQueryList<T>(opts: UseQueryListOptions<T>) {
     setActiveIndex((i) => Math.min(i, Math.max(filtered.length - 1, 0)));
   }, [filtered.length]);
 
+  useEffect(() => {
+    const current = filtered[activeIndex];
+    if (current && itemDisabled?.(current)) {
+      const first = filtered.findIndex((i) => !itemDisabled?.(i));
+      if (first >= 0) setActiveIndex(first);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filtered, activeIndex]);
+
   const move = useCallback(
     (dir: 1 | -1) => {
       if (!filtered.length) return;

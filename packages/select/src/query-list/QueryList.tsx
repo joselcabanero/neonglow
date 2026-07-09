@@ -26,6 +26,7 @@ export function QueryList<T>(props: QueryListProps<T>) {
           className={styles.input}
           role="combobox"
           aria-expanded="true"
+          aria-haspopup="listbox"
           aria-controls={ql.listboxId}
           aria-activedescendant={ql.activeDescendantId}
           aria-autocomplete="list"

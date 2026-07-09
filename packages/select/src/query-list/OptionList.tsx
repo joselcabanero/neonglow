@@ -23,32 +23,33 @@ export function OptionList<T>({
   getItemLabel, getItemKey, itemDisabled, onItemSelect,
 }: OptionListProps<T>) {
   const keyOf = getItemKey ?? getItemLabel;
-  if (!filtered.length) {
-    return <div className={styles.noResults}>{noResults ?? "No results."}</div>;
-  }
   return (
     <ul role="listbox" id={listboxId} className={styles.listbox}>
-      {filtered.map((item, i) => {
-        const disabled = itemDisabled?.(item) ?? false;
-        const isSelected = selected?.some((s) => keyOf(s) === keyOf(item)) ?? false;
-        return (
-          <li
-            key={keyOf(item)}
-            id={getOptionId(i)}
-            role="option"
-            aria-selected={isSelected}
-            aria-disabled={disabled || undefined}
-            className={cx(styles.option, i === activeIndex && styles.active, disabled && styles.disabled)}
-            onMouseEnter={() => setActiveIndex(i)}
-            onClick={() => {
-              if (!disabled) onItemSelect(item);
-            }}
-          >
-            <span className={styles.check}>{isSelected ? <IconCheck size={16} /> : null}</span>
-            <span className={styles.label}>{highlightQuery(getItemLabel(item), query)}</span>
-          </li>
-        );
-      })}
+      {filtered.length === 0 ? (
+        <li role="presentation" className={styles.noResults}>{noResults ?? "No results."}</li>
+      ) : (
+        filtered.map((item, i) => {
+          const disabled = itemDisabled?.(item) ?? false;
+          const isSelected = selected?.some((s) => keyOf(s) === keyOf(item)) ?? false;
+          return (
+            <li
+              key={keyOf(item)}
+              id={getOptionId(i)}
+              role="option"
+              aria-selected={isSelected}
+              aria-disabled={disabled || undefined}
+              className={cx(styles.option, i === activeIndex && styles.active, disabled && styles.disabled)}
+              onMouseEnter={() => setActiveIndex(i)}
+              onClick={() => {
+                if (!disabled) onItemSelect(item);
+              }}
+            >
+              <span className={styles.check}>{isSelected ? <IconCheck size={16} /> : null}</span>
+              <span className={styles.label}>{highlightQuery(getItemLabel(item), query)}</span>
+            </li>
+          );
+        })
+      )}
     </ul>
   );
 }
