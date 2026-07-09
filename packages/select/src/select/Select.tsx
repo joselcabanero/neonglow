@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Popover, cx } from "@neonglow/core";
+import { Popover } from "@neonglow/core";
 import { IconChevronDown } from "@neonglow/icons";
 import type { QueryListCoreOptions } from "../types.js";
 import { QueryList } from "../query-list/QueryList.js";
