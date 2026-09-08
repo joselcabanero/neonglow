@@ -30,6 +30,7 @@ All extracted fonts, tokens and logo assets live in `fonts/` and `assets/` respe
 | `assets/` | Logos — wordmark (primary, ink, inverted), mark (green, ink, grey, paper). |
 | `preview/` | Design‑system cards rendered individually for the Design System review tab. |
 | `ui_kits/investor-deck/` | UI kit for the core product — a 1920×1080 LP / investor deck with all recipe layouts in one stacked HTML preview. |
+| `ui_kits/data-story/` | Long-form data-story kit — five-beat narrative page (Hook · Context · Turn · Resolution · Ask). |
 
 ---
 
@@ -79,7 +80,7 @@ The system is **editorial, not corporate** — it should feel like the business 
 1. **Editorial, not corporate.** Dense, confident, quiet. No gradients, no glass, no drop shadows.
 2. **Numbers are the hero.** Metrics get the largest type on the page. Tabular figures, minus‑zero rounding, units demoted to neutral grey.
 3. **One accent colour, earned.** Green is for positive outcomes, highlights and the brand. Never decorative.
-4. **Structure over decoration.** Hairline rules, 2 px dividers, grids of flat rectangles. No rounded corners on data surfaces.
+4. **Structure over decoration.** Hairline rules, 2 px dividers, grids of flat, softly rounded rectangles. Radius is small and consistent — never pills, never circles on data.
 5. **Dark is for moments.** Ink‑black slides mark the exit, the closing, the value‑creation narrative — never the default.
 
 ### Palette
@@ -148,7 +149,7 @@ Follows the method of Josef Müller-Brockmann's *Grid Systems in Graphic Design*
 - **No gradients. No stock photography. No drop shadows. No glass / blur. No noise textures.**
 
 ### Borders, rules, corners
-- **Corner radius is 0.** Nothing rounds. Data surfaces, cards, tiles, chips are rectangles.
+- **Soft corners, three steps.** `--radius-sm` 6 px for chips, bars, chart marks and grid cells; `--radius` 12 px for cards, tiles, KPI blocks and chart containers; `--radius-lg` 16 px for story blocks and large panels. SVG rects get `rx: 3px`. Never larger, never pill-shaped.
 - Hairline dividers at `rgba(10,10,10,0.12)` — 1 px.
 - Strong dividers are 2 px solid ink.
 - Card separation uses a 2 px ink grid line between cells, not borders around each cell.
@@ -171,7 +172,7 @@ For the rare interactive surface (UI kit, web one‑pager):
 **There is none.** The guidelines call it out explicitly: *No stock imagery. Use placeholders or the mark watermark.* If imagery is ever required, it must be black‑and‑white, warm‑toned, grainy, editorial — think Magnum, not Shutterstock.
 
 ### Cards
-Five states. One shape. Flat rectangles, no borders, no shadows — state is encoded by background colour:
+Five states. One shape. Flat rectangles with 6 px corners, no borders, no shadows — state is encoded by background colour:
 1. **Accent** (`#7BF076`) — featured / brand moment.
 2. **Up** (`#D4F5D1`) — positive performance.
 3. **Neutral** (paper) — default / held at cost.
@@ -188,7 +189,48 @@ Card stack order from top: status label (11 px caps) → value (48 px tabular) �
 
 ---
 
-## Iconography
+## Charts & data visualisation
+
+43 chart cards live in `preview/chart-*.html` (shared styles in `preview/chart.css`). All are flat SVG, editable, and follow one encoding grammar:
+
+**Colour encodes state, never category-for-its-own-sake.**
+- Ink `#0A0A0A` — the primary series, totals, the default bar.
+- Accent `#7BF076` — the one thing the chart is about: the exit, the record year, the mover, the target met. **One accent series per chart.**
+- Perf-up `#D4F5D1` — secondary positive (marking up, above cost). Max two greens per chart.
+- Greys `#EEEEF0 → #E0E0E4 → #C6C6CB → #9A9A9E → #555` — context, below-cost, written-off, benchmark. Ordinal ramps run light→dark; the top step of a ramp is ink.
+- Hollow (white fill, 1.5 px ink stroke) — "at cost" / neutral / planned.
+- Dashed ink — reference lines (1.0×), benchmarks, decline, planned phases.
+
+**Structure.**
+- Soft 3 px radius on SVG marks; no gradients, no shadows, no 3D. Bars are rectangles; dots are circles or 8 px squares.
+- Axis baseline 2 px ink. Gridlines 1 px `rgba(10,10,10,.12)`. Reference lines dashed 3/3.
+- Axis labels and all numbers in Ubuntu Mono; values bold 700, secondary values 400 grey.
+- Every chart has a title row: plain-language label left, the proving number right (mono).
+- Legends are 10 px caps with 10 px swatches, below the chart. Hollow/dashed legend keys exist (`.h`, `.d`).
+- Units are demoted: `€6.12` + small grey `M`; `14.58` + small `×`.
+- Off-scale outliers are flagged, never clipped silently (dashed accent ring + "off scale").
+- **Grid-native charts** (heatmap, treemap, waffle, calendar, KPI) sit on the 12-column module: tiles span whole columns, 8 px gutters, 40 px row rhythm, axes in the margins. Tile fills carry the value; the gutter is white, not ink.
+
+**Which chart.** Comparison → bar / column / grouped / lollipop / dot plot / dumbbell / slope / bump / bullet / radar / small multiples. Part-to-whole → stacked / 100% stacked / donut / pie / waffle / treemap / sunburst / marimekko / circle packing. Change → line / area / streamgraph / waterfall / diverging / slope / sparklines. Distribution → histogram / box plot / heatmap / calendar heatmap / scatter-bubble / quadrant. Flow & relation → sankey / network / chord / arc / tree / funnel / parallel coordinates. Progress → KPI / progress vs target / bullet / gauge / timeline-Gantt.
+
+**Prefer** donut over pie (centre metric), bar over radial, small multiples over spaghetti lines, dot plot over grouped bars when the axis needn't start at zero, treemap over pie when >5 categories.
+
+---
+
+## Data stories
+
+A data story is a five-beat narrative, one chart type per beat — see `ui_kits/data-story/` and the `preview/story-*.html` cards.
+
+1. **Hook** — one surprising number. Dark surface, hero metric in accent. No chart yet.
+2. **Context** — baseline and scale. KPI tiles + one distribution chart.
+3. **Turn** — what changed. Movement charts only (waterfall, slope, diverging, bump).
+4. **Resolution** — where it landed. Annotated chart with numbered markers; echo the hook number.
+5. **Ask** — one decision, one date, ≤2 options; the recommended one on accent.
+
+**Annotation grammar.** Numbered ink squares `01 02 03` (mono, 10 px, white) with orthogonal 1 px leader lines. Callout text 13 px, key phrase weight 500. Read order = number order. Markers on the chart are 10 px ink squares; the current/last point is an accent square with a 2 px ink stroke.
+
+**Copy.** Title row on every chart = claim + proving number. Body: two sentences, numbers bold. Sources in mono under the narrative. Never centre.
+
 
 **The system is close to iconless by design.** The guidelines say, verbatim: *No emoji. No decorative icons.* Accelera decks are typography + numbers + hairlines; they do not lean on icon sets.
 
@@ -228,4 +270,4 @@ Extracted fonts are the latin subset (U+0000–00FF) from the guidelines bundle 
 1. Import the tokens: `<link rel="stylesheet" href="colors_and_type.css">`.
 2. Start from one of the six layout recipes (cover · headline‑metric · dark‑hero · table · card‑grid · split‑narrative). The `ui_kits/investor-deck/` folder has them all as a stacked HTML preview.
 3. Lift a card / chrome / metric component rather than hand‑rolling.
-4. Check copy against the Do / Don't list: no adjectives, bold the number, one accent per slide, neutral greys not warm cream, rectangles not rounded, zero emoji.
+4. Check copy against the Do / Don't list: no adjectives, bold the number, one accent per slide, neutral greys not warm cream, soft 6/12/16 px corners never pills, zero emoji.
