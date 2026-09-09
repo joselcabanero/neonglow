@@ -1,0 +1,28 @@
+<!-- @dsCard group="Maps" viewport="700x340" name="Proportional symbols" subtitle="Circle area = capital deployed · ink land · accent = exited market" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Proportional symbols</title>
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="chart.css">
+<script src="https://unpkg.com/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js" integrity="sha384-Ukv1p/xTma6P4/2bY5KzWBw+ydSpXmhCMtyciIQVDJ1RmOxtCYNMF1uXT9T63H67" crossorigin="anonymous"></script>
+<script src="map.js"></script>
+<style>:root{--r:12px}.map{border-radius:var(--r);overflow:hidden;background:#fff}</style></head><body>
+<div class="wrap">
+<div class="ttl"><span>Capital deployed by city · €K</span><b>€4.15M · 9 cities</b></div>
+<div id="m" class="map"></div>
+<div class="legend"><span><i style="background:#7BF076;border-radius:50%"></i>Exit market</span><span><i style="background:#0a0a0a;border-radius:50%"></i>Active</span><span><i style="background:#fff;border:1.5px solid #0a0a0a;border-radius:50%;width:7px;height:7px"></i>Pipeline</span></div>
+</div>
+<script>
+(async()=>{const M=AcceleraMap,I=M.ID;const feats=await M.countries();
+const W=644,H=250;const s=M.svg('#m',W,H);
+const focus={type:'FeatureCollection',features:feats.filter(f=>[I.ES,I.PT,I.FR,I.IT,I.NL,I.DE,I.GB,I.IE,I.BE,I.CH].includes(f.id))};
+const proj=d3.geoMercator().fitExtent([[8,8],[W-8,H-8]],{type:'MultiPoint',coordinates:[[-11,35],[26,60]]});const path=d3.geoPath(proj);
+M.land(s,feats,path,M.G2);
+const pts=[['Madrid',-3.70,40.42,1420,'exit'],['Barcelona',2.17,41.39,860,'act'],['Valencia',-0.38,39.47,380,'act'],['Lisbon',-9.14,38.72,310,'act'],['Milan',9.19,45.46,420,'act'],['Amsterdam',4.90,52.37,360,'act'],['Paris',2.35,48.86,240,'act'],['Berlin',13.40,52.52,160,'pipe'],['Dublin',-6.26,53.35,0,'pipe']];
+const r=d3.scaleSqrt().domain([0,1420]).range([0,26]);
+const g=s.append('g');
+for(const [n,lon,lat,v,st] of pts.sort((a,b)=>b[3]-a[3])){const [x,y]=proj([lon,lat]);const rr=st==='pipe'?5:r(v);
+g.append('circle').attr('cx',x).attr('cy',y).attr('r',rr).attr('fill',st==='exit'?M.ACC:st==='act'?M.INK:'#fff').attr('fill-opacity',st==='act'?0.85:1).attr('stroke',M.INK).attr('stroke-width',1.5);
+if(v>=360||st==='pipe'){g.append('text').attr('x',x+rr+6).attr('y',y+4).attr('class','lbl').style('font-size','10px').text(n+(v?` €${v}K`:''));}}
+})();
+</script>
+</body></html>

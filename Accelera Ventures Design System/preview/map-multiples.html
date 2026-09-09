@@ -1,0 +1,24 @@
+<!-- @dsCard group="Maps" viewport="700x300" name="Small multiples · maps" subtitle="Same projection repeated per period · shared ramp · reads left to right" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Map small multiples</title>
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="chart.css">
+<script src="https://unpkg.com/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js" integrity="sha384-Ukv1p/xTma6P4/2bY5KzWBw+ydSpXmhCMtyciIQVDJ1RmOxtCYNMF1uXT9T63H67" crossorigin="anonymous"></script>
+<script src="map.js"></script>
+<style>:root{--r:12px}.g{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.cell .h{display:flex;justify-content:space-between;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#555;font-weight:500;margin-bottom:6px}.cell .h b{font-family:'Ubuntu Mono',monospace;letter-spacing:0;text-transform:none;color:#0a0a0a}.map{border-radius:var(--r);overflow:hidden;background:#fff;border:1px solid rgba(10,10,10,.12)}</style></head><body>
+<div class="wrap">
+<div class="ttl"><span>Footprint expansion · countries with a live position</span><b>2020 → 2026</b></div>
+<div class="g" id="g"></div>
+<div class="legend"><span><i style="background:#eeeef0"></i>None</span><span><i style="background:#d4f5d1"></i>1–2 positions</span><span><i style="background:#7BF076"></i>3–5</span><span><i style="background:#0a0a0a"></i>6+</span></div>
+</div>
+<script>
+(async()=>{const M=AcceleraMap,I=M.ID;const feats=await M.countries();
+const eu=[I.ES,I.PT,I.FR,I.IT,I.NL,I.DE,I.GB,I.IE,I.BE,I.CH,I.AT,I.DK,I.PL,I.CZ];
+const years=[['2020',{[I.ES]:6}],['2022',{[I.ES]:12,[I.PT]:2}],['2024',{[I.ES]:16,[I.PT]:3,[I.IT]:2,[I.FR]:1}],['2026',{[I.ES]:19,[I.PT]:4,[I.IT]:3,[I.FR]:2,[I.NL]:3,[I.DE]:1,[I.IE]:1,[I.GB]:2}]];
+const ramp=v=>!v?M.G1:v<=2?M.UP:v<=5?M.ACC:M.INK;
+const focus={type:'FeatureCollection',features:feats.filter(f=>eu.includes(f.id))};
+const W=150,H=150;const proj=d3.geoMercator().fitExtent([[4,4],[W-4,H-4]],{type:'MultiPoint',coordinates:[[-11,35],[26,60]]});const path=d3.geoPath(proj);
+for(const [y,d] of years){const c=d3.select('#g').append('div').attr('class','cell');const n=Object.keys(d).length;c.append('div').attr('class','h').html(`<span>${y}</span><b>${n} ${n===1?'country':'countries'}</b>`);const s=M.svg(c.append('div').attr('class','map').node(),W,H);M.land(s,feats,path,f=>ramp(d[f.id]));}
+})();
+</script>
+</body></html>

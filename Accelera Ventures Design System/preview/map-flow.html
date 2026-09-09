@@ -1,0 +1,28 @@
+<!-- @dsCard group="Maps" viewport="700x340" name="Flow map" subtitle="Great-circle arcs from Madrid · width = co-investment rounds · Natural Earth world" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Flow map</title>
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="chart.css">
+<script src="https://unpkg.com/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js" integrity="sha384-Ukv1p/xTma6P4/2bY5KzWBw+ydSpXmhCMtyciIQVDJ1RmOxtCYNMF1uXT9T63H67" crossorigin="anonymous"></script>
+<script src="map.js"></script>
+<style>:root{--r:12px}.map{border-radius:var(--r);overflow:hidden;background:#fff}</style></head><body>
+<div class="wrap">
+<div class="ttl"><span>Co-investor origin · rounds shared with Accelera</span><b>24 rounds · 7 hubs</b></div>
+<div id="m" class="map"></div>
+<div class="legend"><span><i style="background:#0a0a0a;height:2px"></i>Shared rounds (width)</span><span><i style="background:#7BF076;border-radius:50%"></i>Accelera · Madrid</span></div>
+</div>
+<script>
+(async()=>{const M=AcceleraMap;const feats=await M.countries();
+const W=644,H=260;const s=M.svg('#m',W,H);
+const proj=d3.geoNaturalEarth1().fitExtent([[0,0],[W,H]],{type:'Sphere'});const path=d3.geoPath(proj);
+M.land(s,feats.filter(f=>f.id!=='010'),path,M.G1);
+const hub=[-3.70,40.42];
+const flows=[['London',-0.13,51.51,8],['Paris',2.35,48.86,5],['Amsterdam',4.90,52.37,4],['Tel Aviv',34.78,32.09,3],['New York',-74.01,40.71,2],['São Paulo',-46.63,-23.55,1],['Singapore',103.82,1.35,1]];
+const g=s.append('g');
+for(const [n,lon,lat,w] of flows){g.append('path').datum({type:'LineString',coordinates:[hub,[lon,lat]]}).attr('d',path).attr('fill','none').attr('stroke',M.INK).attr('stroke-width',0.6+w*0.45).attr('stroke-opacity',0.75).attr('stroke-linecap','round');
+const [x,y]=proj([lon,lat]);g.append('circle').attr('cx',x).attr('cy',y).attr('r',3.5).attr('fill','#fff').attr('stroke',M.INK).attr('stroke-width',1.5);
+g.append('text').attr('x',x+(lon<hub[0]?-7:7)).attr('y',y+(n==='Paris'?-4:4)).attr('text-anchor',lon<hub[0]?'end':'start').attr('class','lbl s').style('font-size','9.5px').text(`${n} ${w}`);}
+const [hx,hy]=proj(hub);g.append('circle').attr('cx',hx).attr('cy',hy).attr('r',6).attr('fill',M.ACC).attr('stroke',M.INK).attr('stroke-width',2);
+})();
+</script>
+</body></html>

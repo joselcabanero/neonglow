@@ -1,0 +1,87 @@
+<!-- @dsCard group="UI Kit — Data Story" viewport="1100x1400" name="Data story kit" subtitle="Long-form scroll narrative · Hook → Context → Turn → Resolution → Ask" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Accelera Ventures — Data Story</title>
+<link rel="stylesheet" href="../../colors_and_type.css">
+<style>
+html,body{margin:0;background:#fff;color:#0a0a0a;font-family:'Ubuntu',sans-serif;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1,"lnum" 1}
+a{color:#0a0a0a}a:hover{color:#555}
+.page{max-width:1100px;margin:0 auto;padding:0 40px 120px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:28px 0;border-bottom:2px solid #0a0a0a;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#555;font-weight:500}
+.top img{height:24px}.top .mono{font-family:'Ubuntu Mono',monospace;letter-spacing:.04em;text-transform:none}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
+.chapter{padding:64px 0 56px;border-bottom:1px solid rgba(10,10,10,.12)}
+.chapter.dark{background:#0a0a0a;color:#fff;margin:0 -40px;padding-left:40px;padding-right:40px;border-bottom:none}
+.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.eyebrow::before{content:"";width:32px;height:2px;background:currentColor}
+.eyebrow .chap{font-family:'Ubuntu Mono',monospace;color:#7BF076;letter-spacing:.08em}.eyebrow .sep{color:#555;font-weight:400}
+h1{font-size:clamp(40px,6vw,72px);font-weight:700;letter-spacing:-.035em;line-height:.95;margin:0 0 24px;text-wrap:balance}
+h2{font-size:clamp(28px,3.4vw,40px);font-weight:500;letter-spacing:-.02em;line-height:1.05;margin:0 0 20px;text-wrap:balance}
+p{font-size:18px;line-height:1.5;font-weight:300;color:#2a2a2a;margin:0 0 16px;max-width:56ch}.dark p{color:#d8d8dc}
+p b{font-weight:500;color:#0a0a0a}.dark p b{color:#fff}
+.hero-n{font-size:clamp(96px,14vw,168px);font-weight:500;letter-spacing:-.05em;line-height:.85;font-variant-numeric:tabular-nums;color:#7BF076}
+.hero-n small{font-size:.28em;color:#c6c6cb;font-weight:400;margin-left:8px}
+.lbl{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#555;font-weight:500}.dark .lbl{color:#9a9a9e}
+.src{font-family:'Ubuntu Mono',monospace;font-size:11px;color:#555;margin-top:12px}
+.chart{border:1px solid rgba(10,10,10,.15);padding:20px 24px 16px}
+.chart .t{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#555;font-weight:500;display:flex;justify-content:space-between;margin-bottom:12px}.chart .t b{font-family:'Ubuntu Mono',monospace;color:#0a0a0a;letter-spacing:0;text-transform:none}
+svg{display:block;width:100%;height:auto;overflow:visible}
+.ax{font-family:'Ubuntu Mono',monospace;font-size:10px;fill:#555}.val{font-family:'Ubuntu Mono',monospace;font-size:11px;font-weight:700;fill:#0a0a0a}.val.g{fill:#555;font-weight:400}.val.w{fill:#fff}
+.hair{stroke:rgba(10,10,10,.12)}.rule{stroke:#0a0a0a;stroke-width:2}.dash{stroke:#0a0a0a;stroke-dasharray:3 3}
+.mk{font-family:'Ubuntu Mono',monospace;font-size:10px;font-weight:700}
+.legend{display:flex;gap:18px;margin-top:10px;font-size:10px;color:#555;letter-spacing:.08em;text-transform:uppercase;font-weight:500}.legend span{display:flex;align-items:center;gap:6px}.legend i{width:10px;height:10px;display:inline-block}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:#0a0a0a;border:2px solid #0a0a0a}
+.k{background:#fff;padding:20px;display:flex;flex-direction:column;gap:8px}.k .v{font-size:44px;font-weight:500;letter-spacing:-.04em;line-height:.95;font-variant-numeric:tabular-nums}.k .v small{font-size:.38em;color:#555;font-weight:400}.k .d{font-family:'Ubuntu Mono',monospace;font-size:12px;font-weight:700;display:flex;gap:6px;align-items:center}.k .d i{width:8px;height:8px;background:#7BF076}
+.note{font-size:13px;line-height:1.45;color:#2a2a2a}.note b{font-weight:500;color:#0a0a0a}
+.ask{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;background:#0a0a0a;border:2px solid #0a0a0a}
+.opt{background:#fff;padding:24px}.opt.on{background:#7BF076}.opt .n{font-family:'Ubuntu Mono',monospace;font-size:11px;letter-spacing:.14em;color:#555;margin-bottom:8px}.opt.on .n{color:#0a0a0a}.opt h3{font-size:22px;font-weight:500;letter-spacing:-.015em;margin:0 0 8px}.opt p{font-size:14px;margin:0}
+.foot{display:flex;justify-content:space-between;padding-top:28px;font-size:12px;color:#555;letter-spacing:.04em}
+@media (max-width:760px){.grid>*{grid-column:1 / -1 !important}.kpis,.ask{grid-template-columns:1fr}}
+</style>
+<style>:root{--r-sm:6px;--r:12px;--r-lg:16px}.chip,.c,.k,.cell,.card,.b,.opt,.st,.sw .chip,.bar,.bw,.bar-wrap,.bar-fill,.dist,.tag,.card-cell,.frame,.chrome,.body-z{border-radius:var(--r-sm)}.box,.pv,.preview,.chart,.kpis,.ask,.arc,.card-grid,.wrap>.grid,.col .bar,.delta .chip,.hero,.k.hi{border-radius:var(--r)}.kpis,.ask,.arc,.card-grid,.wrap>.grid{overflow:hidden}.chapter.dark{border-radius:var(--r-lg)}svg rect{rx:3px}</style></head>
+<body>
+<div class="page">
+<div class="top"><img src="../../assets/accelera-wordmark-ink.png" alt="Accelera Ventures"><span>LP Letter · Q4 2026</span><span class="mono">Data story · 5 chapters</span></div>
+
+<section class="chapter dark" data-screen-label="01 Hook">
+<div class="grid">
+<div style="grid-column:span 7"><div class="eyebrow"><span class="chap">01</span><span class="sep">/</span><span>The Hook</span></div><div class="hero-n">82<small>%</small></div><div class="lbl" style="margin-top:20px">of value creation came from two of thirty-five positions</div></div>
+<div style="grid-column:span 5;align-self:end"><p>That is not a concentration problem. It is the model. <b>€1.97M of gains</b> on €4.15M deployed, with <b>zero write-offs inside the Fund</b>. This letter shows where it came from and what we do next.</p></div>
+</div>
+</section>
+
+<section class="chapter" data-screen-label="02 Context">
+<div class="grid">
+<div style="grid-column:span 5"><div class="eyebrow"><span class="chap">02</span><span class="sep">/</span><span>Context</span></div><h2>Two vehicles. Six years. Thirty-five bets of €100–300K.</h2><p>Small early cheques, followed with reserves. The base rate for a seed portfolio of this size is one or two outliers. We planned for that.</p><div class="src">Source · Fund administrator, Q4 2026 marks</div></div>
+<div style="grid-column:span 7"><div class="kpis"><div class="k"><div class="lbl">Deployed</div><div class="v">€4.15<small>M</small></div><div class="d"><i></i>35 positions</div></div><div class="k"><div class="lbl">Current value</div><div class="v">€6.12<small>M</small></div><div class="d"><i></i>+€1.97M</div></div><div class="k"><div class="lbl">Blended MOIC</div><div class="v">1.47<small>×</small></div><div class="d"><i></i>SPV 2.09× · Fund I 1.27×</div></div></div>
+<div class="chart" style="margin-top:24px"><div class="t"><span>Ticket size distribution · 35 positions</span><b>mode €150–200K</b></div><svg viewBox="0 0 644 150"><line class="rule" x1="40" y1="130" x2="644" y2="130"></line><rect x="50" y="110" width="94" height="20" fill="#0a0a0a"></rect><rect x="148" y="70" width="94" height="60" fill="#0a0a0a"></rect><rect x="246" y="20" width="94" height="110" fill="#7BF076"></rect><rect x="344" y="50" width="94" height="80" fill="#0a0a0a"></rect><rect x="442" y="80" width="94" height="50" fill="#0a0a0a"></rect><rect x="540" y="100" width="94" height="30" fill="#0a0a0a"></rect><text class="val" x="97" y="104" text-anchor="middle">2</text><text class="val" x="195" y="64" text-anchor="middle">6</text><text class="val" x="293" y="14" text-anchor="middle">11</text><text class="val" x="391" y="44" text-anchor="middle">8</text><text class="val" x="489" y="74" text-anchor="middle">5</text><text class="val" x="587" y="94" text-anchor="middle">3</text><g class="ax"><text x="50" y="146">€50K</text><text x="148" y="146">€100K</text><text x="246" y="146">€150K</text><text x="344" y="146">€200K</text><text x="442" y="146">€250K</text><text x="540" y="146">€300K</text></g></svg></div></div>
+</div>
+</section>
+
+<section class="chapter" data-screen-label="03 Turn">
+<div class="grid">
+<div style="grid-column:span 12"><div class="eyebrow"><span class="chap">03</span><span class="sep">/</span><span>The Turn</span></div><h2>Where the €1.97M came from.</h2></div>
+<div style="grid-column:span 8"><div class="chart"><div class="t"><span>Value bridge · deployed to current · €M</span><b>€4.15M → €6.12M</b></div><svg viewBox="0 0 644 220"><line class="hair" x1="40" y1="20" x2="644" y2="20"></line><line class="hair" x1="40" y1="100" x2="644" y2="100"></line><line class="rule" x1="40" y1="180" x2="644" y2="180"></line><text class="ax" x="0" y="23">€7M</text><text class="ax" x="0" y="103">€3.5M</text><text class="ax" x="0" y="183">0</text><rect x="60" y="85.1" width="90" height="94.9" fill="#0a0a0a"></rect><text class="val" x="105" y="78" text-anchor="middle">4.15</text><line class="dash" x1="150" y1="85.1" x2="180" y2="85.1"></line><rect x="180" y="38" width="90" height="47.1" fill="#7BF076"></rect><text class="val" x="225" y="31" text-anchor="middle">+2.06</text><line class="dash" x1="270" y1="38" x2="300" y2="38"></line><rect x="300" y="29.1" width="90" height="8.9" fill="#d4f5d1"></rect><text class="val" x="345" y="22" text-anchor="middle">+0.39</text><line class="dash" x1="390" y1="29.1" x2="420" y2="29.1"></line><rect x="420" y="29.1" width="90" height="11" fill="#9a9a9e"></rect><text class="val g" x="465" y="56" text-anchor="middle">−0.48</text><line class="dash" x1="510" y1="40.1" x2="540" y2="40.1"></line><rect x="540" y="40.1" width="90" height="139.9" fill="#0a0a0a"></rect><text class="val" x="585" y="33" text-anchor="middle">6.12</text><g class="ax" text-anchor="middle"><text x="105" y="200">Deployed</text><text x="225" y="200">Ekonoke + Cocuus</text><text x="345" y="200">Other mark-ups</text><text x="465" y="200">Write-offs · fees</text><text x="585" y="200">Current</text></g></svg></div></div>
+<div style="grid-column:span 4"><p><b>Two positions, +€2.06M.</b> Ekonoke exited at 14.58× in December 2022. Cocuus is marked at 5.26× after its Series A.</p><p><b>The tail added +€0.39M</b> across nine mark-ups. Two pre-programme write-offs and fees took back €0.48M.</p><div class="src">Ekonoke · €152K → €2.21M · 29-month hold</div></div>
+</div>
+</section>
+
+<section class="chapter" data-screen-label="04 Resolution">
+<div class="grid">
+<div style="grid-column:span 4"><div class="eyebrow"><span class="chap">04</span><span class="sep">/</span><span>Resolution</span></div><h2>The SPV proves the thesis. The Fund is two years behind it — on schedule.</h2><p>Spain SPV entered 2020 and sits at <b>2.09×</b>. Fund I entered 2022 and sits at <b>1.27×</b> — almost exactly where the SPV was at the same age.</p></div>
+<div style="grid-column:span 8"><div class="chart"><div class="t"><span>MOIC by vehicle age · quarters since first close</span><b>same curve, two years apart</b></div><svg viewBox="0 0 644 220"><line class="hair" x1="40" y1="34.6" x2="480" y2="34.6"></line><line class="hair" x1="40" y1="96.2" x2="480" y2="96.2"></line><line class="rule" x1="40" y1="157.7" x2="480" y2="157.7"></line><text class="ax" x="0" y="38">2.0×</text><text class="ax" x="0" y="100">1.5×</text><text class="ax" x="0" y="161">1.0×</text><polyline points="40,157.7 95,155 150,148 205,137 260,120 315,95 370,65 425,40 480,23.5" fill="none" stroke="#7BF076" stroke-width="2.5"></polyline><polyline points="40,157.7 95,155.2 150,151.5 205,145.4 260,139.2 315,124.5" fill="none" stroke="#0a0a0a" stroke-width="2"></polyline><rect x="310" y="119.5" width="10" height="10" fill="#0a0a0a"></rect><rect x="475" y="18.5" width="10" height="10" fill="#7BF076" stroke="#0a0a0a" stroke-width="2"></rect><line x1="315" y1="119" x2="315" y2="60" stroke="#0a0a0a"></line><line x1="315" y1="60" x2="500" y2="60" stroke="#0a0a0a"></line><rect x="500" y="51" width="18" height="18" fill="#0a0a0a"></rect><text class="mk" x="509" y="64" text-anchor="middle" fill="#fff">01</text><foreignObject x="526" y="49" width="118" height="70"><div xmlns="http://www.w3.org/1999/xhtml" class="note"><b>Fund I at Q10 · 1.27×.</b> SPV at Q10 was 1.30×.</div></foreignObject><text class="val" x="492" y="27">2.09×</text><g class="ax" text-anchor="middle"><text x="40" y="180">Q0</text><text x="150" y="180">Q4</text><text x="260" y="180">Q8</text><text x="370" y="180">Q12</text><text x="480" y="180">Q16</text></g></svg><div class="legend"><span><i style="background:#7BF076"></i>Spain SPV · 2020</span><span><i style="background:#0a0a0a"></i>Fund I · 2022</span></div></div></div>
+</div>
+</section>
+
+<section class="chapter" data-screen-label="05 Ask" style="border-bottom:none">
+<div class="grid">
+<div style="grid-column:span 12"><div class="eyebrow"><span class="chap">05</span><span class="sep">/</span><span>The Ask</span></div><h2>Fund II first close — March 2027. Two options.</h2></div>
+<div style="grid-column:span 12"><div class="ask"><div class="opt on"><div class="n">OPTION A · RECOMMENDED</div><h3>Re-up at pro-rata, €25M target.</h3><p>Same strategy, same ticket band, reserves raised to 40%. Indicative allocation letter by 31 January.</p></div><div class="opt"><div class="n">OPTION B</div><h3>Hold. Revisit at Fund I DPI ≥ 0.5×.</h3><p>Expected Q4 2027 on current pipeline. No allocation guaranteed at that point.</p></div></div></div>
+</div>
+<div class="foot"><span>Accelera Ventures</span><span>Confidential · LP distribution only</span></div>
+</section>
+</div>
+</body>
+</html>

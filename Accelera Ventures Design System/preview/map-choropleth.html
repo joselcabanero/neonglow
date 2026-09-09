@@ -1,0 +1,25 @@
+<!-- @dsCard group="Maps" viewport="700x340" name="Choropleth · Europe" subtitle="Real Natural Earth geometry · MOIC ramp · white borders · Mercator fit" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Choropleth</title>
+<link rel="stylesheet" href="../colors_and_type.css"><link rel="stylesheet" href="chart.css">
+<script src="https://unpkg.com/d3@7.9.0/dist/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js" integrity="sha384-Ukv1p/xTma6P4/2bY5KzWBw+ydSpXmhCMtyciIQVDJ1RmOxtCYNMF1uXT9T63H67" crossorigin="anonymous"></script>
+<script src="map.js"></script>
+<style>:root{--r-sm:6px;--r:12px}.map{border-radius:var(--r);overflow:hidden;background:#fff}</style></head><body>
+<div class="wrap">
+<div class="ttl"><span>Portfolio MOIC by country · Europe</span><b>8 markets</b></div>
+<div id="m" class="map"></div>
+<div class="legend"><span><i style="background:#eeeef0"></i>No position</span><span><i style="background:#e0e0e4"></i>1.0–1.2×</span><span><i style="background:#d4f5d1"></i>1.2–1.5×</span><span><i style="background:#7BF076"></i>1.5–2×</span><span><i style="background:#0a0a0a"></i>2×+</span></div>
+</div>
+<script>
+(async()=>{const M=AcceleraMap,I=M.ID;const feats=await M.countries();
+const data={[I.ES]:2.09,[I.PT]:1.31,[I.FR]:1.18,[I.IT]:1.46,[I.NL]:1.72,[I.DE]:1.12,[I.GB]:1.05,[I.IE]:1.26};
+const W=644,H=250;const s=M.svg('#m',W,H);
+const focus={type:'FeatureCollection',features:feats.filter(f=>[I.ES,I.PT,I.FR,I.IT,I.NL,I.DE,I.GB,I.IE,I.BE,I.CH,I.AT,I.DK,I.PL,I.CZ].includes(f.id))};
+const proj=d3.geoMercator().fitExtent([[8,8],[W-8,H-8]],{type:'MultiPoint',coordinates:[[-11,35],[26,60]]});const path=d3.geoPath(proj);
+M.land(s,feats,path,d=>data[d.id]==null?M.G1:M.rampMoic(data[d.id]));
+const lab=[[I.ES,'2.09×',-3.7,40.2],[I.NL,'1.72×',5.5,52.3],[I.IT,'1.46×',12.5,42.8]];
+for(const [id,t,lon,lat] of lab){const [x,y]=proj([lon,lat]);s.append('text').attr('x',x).attr('y',y+4).attr('text-anchor','middle').attr('class',data[id]>=2?'val w':'val').text(t);}
+})();
+</script>
+</body></html>
