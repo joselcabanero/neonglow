@@ -4,6 +4,14 @@ export const primitives = {
   green: "#7BF076",
   greenHover: "#6de066",
   greenPress: "#5fd158",
+  // Neon glow palette — five chart series, fixed order, never cycled.
+  // Bright set for ink surfaces; deep set for paper (all ≥3:1 on white).
+  neonGreen: "#7BF076", neonCyan: "#2FD4FF", neonViolet: "#B794FF",
+  neonAmber: "#FFC94A", neonEmber: "#FF8A3D",
+  deepGreen: "#1F9A1F", deepCyan: "#0077C8", deepViolet: "#7C4DFF",
+  deepAmber: "#C27C00", deepEmber: "#D9640F",
+  // Green-tinted dark surfaces
+  night: "#0D1A12", moss: "#16301F",
   radius0: "0px",
   radiusAction: "4px",
   baseline: "24px",
