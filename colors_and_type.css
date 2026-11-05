@@ -71,6 +71,23 @@
   --grey-d8:     #d8d8dc;  /* Emphasised body on dark */
   --grey-88:     #888888;  /* Dark-slide chrome (logo/page) */
 
+  /* ----- Neon glow chart series (fixed order, never cycled) ----- */
+  /* On ink / dark slides */
+  --neon-green:  #7BF076;
+  --neon-cyan:   #2FD4FF;
+  --neon-violet: #B794FF;
+  --neon-amber:  #FFC94A;
+  --neon-ember:  #FF8A3D;
+  /* On paper — deep twins, all ≥3:1 on white */
+  --deep-green:  #1F9A1F;
+  --deep-cyan:   #0077C8;
+  --deep-violet: #7C4DFF;
+  --deep-amber:  #C27C00;
+  --deep-ember:  #D9640F;
+  /* Green-tinted dark surfaces */
+  --night:       #0D1A12;  /* Raised card on ink */
+  --moss:        #16301F;  /* Deeper panel on ink, sparingly */
+
   /* ----- Rules / hairlines ----- */
   --rule:        #0a0a0a;
   --rule-faint:  rgba(10, 10, 10, 0.12);

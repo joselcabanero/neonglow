@@ -19,13 +19,15 @@ const light = {
   elevationOverlay: "0 10px 34px rgba(10,10,10,.18), 0 2px 8px rgba(10,10,10,.10)",
   scrim: "rgba(10,10,10,.42)",
   glow: "none",
+  series1: p.deepGreen as string, series2: p.deepCyan as string, series3: p.deepViolet as string,
+  series4: p.deepAmber as string, series5: p.deepEmber as string,
 };
 
 const dark: typeof light = {
   surface: "#0a0a0a",
-  surfaceRaised: "#18181b",
-  surfaceSunken: "#141416",
-  surfaceSunken2: "#1f1f23",
+  surfaceRaised: p.night,
+  surfaceSunken: "#0b130e",
+  surfaceSunken2: p.moss,
   text1: "#f2f2f4", text2: "#d8d8dc", text3: "#9a9a9e",
   borderHairline: "rgba(255,255,255,.15)",
   borderStrong: "rgba(255,255,255,.82)",
@@ -40,6 +42,8 @@ const dark: typeof light = {
   elevationOverlay: "0 12px 36px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.06)",
   scrim: "rgba(0,0,0,.62)",
   glow: "0 0 14px -4px currentColor",
+  series1: p.neonGreen, series2: p.neonCyan, series3: p.neonViolet,
+  series4: p.neonAmber, series5: p.neonEmber,
 };
 
 export type SemanticTokens = typeof light;

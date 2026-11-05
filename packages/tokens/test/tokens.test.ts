@@ -30,6 +30,25 @@ describe("themes", () => {
   });
 });
 
+describe("neon glow series", () => {
+  const lum = (h: string) => {
+    const n = parseInt(h.slice(1), 16);
+    const f = (c: number) => (c /= 255) <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
+    return 0.2126 * f(n >> 16) + 0.7152 * f((n >> 8) & 255) + 0.0722 * f(n & 255);
+  };
+  const ratio = (a: string, b: string) => {
+    const [x, y] = [lum(a), lum(b)].sort((m, n) => n - m);
+    return (x + 0.05) / (y + 0.05);
+  };
+  const keys = ["series1", "series2", "series3", "series4", "series5"] as const;
+  it("light series reach 3:1 on white", () => {
+    for (const k of keys) expect(ratio(themes.light[k], "#ffffff"), k).toBeGreaterThanOrEqual(3);
+  });
+  it("dark series reach 7:1 on ink", () => {
+    for (const k of keys) expect(ratio(themes.dark[k], "#0a0a0a"), k).toBeGreaterThanOrEqual(7);
+  });
+});
+
 describe("densities", () => {
   it("heights are half-baseline (12px) multiples", () => {
     for (const d of Object.values(densities))

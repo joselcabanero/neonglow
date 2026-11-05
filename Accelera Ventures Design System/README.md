@@ -194,12 +194,26 @@ Card stack order from top: status label (11 px caps) → value (48 px tabular) �
 43 chart cards live in `preview/chart-*.html` (shared styles in `preview/chart.css`). All are flat SVG, editable, and follow one encoding grammar:
 
 **Colour encodes state, never category-for-its-own-sake.**
-- Ink `#0A0A0A` — the primary series, totals, the default bar.
-- Accent `#7BF076` — the one thing the chart is about: the exit, the record year, the mover, the target met. **One accent series per chart.**
+- Cyan `#0077C8` (`--series-2`, deep) — the primary series, totals, the default bar. Replaces ink for data marks; ink stays for axes, rules and text.
+- Green `#1F9A1F` (`--series-1`, deep; neon `#7BF076` on ink) — the one thing the chart is about: the exit, the record year, the mover, the target met. **One story series per chart.**
 - Perf-up `#D4F5D1` — secondary positive (marking up, above cost). Max two greens per chart.
-- Greys `#EEEEF0 → #E0E0E4 → #C6C6CB → #9A9A9E → #555` — context, below-cost, written-off, benchmark. Ordinal ramps run light→dark; the top step of a ramp is ink.
-- Hollow (white fill, 1.5 px ink stroke) — "at cost" / neutral / planned.
+- Greys `#EEEEF0 → #E0E0E4 → #C6C6CB → #9A9A9E → #555` — context, below-cost, written-off, benchmark.
+- Sequential ramps (heatmap, calendar, treemap) run `#EEEEF0 → #D4F5D1 → #9BE896 → #2EC22B → #14532D` — grey for no data, then mint to forest. One hue, never the categorical series.
+- Hollow (white fill, 1.5 px cyan stroke) — "at cost" / neutral / planned.
 - Dashed ink — reference lines (1.0×), benchmarks, decline, planned phases.
+
+**Neon glow series — when a chart must tell categories apart.** Up to five series, always in this order, never cycled. More than five → fold into "Other" or use small multiples. Text never takes the series colour; a swatch beside it carries identity.
+
+| Slot | Name | On ink (`--series-N`, dark) | On paper (`--series-N`, light) |
+|---|---|---|---|
+| 1 | Green | `#7BF076` | `#1F9A1F` |
+| 2 | Cyan | `#2FD4FF` | `#0077C8` |
+| 3 | Violet | `#B794FF` | `#7C4DFF` |
+| 4 | Amber | `#FFC94A` | `#C27C00` |
+| 5 | Ember | `#FF8A3D` | `#D9640F` |
+
+Bright set ≥ 7:1 on ink; deep set ≥ 3:1 on white. Dark surfaces are green-tinted: Night `#0D1A12` for raised cards, Moss `#16301F` for deeper panels. "One accent earned" still applies to single-story charts (emphasis = one series colour + greys).
+
 
 **Structure.**
 - Soft 3 px radius on SVG marks; no gradients, no shadows, no 3D. Bars are rectangles; dots are circles or 8 px squares.
