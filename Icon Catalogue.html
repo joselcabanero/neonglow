@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accelera Ventures — Icon Catalogue</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-sans);}
+  .wrap{max-width:1240px;margin:0 auto;padding:80px 40px 120px}
+  h1{font-size:64px;font-weight:500;letter-spacing:-.02em;margin:0 0 20px}
+  .lede{font-size:22px;font-weight:300;color:var(--ink-2);max-width:760px;margin:0 0 40px;
+  line-height:1.45}
+  .lede code{font-size:18px;background:var(--paper-2);padding:2px 8px;border-radius:6px}
+  .bar{position:sticky;top:0;background:var(--paper);padding:20px 0 20px;z-index:2;
+  border-bottom:2px solid var(--ink);margin-bottom:40px;display:flex;gap:20px;align-items:center}
+  input{flex:1;font-family:var(--font-mono);font-size:16px;padding:14px 18px;
+  border:1.5px solid var(--rule-light);border-radius:6px;background:var(--paper);color:var(--ink)}
+  input:focus{outline:none;border-color:var(--ink)}
+  .count{font-family:var(--font-mono);font-size:14px;color:var(--ink-3);white-space:nowrap}
+  h2{font-size:16px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;
+  color:var(--ink-3);margin:56px 0 20px;display:flex;gap:12px;align-items:baseline}
+  h2 span{font-family:var(--font-mono);font-size:13px;color:var(--ink-3)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(176px,1fr));gap:2px;
+  background:var(--rule-faint);border:1px solid var(--rule-faint)}
+  .ic{background:var(--paper);padding:24px 16px 18px;text-align:center}
+  .ic .g{height:40px;display:flex;align-items:center;justify-content:center;color:var(--ink)}
+  .ic .n{font-family:var(--font-mono);font-size:13px;margin-top:14px;word-break:break-word}
+  .ic .w{font-size:11px;color:var(--ink-3);margin-top:6px;line-height:1.35;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .th.hide,.ic.hide{display:none}
+  table{border-collapse:collapse;margin-top:20px;font-size:14px}
+  td{padding:7px 24px 7px 0;font-family:var(--font-mono);color:var(--ink-2)}
+  td:first-child{color:var(--ink)}
+  .rules{margin-top:80px;padding-top:40px;border-top:2px solid var(--ink)}
+  .rules li{font-size:18px;font-weight:300;color:var(--ink-2);line-height:1.5;margin-bottom:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Icon catalogue</h1>
+  <p class="lede">93 icons in 8 themes. Draw one with
+  <code>X.icon("name")</code>. The name has to exist — <code>icon()</code> raises instead of printing
+  nothing. Search by name or by what you mean: <code>X.find_icon("money")</code>.</p>
+  <div class="bar">
+    <input id="q" type="search" placeholder="Search by name, keyword or theme…" autocomplete="off">
+    <span class="count" id="count"></span>
+  </div>
+  <section class="th" data-theme="interface">
+    <h2>interface<span>34</span></h2>
+    <div class="grid">
+    <div class="ic" data-find="chevron-down down open expand interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="chevron-down"><polyline points="6 9 12 15 18 9" /></svg></div>
+      <div class="n">chevron-down</div>
+      <div class="w">down open expand</div>
+    </div>
+    <div class="ic" data-find="chevron-right right next forward interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="chevron-right"><polyline points="9 6 15 12 9 18" /></svg></div>
+      <div class="n">chevron-right</div>
+      <div class="w">right next forward</div>
+    </div>
+    <div class="ic" data-find="chevron-up up close collapse interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="chevron-up"><polyline points="6 15 12 9 18 15" /></svg></div>
+      <div class="n">chevron-up</div>
+      <div class="w">up close collapse</div>
+    </div>
+    <div class="ic" data-find="chevron-left left back previous interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="chevron-left"><polyline points="15 6 9 12 15 18" /></svg></div>
+      <div class="n">chevron-left</div>
+      <div class="w">left back previous</div>
+    </div>
+    <div class="ic" data-find="caret-down down menu select interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="caret-down"><path d="M7 10l5 5 5-5" /></svg></div>
+      <div class="n">caret-down</div>
+      <div class="w">down menu select</div>
+    </div>
+    <div class="ic" data-find="caret-up up menu select interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="caret-up"><path d="M7 14l5-5 5 5" /></svg></div>
+      <div class="n">caret-up</div>
+      <div class="w">up menu select</div>
+    </div>
+    <div class="ic" data-find="check done yes tick complete interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="check"><polyline points="4 12 10 18 20 6" /></svg></div>
+      <div class="n">check</div>
+      <div class="w">done yes tick complete</div>
+    </div>
+    <div class="ic" data-find="x close no cancel remove interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="x"><line x1="6" y1="6" x2="18" y2="18" /><line x1="18" y1="6" x2="6" y2="18" /></svg></div>
+      <div class="n">x</div>
+      <div class="w">close no cancel remove</div>
+    </div>
+    <div class="ic" data-find="dash none empty not applicable interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="dash"><line x1="6" y1="12" x2="18" y2="12" /></svg></div>
+      <div class="n">dash</div>
+      <div class="w">none empty not applicable</div>
+    </div>
+    <div class="ic" data-find="plus add new more interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="plus"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg></div>
+      <div class="n">plus</div>
+      <div class="w">add new more</div>
+    </div>
+    <div class="ic" data-find="minus remove less subtract interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="minus"><line x1="5" y1="12" x2="19" y2="12" /></svg></div>
+      <div class="n">minus</div>
+      <div class="w">remove less subtract</div>
+    </div>
+    <div class="ic" data-find="search find look magnifier interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="search"><circle cx="11" cy="11" r="7" /><line x1="16.5" y1="16.5" x2="21" y2="21" /></svg></div>
+      <div class="n">search</div>
+      <div class="w">find look magnifier</div>
+    </div>
+    <div class="ic" data-find="command shortcut key interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="command"><path d="M9 6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3z" /></svg></div>
+      <div class="n">command</div>
+      <div class="w">shortcut key</div>
+    </div>
+    <div class="ic" data-find="filter funnel narrow screen stage interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="filter"><polygon points="4 5 20 5 14 12.5 14 19 10 21 10 12.5" /></svg></div>
+      <div class="n">filter</div>
+      <div class="w">funnel narrow screen stage</div>
+    </div>
+    <div class="ic" data-find="sort order rank arrange interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="sort"><line x1="4" y1="7" x2="16" y2="7" /><line x1="4" y1="12" x2="13" y2="12" /><line x1="4" y1="17" x2="10" y2="17" /><polyline points="17 14 20 17 23 14" /></svg></div>
+      <div class="n">sort</div>
+      <div class="w">order rank arrange</div>
+    </div>
+    <div class="ic" data-find="more-horizontal menu options ellipsis interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="more-horizontal"><circle cx="5" cy="12" r="1.4" fill="currentColor" stroke="none" /><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none" /><circle cx="19" cy="12" r="1.4" fill="currentColor" stroke="none" /></svg></div>
+      <div class="n">more-horizontal</div>
+      <div class="w">menu options ellipsis</div>
+    </div>
+    <div class="ic" data-find="more-vertical menu options ellipsis interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="more-vertical"><circle cx="12" cy="5" r="1.4" fill="currentColor" stroke="none" /><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none" /><circle cx="12" cy="19" r="1.4" fill="currentColor" stroke="none" /></svg></div>
+      <div class="n">more-vertical</div>
+      <div class="w">menu options ellipsis</div>
+    </div>
+    <div class="ic" data-find="arrow-right flow next leads to becomes interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="arrow-right"><line x1="4" y1="12" x2="20" y2="12" /><polyline points="14 6 20 12 14 18" /></svg></div>
+      <div class="n">arrow-right</div>
+      <div class="w">flow next leads to becomes</div>
+    </div>
+    <div class="ic" data-find="arrow-left back return interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="arrow-left"><line x1="20" y1="12" x2="4" y2="12" /><polyline points="10 6 4 12 10 18" /></svg></div>
+      <div class="n">arrow-left</div>
+      <div class="w">back return</div>
+    </div>
+    <div class="ic" data-find="arrow-up rise increase up interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="arrow-up"><line x1="12" y1="20" x2="12" y2="4" /><polyline points="6 10 12 4 18 10" /></svg></div>
+      <div class="n">arrow-up</div>
+      <div class="w">rise increase up</div>
+    </div>
+    <div class="ic" data-find="arrow-down fall decrease down interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="arrow-down"><line x1="12" y1="4" x2="12" y2="20" /><polyline points="6 14 12 20 18 14" /></svg></div>
+      <div class="n">arrow-down</div>
+      <div class="w">fall decrease down</div>
+    </div>
+    <div class="ic" data-find="calendar date when schedule quarter interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="calendar"><rect x="4" y="5" width="16" height="16" rx="1" /><line x1="4" y1="9" x2="20" y2="9" /><line x1="8" y1="3" x2="8" y2="6" /><line x1="16" y1="3" x2="16" y2="6" /></svg></div>
+      <div class="n">calendar</div>
+      <div class="w">date when schedule quarter</div>
+    </div>
+    <div class="ic" data-find="clock time hold period delayed late interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="clock"><circle cx="12" cy="12" r="8" /><polyline points="12 8 12 12 15 14" /></svg></div>
+      <div class="n">clock</div>
+      <div class="w">time hold period delayed late</div>
+    </div>
+    <div class="ic" data-find="info note detail interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="info"><circle cx="12" cy="12" r="8" /><line x1="12" y1="11" x2="12" y2="16" /><circle cx="12" cy="8" r=".6" fill="currentColor" stroke="none" /></svg></div>
+      <div class="n">info</div>
+      <div class="w">note detail</div>
+    </div>
+    <div class="ic" data-find="warning risk caution attention caveat interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="warning"><path d="M12 4l8.5 15h-17z" /><line x1="12" y1="10" x2="12" y2="14" /><circle cx="12" cy="16.5" r=".6" fill="currentColor" stroke="none" /></svg></div>
+      <div class="n">warning</div>
+      <div class="w">risk caution attention caveat</div>
+    </div>
+    <div class="ic" data-find="error fail rejected wrong written off interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="error"><circle cx="12" cy="12" r="8" /><line x1="9" y1="9" x2="15" y2="15" /><line x1="15" y1="9" x2="9" y2="15" /></svg></div>
+      <div class="n">error</div>
+      <div class="w">fail rejected wrong written off</div>
+    </div>
+    <div class="ic" data-find="success approved on track validated closed won interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="success"><circle cx="12" cy="12" r="8" /><polyline points="8 12 11 15 16 9" /></svg></div>
+      <div class="n">success</div>
+      <div class="w">approved on track validated closed won</div>
+    </div>
+    <div class="ic" data-find="drag-handle move reorder interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="drag-handle"><circle cx="9" cy="6" r="1.2" fill="currentColor" stroke="none" /><circle cx="15" cy="6" r="1.2" fill="currentColor" stroke="none" /><circle cx="9" cy="12" r="1.2" fill="currentColor" stroke="none" /><circle cx="15" cy="12" r="1.2" fill="currentColor" stroke="none" /><circle cx="9" cy="18" r="1.2" fill="currentColor" stroke="none" /><circle cx="15" cy="18" r="1.2" fill="currentColor" stroke="none" /></svg></div>
+      <div class="n">drag-handle</div>
+      <div class="w">move reorder</div>
+    </div>
+    <div class="ic" data-find="external-link open source reference interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="external-link"><path d="M14 5h5v5" /><line x1="19" y1="5" x2="11" y2="13" /><path d="M18 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4" /></svg></div>
+      <div class="n">external-link</div>
+      <div class="w">open source reference</div>
+    </div>
+    <div class="ic" data-find="eye watch visible monitor interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="eye"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" /><circle cx="12" cy="12" r="3" /></svg></div>
+      <div class="n">eye</div>
+      <div class="w">watch visible monitor</div>
+    </div>
+    <div class="ic" data-find="eye-off hidden private confidential interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="eye-off"><path d="M2 12s3.5-7 10-7c2.1 0 3.9.7 5.4 1.7M22 12s-3.5 7-10 7c-2.1 0-3.9-.7-5.4-1.7" /><line x1="4" y1="20" x2="20" y2="4" /></svg></div>
+      <div class="n">eye-off</div>
+      <div class="w">hidden private confidential</div>
+    </div>
+    <div class="ic" data-find="chevron-double expand all interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="chevron-double"><polyline points="6 6 12 12 18 6" /><polyline points="6 13 12 19 18 13" /></svg></div>
+      <div class="n">chevron-double</div>
+      <div class="w">expand all</div>
+    </div>
+    <div class="ic" data-find="folder group category set interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="folder"><path d="M3 7a1 1 0 0 1 1-1h5l2 2h9a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1z" /></svg></div>
+      <div class="n">folder</div>
+      <div class="w">group category set</div>
+    </div>
+    <div class="ic" data-find="doc document report paper file interface">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="doc"><path d="M6 3h8l4 4v14H6z" /><polyline points="14 3 14 7 18 7" /></svg></div>
+      <div class="n">doc</div>
+      <div class="w">document report paper file</div>
+    </div>
+    </div>
+  </section>
+  <section class="th" data-theme="capital">
+    <h2>capital<span>15</span></h2>
+    <div class="grid">
+    <div class="ic" data-find="fund vehicle spv capital pool aum commitment capital">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="fund"><rect x="4" y="15" width="16" height="4.5" rx="1" /><rect x="6" y="9.5" width="12" height="4.5" rx="1" /><rect x="8" y="4" width="8" height="4.5" rx="1" /></svg></div>
+      <div class="n">fund</div>
+      <div class="w">vehicle spv capital pool aum commitment</div>
+    </div>
+    <div class="ic" data-find="investment cheque ticket money deployed entry capital capital">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="investment"><rect x="3" y="7" width="18" height="10" rx="1.5" /><circle cx="12" cy="12" r="2.5" /><line x1="6" y1="12" x2="6.01" y2="12" /><line x1="18" y1="12" x2="18.01" y2="12" /></svg></div>
+      <div class="n">investment</div>
+      <div class="w">cheque ticket money deployed entry capital</div>
+    </div>
+    <div class="ic" data-find="valuation price tag mark post money worth capital">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="valuation"><path d="M3.5 11.5V4.5a1 1 0 0 1 1-1h7l9 9-8 8z" /><circle cx="7.5" cy="7.5" r="1.3" /></svg></div>
+      <div class="n">valuation</div>
+      <div class="w">price tag mark post money worth</div>
+    </div>
+    <div class="ic" data-find="portfolio holdings positions companies book capital">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="portfolio"><rect x="3" y="7" width="18" height="12.5" rx="1.5" /><path d="M9 7V5.2a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1V7" /><line x1="3" y1="12" x2="21" y2="12" /></svg></div>
+      <div class="n">portfolio</div>
+      <div class="w">holdings positions companies book</div>
+    </div>
+    <div class="ic" data-find="funnel pipeline stage screen deal flow narrow capital">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="funnel"><path d="M3 5h18l-7 8v6.5l-4 2V13z" /></svg></div>
+      <div class="n">funnel</div>
+      <div class="w">pipeline stage screen deal flow narrow</div>
+    </div>
+    <div class="ic" data-find="diligence due diligence review check research deal capital">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="diligence"><path d="M6 3h8l4 4v14H6z" /><polyline points="14 3 14 7 18 7" /><circle cx="11.5" cy="13.5" r="2.8" /><line x1="13.6" y1="15.6" x2="16" y2="18" /></svg></div>
+      <div class="n">diligence</div>
+      <div class="w">due diligence review check research deal</div>
+    </div>
+    <div class="ic" data-find="cap-table ownership shares equity stake table capital">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="cap-table"><rect x="3" y="5" width="18" height="14" rx="1.5" /><line x1="3" y1="9.5" x2="21" y2="9.5" /><line x1="9" y1="9.5" x2="9" y2="19" /><line x1="15" y1="9.5" x2="15" y2="19" /></svg></div>
+      <div class="n">cap-table</div>
+      <div class="w">ownership shares equity stake table</div>
+    </div>
+    <div class="ic" data-find="exit realised sale acquisition liquidity moic return capital">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="exit"><path d="M10 4H5.5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1H10" /><line x1="20" y1="12" x2="10" y2="12" /><polyline points="16 8 20 12 16 16" /></svg></div>
+      <div class="n">exit</div>
+      <div class="w">realised sale acquisition liquidity moic return</div>
+    </div>
+    <div class="ic" data-find="growth up markup increase traction rise above cost capital">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="growth"><polyline points="3 17 9 11 13 15 21 7" /><polyline points="15.5 7 21 7 21 12.5" /></svg></div>
+      <div class="n">growth</div>
+      <div class="w">up markup increase traction rise above cost</div>
+    </div>
+    <div class="ic" data-find="burn down decline write off below cost loss capital">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="burn"><polyline points="3 7 9 13 13 9 21 17" /><polyline points="15.5 17 21 17 21 11.5" /></svg></div>
+      <div class="n">burn</div>
+      <div class="w">down decline write off below cost loss</div>
+    </div>
+    <div class="ic" data-find="runway cash months remaining deadline out of money gauge low capital">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="runway"><path d="M3.5 18a8.5 8.5 0 1 1 17 0" /><line x1="3.5" y1="18" x2="20.5" y2="18" /><line x1="12" y1="18" x2="7" y2="12.5" /><circle cx="12" cy="18" r="1.3" fill="currentColor" stroke="none" /></svg></div>
+      <div class="n">runway</div>
+      <div class="w">cash months remaining deadline out of money gauge low</div>
+    </div>
+    <div class="ic" data-find="follow-on reserve bridge second cheque again reinvest capital">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="follow-on"><path d="M20 12a8 8 0 1 1-2.4-5.7" /><polyline points="20 3.5 20 8 15.5 8" /></svg></div>
+      <div class="n">follow-on</div>
+      <div class="w">reserve bridge second cheque again reinvest</div>
+    </div>
+    <div class="ic" data-find="milestone target goal gate flag checkpoint capital">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="milestone"><line x1="6" y1="3" x2="6" y2="21" /><path d="M6 4.5h11.5l-2.6 4 2.6 4H6z" /></svg></div>
+      <div class="n">milestone</div>
+      <div class="w">target goal gate flag checkpoint</div>
+    </div>
+    <div class="ic" data-find="committee board decision vote panel approval capital">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="committee"><circle cx="5.5" cy="8" r="2.2" /><path d="M2 15.5a3.5 3.5 0 0 1 7 0" /><circle cx="12" cy="6.8" r="2.5" /><path d="M8 15.5a4 4 0 0 1 8 0" /><circle cx="18.5" cy="8" r="2.2" /><path d="M15 15.5a3.5 3.5 0 0 1 7 0" /><line x1="2.5" y1="19.5" x2="21.5" y2="19.5" /></svg></div>
+      <div class="n">committee</div>
+      <div class="w">board decision vote panel approval</div>
+    </div>
+    <div class="ic" data-find="investor lp limited partner backer shareholder capital">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="investor"><circle cx="8.5" cy="7.5" r="3" /><path d="M2.5 19.5a6 6 0 0 1 12 0" /><circle cx="18" cy="15" r="3.4" /><circle cx="18" cy="15" r="1.3" /></svg></div>
+      <div class="n">investor</div>
+      <div class="w">lp limited partner backer shareholder</div>
+    </div>
+    </div>
+  </section>
+  <section class="th" data-theme="company">
+    <h2>company<span>5</span></h2>
+    <div class="grid">
+    <div class="ic" data-find="company startup business office building firm company">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="company"><path d="M4 21V5a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v16" /><path d="M14 10h5a1 1 0 0 1 1 1v10" /><line x1="7" y1="8" x2="11" y2="8" /><line x1="7" y1="12" x2="11" y2="12" /><line x1="7" y1="16" x2="11" y2="16" /><line x1="2.5" y1="21" x2="21.5" y2="21" /></svg></div>
+      <div class="n">company</div>
+      <div class="w">startup business office building firm</div>
+    </div>
+    <div class="ic" data-find="founder person ceo entrepreneur individual company">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="founder"><circle cx="12" cy="7.5" r="3.5" /><path d="M5 20.5a7 7 0 0 1 14 0" /></svg></div>
+      <div class="n">founder</div>
+      <div class="w">person ceo entrepreneur individual</div>
+    </div>
+    <div class="ic" data-find="team people staff headcount employees group company">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="team"><circle cx="9" cy="7.5" r="3" /><path d="M3 19.5a6 6 0 0 1 12 0" /><path d="M16.5 5.6a3 3 0 0 1 0 5.8" /><path d="M17.5 14a6 6 0 0 1 3.5 4" /></svg></div>
+      <div class="n">team</div>
+      <div class="w">people staff headcount employees group</div>
+    </div>
+    <div class="ic" data-find="hiring recruit add headcount grow team company">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="hiring"><circle cx="10" cy="7.5" r="3.4" /><path d="M3 20a7 7 0 0 1 13.2-3.2" /><line x1="19" y1="14" x2="19" y2="20" /><line x1="16" y1="17" x2="22" y2="17" /></svg></div>
+      <div class="n">hiring</div>
+      <div class="w">recruit add headcount grow team</div>
+    </div>
+    <div class="ic" data-find="board governance seat directors meeting table company">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="board"><rect x="4" y="9" width="16" height="6" rx="3" /><circle cx="8.5" cy="5" r="1.9" /><circle cx="15.5" cy="5" r="1.9" /><circle cx="8.5" cy="19" r="1.9" /><circle cx="15.5" cy="19" r="1.9" /></svg></div>
+      <div class="n">board</div>
+      <div class="w">governance seat directors meeting table</div>
+    </div>
+    </div>
+  </section>
+  <section class="th" data-theme="market">
+    <h2>market<span>4</span></h2>
+    <div class="grid">
+    <div class="ic" data-find="market world global geography tam region market">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="market"><circle cx="12" cy="12" r="8.5" /><ellipse cx="12" cy="12" rx="3.6" ry="8.5" /><line x1="3.5" y1="12" x2="20.5" y2="12" /></svg></div>
+      <div class="n">market</div>
+      <div class="w">world global geography tam region</div>
+    </div>
+    <div class="ic" data-find="customer buyer demand offtake client sales market">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="customer"><circle cx="9.5" cy="19" r="1.5" /><circle cx="17" cy="19" r="1.5" /><path d="M2.5 4H5l2.6 10.5h10L20 7.5H6.2" /></svg></div>
+      <div class="n">customer</div>
+      <div class="w">buyer demand offtake client sales</div>
+    </div>
+    <div class="ic" data-find="revenue money sales arr turnover income market">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="revenue"><circle cx="12" cy="12" r="8.5" /><path d="M15 9.4A3.2 3.2 0 0 0 12 8c-1.7 0-3 .9-3 2s1.3 1.9 3 1.9 3 .9 3 2-1.3 2-3 2a3.2 3.2 0 0 1-3-1.4" /><line x1="12" y1="6" x2="12" y2="18" /></svg></div>
+      <div class="n">revenue</div>
+      <div class="w">money sales arr turnover income</div>
+    </div>
+    <div class="ic" data-find="partnership alliance joint overlap deal partner market">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="partnership"><circle cx="8.8" cy="12" r="5.2" /><circle cx="15.2" cy="12" r="5.2" /></svg></div>
+      <div class="n">partnership</div>
+      <div class="w">alliance joint overlap deal partner</div>
+    </div>
+    </div>
+  </section>
+  <section class="th" data-theme="technology">
+    <h2>technology<span>9</span></h2>
+    <div class="grid">
+    <div class="ic" data-find="lab flask experiment chemistry rnd science technology">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="lab"><path d="M9.5 3v6.2L4.6 18.6A1.4 1.4 0 0 0 5.9 20.7h12.2a1.4 1.4 0 0 0 1.3-2.1L14.5 9.2V3" /><line x1="8" y1="3" x2="16" y2="3" /><line x1="7" y1="14" x2="17" y2="14" /></svg></div>
+      <div class="n">lab</div>
+      <div class="w">flask experiment chemistry rnd science</div>
+    </div>
+    <div class="ic" data-find="research microscope science study paper lab technology">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="research"><line x1="3.5" y1="21" x2="20.5" y2="21" /><path d="M7 21v-1.5a5 5 0 0 1 5-5h1.5" /><line x1="4" y1="16.5" x2="11" y2="16.5" /><rect x="12.5" y="3" width="5.5" height="11" rx="2.7" /><line x1="15.25" y1="14" x2="15.25" y2="16.5" /></svg></div>
+      <div class="n">research</div>
+      <div class="w">microscope science study paper lab</div>
+    </div>
+    <div class="ic" data-find="patent ip protection shield granted moat technology">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="patent"><path d="M12 3l7.5 3.2v5.8c0 4.6-3.2 8-7.5 9.4-4.3-1.4-7.5-4.8-7.5-9.4V6.2z" /><polyline points="9 12 11.2 14.2 15.2 10" /></svg></div>
+      <div class="n">patent</div>
+      <div class="w">ip protection shield granted moat</div>
+    </div>
+    <div class="ic" data-find="prototype mvp cube unit product build trl technology">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="prototype"><path d="M12 3l8 4.6v8.8L12 21l-8-4.6V7.6z" /><polyline points="4 7.6 12 12.2 20 7.6" /><line x1="12" y1="12.2" x2="12" y2="21" /></svg></div>
+      <div class="n">prototype</div>
+      <div class="w">mvp cube unit product build trl</div>
+    </div>
+    <div class="ic" data-find="factory plant manufacturing scale up production industrial technology">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="factory"><path d="M3 21v-9.5l6 3.5v-3.5l6 3.5V7l6 3.5V21z" /><line x1="2" y1="21" x2="22" y2="21" /><line x1="7" y1="18" x2="7" y2="18.01" /></svg></div>
+      <div class="n">factory</div>
+      <div class="w">plant manufacturing scale up production industrial</div>
+    </div>
+    <div class="ic" data-find="data database dataset records storage technology">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="data"><ellipse cx="12" cy="6" rx="7.5" ry="2.8" /><path d="M4.5 6v12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8V6" /><path d="M4.5 12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8" /></svg></div>
+      <div class="n">data</div>
+      <div class="w">database dataset records storage</div>
+    </div>
+    <div class="ic" data-find="ai model machine learning network algorithm technology">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="ai"><circle cx="12" cy="12" r="2.6" /><circle cx="5" cy="5.5" r="1.8" /><circle cx="19" cy="5.5" r="1.8" /><circle cx="5" cy="18.5" r="1.8" /><circle cx="19" cy="18.5" r="1.8" /><line x1="6.3" y1="6.8" x2="10.2" y2="10.3" /><line x1="17.7" y1="6.8" x2="13.8" y2="10.3" /><line x1="6.3" y1="17.2" x2="10.2" y2="13.7" /><line x1="17.7" y1="17.2" x2="13.8" y2="13.7" /></svg></div>
+      <div class="n">ai</div>
+      <div class="w">model machine learning network algorithm</div>
+    </div>
+    <div class="ic" data-find="software code platform saas digital technology">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="software"><polyline points="9 6.5 3.5 12 9 17.5" /><polyline points="15 6.5 20.5 12 15 17.5" /></svg></div>
+      <div class="n">software</div>
+      <div class="w">code platform saas digital</div>
+    </div>
+    <div class="ic" data-find="hardware chip device sensor equipment deep tech technology">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="hardware"><rect x="7" y="7" width="10" height="10" rx="1.5" /><line x1="9.5" y1="3.5" x2="9.5" y2="7" /><line x1="14.5" y1="3.5" x2="14.5" y2="7" /><line x1="9.5" y1="17" x2="9.5" y2="20.5" /><line x1="14.5" y1="17" x2="14.5" y2="20.5" /><line x1="3.5" y1="9.5" x2="7" y2="9.5" /><line x1="3.5" y1="14.5" x2="7" y2="14.5" /><line x1="17" y1="9.5" x2="20.5" y2="9.5" /><line x1="17" y1="14.5" x2="20.5" y2="14.5" /></svg></div>
+      <div class="n">hardware</div>
+      <div class="w">chip device sensor equipment deep tech</div>
+    </div>
+    </div>
+  </section>
+  <section class="th" data-theme="climate">
+    <h2>climate<span>13</span></h2>
+    <div class="grid">
+    <div class="ic" data-find="emissions co2 scope chimney pollution footprint climate">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="emissions"><path d="M5.5 21V9.5" /><path d="M10 21V9.5" /><path d="M4.8 9.5h5.9L9.9 4.2H5.6z" /><path d="M13.5 7.5c1.4 0 1.4 1.8 2.8 1.8s1.4-1.8 2.8-1.8" /><path d="M13.5 12.5c1.4 0 1.4 1.8 2.8 1.8s1.4-1.8 2.8-1.8" /></svg></div>
+      <div class="n">emissions</div>
+      <div class="w">co2 scope chimney pollution footprint</div>
+    </div>
+    <div class="ic" data-find="carbon capture sequestration removal offset drawdown climate">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="carbon"><path d="M7 13.5a3.6 3.6 0 0 1 .6-7.2 5 5 0 0 1 9.5 1.5 3.1 3.1 0 0 1-.6 5.7" /><line x1="12" y1="12" x2="12" y2="21" /><polyline points="8.8 17.8 12 21 15.2 17.8" /></svg></div>
+      <div class="n">carbon</div>
+      <div class="w">capture sequestration removal offset drawdown</div>
+    </div>
+    <div class="ic" data-find="renewable clean energy cycle regenerate renew climate">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="renewable"><path d="M20 12a8 8 0 0 1-13.7 5.7" /><polyline points="3.5 20 3.5 14.8 8.7 14.8" /><path d="M4 12a8 8 0 0 1 13.7-5.7" /><polyline points="20.5 4 20.5 9.2 15.3 9.2" /></svg></div>
+      <div class="n">renewable</div>
+      <div class="w">clean energy cycle regenerate renew</div>
+    </div>
+    <div class="ic" data-find="solar pv panel sun photovoltaic climate">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="solar"><circle cx="12" cy="5.5" r="2.6" /><line x1="12" y1="0.8" x2="12" y2="2" /><line x1="7.8" y1="2.6" x2="8.6" y2="3.6" /><line x1="16.2" y1="2.6" x2="15.4" y2="3.6" /><path d="M4.5 20.5h15l-2.2-8.5H6.7z" /><line x1="5.6" y1="16.2" x2="18.4" y2="16.2" /><line x1="11.2" y1="12" x2="10.4" y2="20.5" /><line x1="12.8" y1="12" x2="13.6" y2="20.5" /></svg></div>
+      <div class="n">solar</div>
+      <div class="w">pv panel sun photovoltaic</div>
+    </div>
+    <div class="ic" data-find="wind turbine power generation offshore climate">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="wind"><line x1="12" y1="12.8" x2="12" y2="21" /><line x1="9" y1="21" x2="15" y2="21" /><circle cx="12" cy="11.2" r="1.4" /><line x1="12" y1="9.8" x2="12" y2="3" /><line x1="13.2" y1="12" x2="19.2" y2="15" /><line x1="10.8" y1="12" x2="4.8" y2="15" /></svg></div>
+      <div class="n">wind</div>
+      <div class="w">turbine power generation offshore</div>
+    </div>
+    <div class="ic" data-find="battery storage charge cell energy climate">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="battery"><rect x="2.5" y="8" width="16.5" height="9" rx="1.8" /><line x1="21.5" y1="11" x2="21.5" y2="14" /><line x1="6.5" y1="11" x2="6.5" y2="14" /><line x1="10.5" y1="11" x2="10.5" y2="14" /></svg></div>
+      <div class="n">battery</div>
+      <div class="w">storage charge cell energy</div>
+    </div>
+    <div class="ic" data-find="grid network distribution utility infrastructure climate">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="grid"><line x1="3" y1="9" x2="21" y2="9" /><line x1="3" y1="15" x2="21" y2="15" /><line x1="9" y1="3" x2="9" y2="21" /><line x1="15" y1="3" x2="15" y2="21" /><circle cx="9" cy="9" r="1.6" fill="currentColor" stroke="none" /></svg></div>
+      <div class="n">grid</div>
+      <div class="w">network distribution utility infrastructure</div>
+    </div>
+    <div class="ic" data-find="water droplet irrigation blue scarcity climate">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="water"><path d="M12 3.2s6.2 6.6 6.2 10.6a6.2 6.2 0 0 1-12.4 0C5.8 9.8 12 3.2 12 3.2z" /></svg></div>
+      <div class="n">water</div>
+      <div class="w">droplet irrigation blue scarcity</div>
+    </div>
+    <div class="ic" data-find="waste residue byproduct landfill disposal climate">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="waste"><line x1="3.5" y1="7" x2="20.5" y2="7" /><path d="M6 7l1 13.5h10L18 7" /><path d="M9.5 7V4.2a.8.8 0 0 1 .8-.8h3.4a.8.8 0 0 1 .8.8V7" /><line x1="10" y1="11" x2="10.4" y2="17" /><line x1="14" y1="11" x2="13.6" y2="17" /></svg></div>
+      <div class="n">waste</div>
+      <div class="w">residue byproduct landfill disposal</div>
+    </div>
+    <div class="ic" data-find="circular loop recycle reuse closed valorisation climate">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="circular"><path d="M5.5 9.2A7.6 7.6 0 0 1 18.2 7.4" /><polyline points="18.6 3.2 18.8 7.8 14.2 8" /><path d="M18.5 14.8A7.6 7.6 0 0 1 5.8 16.6" /><polyline points="5.4 20.8 5.2 16.2 9.8 16" /></svg></div>
+      <div class="n">circular</div>
+      <div class="w">loop recycle reuse closed valorisation</div>
+    </div>
+    <div class="ic" data-find="leaf nature biodiversity bio green plant climate">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="leaf"><path d="M4.5 19.5C4.5 10.5 10.5 4.5 20 4.5c0 9.5-5.5 15-15 15z" /><line x1="4.5" y1="19.5" x2="13" y2="11" /></svg></div>
+      <div class="n">leaf</div>
+      <div class="w">nature biodiversity bio green plant</div>
+    </div>
+    <div class="ic" data-find="soil agriculture land regenerative farm crop climate">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="soil"><line x1="3" y1="13" x2="21" y2="13" /><line x1="3" y1="17" x2="21" y2="17" /><line x1="3" y1="21" x2="21" y2="21" /><line x1="12" y1="13" x2="12" y2="5" /><path d="M12 8.5c0-2 1.5-3.2 3.6-3.2" /><path d="M12 10.5c0-2-1.5-3.2-3.6-3.2" /></svg></div>
+      <div class="n">soil</div>
+      <div class="w">agriculture land regenerative farm crop</div>
+    </div>
+    <div class="ic" data-find="forest tree forestry carbon sink land use climate">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="forest"><path d="M7 12.5H3.2L7 6.2l3.8 6.3H7z" /><path d="M7 16.5H3.8L7 11.2l3.2 5.3H7z" /><line x1="7" y1="16.5" x2="7" y2="21" /><path d="M17 11.5h-3.4L17 5.8l3.4 5.7H17z" /><line x1="17" y1="11.5" x2="17" y2="21" /><line x1="3" y1="21" x2="21" y2="21" /></svg></div>
+      <div class="n">forest</div>
+      <div class="w">tree forestry carbon sink land use</div>
+    </div>
+    </div>
+  </section>
+  <section class="th" data-theme="biotech">
+    <h2>biotech<span>8</span></h2>
+    <div class="grid">
+    <div class="ic" data-find="dna genomics gene helix sequence genetic biotech">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="dna"><path d="M8 3c0 6 8 6 8 9s-8 3-8 9" /><path d="M16 3c0 6-8 6-8 9s8 3 8 9" /><line x1="9.6" y1="6.5" x2="14.4" y2="6.5" /><line x1="8.2" y1="12" x2="15.8" y2="12" /><line x1="9.6" y1="17.5" x2="14.4" y2="17.5" /></svg></div>
+      <div class="n">dna</div>
+      <div class="w">genomics gene helix sequence genetic</div>
+    </div>
+    <div class="ic" data-find="cell biology culture strain organism microbe biotech">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="cell"><circle cx="12" cy="12" r="8.5" /><circle cx="13.2" cy="10.8" r="2.6" /><circle cx="8.2" cy="14.8" r="1.1" /></svg></div>
+      <div class="n">cell</div>
+      <div class="w">biology culture strain organism microbe</div>
+    </div>
+    <div class="ic" data-find="molecule compound chemistry ingredient structure biotech">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="molecule"><circle cx="5.8" cy="17.2" r="2.5" /><circle cx="18.2" cy="17.2" r="2.5" /><circle cx="12" cy="6" r="2.5" /><line x1="7.3" y1="15.2" x2="10.5" y2="8" /><line x1="16.7" y1="15.2" x2="13.5" y2="8" /><line x1="8.3" y1="17.2" x2="15.7" y2="17.2" /></svg></div>
+      <div class="n">molecule</div>
+      <div class="w">compound chemistry ingredient structure</div>
+    </div>
+    <div class="ic" data-find="bioreactor fermentation tank vessel precision scale biotech">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="bioreactor"><rect x="6" y="5.5" width="12" height="15" rx="2" /><line x1="6" y1="11" x2="18" y2="11" /><circle cx="9.8" cy="15.5" r="1.1" /><circle cx="14.2" cy="17.5" r="1.4" /><circle cx="12.4" cy="13.6" r=".8" /><line x1="9" y1="2.5" x2="9" y2="5.5" /><line x1="15" y1="2.5" x2="15" y2="5.5" /></svg></div>
+      <div class="n">bioreactor</div>
+      <div class="w">fermentation tank vessel precision scale</div>
+    </div>
+    <div class="ic" data-find="clinical-trial study trial protocol phase patient biotech">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="clinical-trial"><rect x="5" y="4" width="14" height="17" rx="1.8" /><path d="M9.2 4V3a1 1 0 0 1 1-1h3.6a1 1 0 0 1 1 1v1" /><line x1="12" y1="10" x2="12" y2="16" /><line x1="9" y1="13" x2="15" y2="13" /></svg></div>
+      <div class="n">clinical-trial</div>
+      <div class="w">study trial protocol phase patient</div>
+    </div>
+    <div class="ic" data-find="regulatory approval efsa fda novel food compliance biotech">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="regulatory"><path d="M12 3l7.5 3.2v5.8c0 4.6-3.2 8-7.5 9.4-4.3-1.4-7.5-4.8-7.5-9.4V6.2z" /><line x1="8.8" y1="11" x2="15.2" y2="11" /><line x1="8.8" y1="14" x2="13.2" y2="14" /></svg></div>
+      <div class="n">regulatory</div>
+      <div class="w">approval efsa fda novel food compliance</div>
+    </div>
+    <div class="ic" data-find="sequencing read genome assay signal spectrum biotech">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="sequencing"><line x1="4" y1="8.5" x2="4" y2="15.5" /><line x1="8" y1="4.5" x2="8" y2="19.5" /><line x1="12" y1="9.5" x2="12" y2="14.5" /><line x1="16" y1="3.5" x2="16" y2="20.5" /><line x1="20" y1="7" x2="20" y2="17" /></svg></div>
+      <div class="n">sequencing</div>
+      <div class="w">read genome assay signal spectrum</div>
+    </div>
+    <div class="ic" data-find="protein chain fold alternative amino peptide biotech">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="protein"><path d="M4 18.5c2.5-5.5 4.5 1.5 6.5-3.5s3 3.5 5 0 1-5.5 3.5-6.5" /><circle cx="4" cy="18.5" r="1.6" /><circle cx="19" cy="8.5" r="1.6" /></svg></div>
+      <div class="n">protein</div>
+      <div class="w">chain fold alternative amino peptide</div>
+    </div>
+    </div>
+  </section>
+  <section class="th" data-theme="status">
+    <h2>status<span>5</span></h2>
+    <div class="grid">
+    <div class="ic" data-find="blocked stopped halted no entry stuck status">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="blocked"><circle cx="12" cy="12" r="8.5" /><line x1="6" y1="6" x2="18" y2="18" /></svg></div>
+      <div class="n">blocked</div>
+      <div class="w">stopped halted no entry stuck</div>
+    </div>
+    <div class="ic" data-find="decision choice fork gate go no go status">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="decision"><path d="M12 2.8L21.2 12 12 21.2 2.8 12z" /><line x1="12" y1="8.5" x2="12" y2="13" /><circle cx="12" cy="16" r=".7" fill="currentColor" stroke="none" /></svg></div>
+      <div class="n">decision</div>
+      <div class="w">choice fork gate go no go</div>
+    </div>
+    <div class="ic" data-find="question open unknown to confirm unresolved status">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="question"><circle cx="12" cy="12" r="8.5" /><path d="M9.6 9.3A2.6 2.6 0 0 1 14.6 10c0 1.8-2.6 2.1-2.6 3.7" /><circle cx="12" cy="17" r=".7" fill="currentColor" stroke="none" /></svg></div>
+      <div class="n">question</div>
+      <div class="w">open unknown to confirm unresolved</div>
+    </div>
+    <div class="ic" data-find="target goal objective aim plan benchmark status">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="target"><circle cx="12" cy="12" r="8.5" /><circle cx="12" cy="12" r="4.2" /><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none" /></svg></div>
+      <div class="n">target</div>
+      <div class="w">goal objective aim plan benchmark</div>
+    </div>
+    <div class="ic" data-find="location place site hq country where geography status">
+      <div class="g"><svg class="av-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-icon="location"><path d="M12 21.2s7-6.4 7-11.2a7 7 0 1 0-14 0c0 4.8 7 11.2 7 11.2z" /><circle cx="12" cy="10" r="2.6" /></svg></div>
+      <div class="n">location</div>
+      <div class="w">place site hq country where geography</div>
+    </div>
+    </div>
+  </section>
+  <section class="rules">
+    <h2>Rules</h2>
+    <ul>
+      <li><strong>No emoji.</strong> Not for bullets, not for status, nowhere.</li>
+      <li><strong>No unicode character used as an icon.</strong> No ✓, no ★, no arrow as a section mark.
+      The only marks that belong to the system are <code>·</code> <code>–</code> <code>—</code>
+      <code>→</code> (money flow only) and <code>×</code> (the MOIC unit).</li>
+      <li><strong>An icon is functional and secondary.</strong> It supports a label; it never carries
+      the message of a slide on its own, and it is never decoration.</li>
+      <li><strong>One geometry.</strong> 24 px box, 1.5 stroke, no fill, currentColor. The
+      <code>interface</code> theme is the same geometry as the React package
+      <code>@neonglow/icons</code>; <code>verify.py</code> fails if the two drift apart.</li>
+      <li><strong>Check before you deliver.</strong> <code>X.check_icons(deck_html)</code> reports an
+      unknown name, an emoji, or a unicode character used as an icon.</li>
+    </ul>
+    <h2>Aliases</h2>
+    <table><tbody><tr><td>approved</td><td>success</td></tr><tr><td>caveat</td><td>warning</td></tr><tr><td>co2</td><td>emissions</td></tr><tr><td>delayed</td><td>clock</td></tr><tr><td>globe</td><td>market</td></tr><tr><td>lp</td><td>investor</td></tr><tr><td>microscope</td><td>research</td></tr><tr><td>moic</td><td>exit</td></tr><tr><td>on-track</td><td>success</td></tr><tr><td>people</td><td>team</td></tr><tr><td>person</td><td>founder</td></tr><tr><td>pipeline</td><td>funnel</td></tr><tr><td>recycle</td><td>circular</td></tr><tr><td>rejected</td><td>error</td></tr><tr><td>risk</td><td>warning</td></tr><tr><td>source</td><td>doc</td></tr><tr><td>validated</td><td>success</td></tr><tr><td>written-off</td><td>error</td></tr></tbody></table>
+  </section>
+</div>
+<script>
+  const q = document.getElementById('q'), count = document.getElementById('count');
+  const cards = [...document.querySelectorAll('.ic')], themes = [...document.querySelectorAll('.th')];
+  function run() {
+    const t = q.value.toLowerCase().trim();
+    let n = 0;
+    cards.forEach(c => {
+      const hit = !t || c.dataset.find.includes(t);
+      c.classList.toggle('hide', !hit);
+      if (hit) n++;
+    });
+    themes.forEach(s => s.classList.toggle('hide',
+      !s.querySelectorAll('.ic:not(.hide)').length));
+    count.textContent = n + ' / ' + cards.length;
+  }
+  q.addEventListener('input', run);
+  run();
+</script>
+</body>
+</html>

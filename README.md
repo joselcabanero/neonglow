@@ -31,6 +31,9 @@ All extracted fonts, tokens and logo assets live in `fonts/` and `assets/` respe
 | `preview/` | Design‑system cards rendered individually for the Design System review tab. |
 | `ui_kits/investor-deck/` | UI kit for the core product — a 1920×1080 LP / investor deck with all recipe layouts in one stacked HTML preview. |
 | `ui_kits/data-story/` | Long-form data-story kit — five-beat narrative page (Hook · Context · Turn · Resolution · Ask). |
+| `decks/` | The deck engine. Build a 1920×1080 deck with Python and get one self-contained HTML file. The fixed base is `av_deck.py`, the body region is `av_elements`; read `decks/README.md`. |
+| `Icon Catalogue.html` | 93 icons in 8 themes, searchable. Generated from `decks/av_elements/icons.py` — never edit by hand. |
+| `Scene Catalogue.html` | 18 isometric scenes for investment, climate and biotech. Generated from `decks/av_elements/scenes.py`. |
 
 ---
 

@@ -7,3 +7,8 @@ storybook-static/
 .turbo/
 vrt/current/
 vrt/diff/
+__pycache__/
+decks/examples/example-deck.html
+decks/examples/example-deck.pdf
+decks/examples/*.png
+decks/**/_review/
