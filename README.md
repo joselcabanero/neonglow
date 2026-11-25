@@ -245,6 +245,24 @@ A data story is a five-beat narrative, one chart type per beat — see `ui_kits/
 
 ---
 
+## Maps
+
+Five map cards in `preview/map-*.html` (helper in `preview/map.js`). Maps are **data, not drawings** — geometry is always real Natural Earth 110m TopoJSON (`world-atlas@2.0.2`) rendered with d3-geo; never freehand outlines, never stock map imagery.
+
+**Encoding — same grammar as charts.**
+- Land: `#EEEEF0` (no data) → `#E0E0E4` → `#D4F5D1` → `#7BF076` → `#0A0A0A` for ordinal ramps (MOIC, position count). Borders are **white 0.6 px**, never ink. Focus region in `#C6C6CB` with neighbours in `#EEEEF0`. Ocean is the page background — no blue, ever.
+- Points: circles, ink fill 85% for active, accent for the exit market / HQ, hollow (white + 1.5 px ink) for pipeline. Area ∝ value (`d3.scaleSqrt`). Label the top 3–5 only, 10 px Ubuntu, right of the mark.
+- Flows: great-circle `LineString` paths in ink, width 0.6–4 px ∝ count, round caps. One hub in accent.
+- Container gets `--radius` 12 px with `overflow:hidden`; the SVG itself has no frame.
+
+**Projections.** `d3.geoNaturalEarth1` for the world; `d3.geoMercator().fitExtent(...)` for Europe / a country. **Always fit to an explicit `MultiPoint` [SW, NE] bound, never to the features or to a Polygon** (d3-geo polygons are spherical — a wrong winding fits the whole globe) — world-atlas France includes French Guiana, the Netherlands its Caribbean islands, Spain the Canaries, so feature bboxes drag the view to the Atlantic. Europe: `[-11,35]–[26,60]`; mainland Spain: `[-9.5,35.8]–[3.5,44]`. Anchor country labels on a fixed mainland lon/lat, not `path.centroid`. Drop Antarctica (`id 010`) on world views.
+
+**Which map.** Value per country → choropleth. Value per city → proportional symbols. Relationships → flow map. One-country detail → regional zoom + side table. Change over time → small multiples (never animation in a static deliverable).
+
+**Interactive / street level** (web prototypes only): Leaflet + OpenStreetMap tiles with the attribution string; never in decks or PDFs.
+
+---
+
 ## Logos — inventory
 
 All live in `assets/`.

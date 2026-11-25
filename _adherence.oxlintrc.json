@@ -13,7 +13,14 @@
     "no-restricted-imports": [
       "warn",
       {
-        "patterns": []
+        "patterns": [
+          {
+            "group": [
+              "preview/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
       }
     ],
     "no-restricted-syntax": [
@@ -107,6 +114,9 @@
       "--perf-down",
       "--perf-neutral",
       "--perf-up",
+      "--radius",
+      "--radius-lg",
+      "--radius-sm",
       "--rhythm",
       "--rule",
       "--rule-dark-faint",
@@ -187,6 +197,9 @@
       "--sp-56": "spacing",
       "--sp-80": "spacing",
       "--sp-100": "spacing",
+      "--radius-sm": "radius",
+      "--radius": "radius",
+      "--radius-lg": "radius",
       "--canvas-w": "spacing",
       "--canvas-h": "spacing",
       "--margin-x": "spacing",

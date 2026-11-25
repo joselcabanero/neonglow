@@ -2,8 +2,9 @@ repo: joselcabanero/neonglow
 branch: main
 
 ## Last sync
-date: 2026-09-08T08:18:14Z
-direction: project → repo (manual commit; push tooling not available)
+date: 2026-09-08T09:14:43Z
+commit: 53f95a7635c8
+direction: project → repo (rsync + manual push; merged feat/phase-3 → main)
 ### Updated in this project
 - 43 chart cards + `preview/chart.css` (new)
 - 5 data-story cards + `ui_kits/data-story/` (new)
